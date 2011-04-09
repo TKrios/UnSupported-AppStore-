@@ -48,18 +48,11 @@ def ValidatePrefs():
  
 
 def ApplicationsMainMenu():
-
-    gitpath = Helper.Run('which_git.sh', [])
-    if gitpath == '':
-        git = False
-        Log('git path not found, please install git and ensure that the PATH is setup for non-terminal programs')
-    else:
-        Log('git path: %s' % gitpath)
-    Dict['GitPath'] = gitpath
     
     if Dict['installed'] == None:
         Dict['installed'] = {}
-    
+    if not GitCheck():
+        return MessageContainer(NAME, 'git not found! please make sure git is installed and git PATH for non-terminal apps is setup.')
     dir = MediaContainer(viewGroup="InfoList")
     Dict['plugins'] = LoadData()
     for plugin in Dict['plugins']:
@@ -75,6 +68,22 @@ def ApplicationsMainMenu():
 
     return dir
 
+def GitCheck():
+    try:
+        if Dict['GitPath']:
+            return True
+        else:
+            pass
+    except:
+        gitpath = Helper.Run('which_git.sh')
+        if gitpath == '':
+            Log('git path not found, please install git and ensure that the PATH is setup for non-terminal programs')
+            return False
+        else:
+            Log('git path: %s' % gitpath)
+        Dict['GitPath'] = gitpath
+    return True
+
 def PluginMenu(sender, plugin):
     dir = MediaContainer(title1=sender.itemTitle)
     if Installed(plugin):
@@ -83,19 +92,11 @@ def PluginMenu(sender, plugin):
     else:
         dir.Append(Function(DirectoryItem(InstallPlugin, title='Install'), plugin=plugin))
     return dir
-
   
 def LoadData():
     userdata = Resource.Load(PLUGINS)
     Log('Loaded userdata: %s' % userdata)
     return JSON.ObjectFromString(userdata)
-    
-#def SaveData():
-#    f = io.open(FILE, w)
-#    f.write(JSON.StringFromObject(Dict['Plugins']))
-#    f.close
-#    Log('Saved userdata')
-#    return
 
 def Installed(plugin):
     try:
