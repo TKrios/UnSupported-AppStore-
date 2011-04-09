@@ -1,9 +1,3 @@
-#import os
-#import plugin_details.json as plugins
-#from Framework.api.helperkit import Popen
-#from subprocess import *
-#import subprocess as SUBPROCESS
-
 APPLICATIONS_PREFIX = "/applications/unsupportedappstore"
 
 NAME = L('Title')
@@ -14,13 +8,10 @@ PREFS_ICON  = 'prefs-icon.png'
 
 PLUGINS     = 'plugin_details.json'
 
-PLEXPATH          = '/Library/Application Support/Plex Media Server/Plug-ins'
-#GITPATH             = '/usr/bin'
-#GITPATHCHECK        = '/usr/local/git/bin'
-#GITPATHCHECKMACPORT = '/opt/local/bin/git'
-#PATH=${GITPATH}:${PATH}
+PLEXPATH    = '/Library/Application Support/Plex Media Server/Plug-ins'
 
-
+APPSTORE    = {"title":"UnSupported Appstore","bundle":"UnSupportedAppstore.bundle","type":"Application","description":"Download, install, and update unsupported plugins for PMS",
+                "repo":"git@github.com:mikedm139/UnSupportedAppstore.bundle.git","icon":"icon-default.png"}
 
 ####################################################################################################
 
@@ -53,6 +44,7 @@ def ApplicationsMainMenu():
         Dict['installed'] = {}
     if not GitCheck():
         return MessageContainer(NAME, 'git not found! please make sure git is installed and git PATH for non-terminal apps is setup.')
+    updateSelf = UpdatePlugin(APPSTORE)
     dir = MediaContainer(viewGroup="InfoList")
     Dict['plugins'] = LoadData()
     for plugin in Dict['plugins']:
@@ -95,7 +87,7 @@ def PluginMenu(sender, plugin):
   
 def LoadData():
     userdata = Resource.Load(PLUGINS)
-    Log('Loaded userdata: %s' % userdata)
+    #Log('Loaded userdata: %s' % userdata)
     return JSON.ObjectFromString(userdata)
 
 def Installed(plugin):
