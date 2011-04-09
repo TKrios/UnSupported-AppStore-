@@ -53,7 +53,7 @@ def ApplicationsMainMenu():
     dir.Append(Function(DirectoryItem(GenreMenu, 'Music', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(UpdateAll, "Download updates", "Update all installed plugins", "This may take a while and will require you to restart PMS for changes to take effect",
         thumb=R(ICON))))
-    dir.Append(PrefsItem(title="Preferences", thumb=R(PREFS_ICON)))
+    #dir.Append(PrefsItem(title="Preferences", thumb=R(PREFS_ICON)))
 
     return dir
 
