@@ -127,18 +127,21 @@ def UpdatePlugin(plugin):
 
 def UpdateAll(sender):
     for plugin in Dict['plugins']:
-        #try:
+        try:
             if Dict['installed'][plugin['title']] == True:
                 Log('%s is installed. Downloading updates' % plugin['title'])
                 update = UpdatePlugin(plugin)
             else:
                 Log('%s is not installed.' % plugin['title'])
                 pass
-        #except:
-            #Log('%s is not installed.' % plugin['title'])
-            #pass
+        except:
+            Log('%s is not installed.' % plugin['title'])
+            pass
     
     return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
     
 def UnInstallPlugin(sender, plugin):
-    return
+    uninstall = Helper.Run('remove_plugin.sh', '%s/%s' % (PLEXPATH, plugin['bundle']))
+    Log(uninstall)
+    Dict['installed'][plugin['title']] = False
+    return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
