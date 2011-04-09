@@ -47,7 +47,7 @@ def ApplicationsMainMenu():
     updateSelf = UpdatePlugin(APPSTORE)
     Dict['plugins'] = LoadData()
     dir = MediaContainer(viewGroup="List")
-    dir.Append(Function(DirectoryItem(GenreMenu, 'Applications', thumb=R(ICON))))
+    dir.Append(Function(DirectoryItem(GenreMenu, 'Application', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Video', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Photo', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Music', thumb=R(ICON))))
