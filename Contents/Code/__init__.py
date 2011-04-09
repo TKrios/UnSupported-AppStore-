@@ -45,15 +45,12 @@ def ApplicationsMainMenu():
     if not GitCheck():
         return MessageContainer(NAME, 'git not found! please make sure git is installed and git PATH for non-terminal apps is setup.')
     updateSelf = UpdatePlugin(APPSTORE)
-    dir = MediaContainer(viewGroup="InfoList")
     Dict['plugins'] = LoadData()
-    for plugin in Dict['plugins']:
-        if Installed(plugin):
-            subtitle = 'Installed'
-        else:
-            subtitle = ''
-        dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
-    
+    dir = MediaContainer(viewGroup="List")
+    dir.Append(Function(DirectoryItem(GenreMenu, 'Applications', thumb=R(ICON))))
+    dir.Append(Function(DirectoryItem(GenreMenu, 'Video', thumb=R(ICON))))
+    dir.Append(Function(DirectoryItem(GenreMenu, 'Photo', thumb=R(ICON))))
+    dir.Append(Function(DirectoryItem(GenreMenu, 'Music', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(UpdateAll, "Download updates", "Update all installed plugins", "This may take a while and will require you to restart PMS for changes to take effect",
         thumb=R(ICON))))
     dir.Append(PrefsItem(title="Your preferences",subtile="So you can set preferences",summary="lets you set preferences",thumb=R(ICON)))
@@ -75,6 +72,28 @@ def GitCheck():
             Log('git path: %s' % gitpath)
         Dict['GitPath'] = gitpath
     return True
+
+def GenreMenu(sender):
+    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList')
+    genre = sender.itemTitle
+    for plugin in Dict['plugins']:
+        if genre in plugin['type']:
+            if Installed(plugin):
+                subtitle = 'Installed'
+            else:
+                subtitle = ''
+            dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
+    return dir
+
+def AllMenu(sender):
+    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList')
+    for plugin in Dict['plugins']:
+        if Installed(plugin):
+            subtitle = 'Installed'
+        else:
+            subtitle = ''
+        dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
+    return dir
 
 def PluginMenu(sender, plugin):
     dir = MediaContainer(title1=sender.itemTitle)

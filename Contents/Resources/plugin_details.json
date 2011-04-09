@@ -2,7 +2,7 @@
     {
         "title"           :     "SABnzbd+",
         "bundle"          :     "SABnzbd.bundle",
-        "type"            :     "Application",
+        "type"            :     ["Application"],
         "description"     :     "Manage your SABnzbd+ queue and history from within Plex.",
         "repo"            :     "git@github.com:mikedm139/SABnzbd.bundle.git",
         "icon"            :     "sabnzbd-icon.png"
@@ -10,9 +10,25 @@
     {
         "title"           :     "CouchPotato",
         "bundle"          :     "CouchPotato.bundle",
-        "type"            :     "Application",
+        "type"            :     ["Application"],
         "description"     :     "View, edit and add to your CouchPotato wanted list.",
         "repo"            :     "git@github.com:mikedm139/CouchPotato.bundle.git",
         "icon"            :     "couchpotato-icon.png"
+    },
+    {
+        "title"           :     "SickBeard",
+        "bundle"          :     "SickBeard.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "A plugin for Plex media center to view and control basic functions of SickBeard",
+        "repo"            :     "git@github.com:mikedm139/SickBeard.bundle.git",
+        "icon"            :     "sickbeard-icon.png"
+    },
+    {
+        "title"           :     "unRAID",
+        "bundle"          :     "unRAID.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "Plex Media Server plugin to control basic functions of an unRAID server. ",
+        "repo"            :     "git@github.com:mikedm139/unRAID.bundle.git",
+        "icon"            :     "unraid-icon.png"
     }
 ]
