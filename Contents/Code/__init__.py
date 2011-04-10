@@ -114,6 +114,7 @@ def Installed(plugin):
         if Dict['installed'][plugin['title']] == True:
             return True
         else:
+            return False
             pass
     except:
         pass
