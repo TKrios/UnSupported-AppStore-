@@ -112,10 +112,8 @@ def LoadData():
 def Installed(plugin):
     try:
         if Dict['installed'][plugin['title']] == True:
-            Log('registered as installed')
             return True
         else:
-            Log('no record of installation found')
             pass
     except:
         pass
