@@ -5,7 +5,9 @@ target=/Users/$user$1
 git='/.git'
 
 if [ ! -d "$target$git" ]; then
-    git init $target
+    echo `git init "$target"`
+    wait $!
+    echo 'git repo initialized'
     else
     echo '.git found'
 fi
