@@ -46,7 +46,7 @@ def ApplicationsMainMenu():
         Log(Dict['installed'])
     if not GitCheck():
         return MessageContainer(NAME, 'git not found! please make sure git is installed and git PATH for non-terminal apps is setup.')
-    updateSelf = UpdatePlugin(APPSTORE)
+    #updateSelf = UpdatePlugin(APPSTORE)
     Dict['plugins'] = LoadData()
     dir = MediaContainer(viewGroup="List")
     dir.Append(Function(DirectoryItem(AlMenu, 'All', thumb = R(ICON))))

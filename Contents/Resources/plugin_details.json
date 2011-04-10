@@ -1,5 +1,13 @@
 [
     {
+        "title"           :     "UnSupported Appstore",
+        "bundle"          :     "UnSupportedAppstore.bundle",
+        "type"            :     "Application",
+        "description"     :     "Download, install, and update unsupported plugins for PMS",
+        "repo"            :     "git@github.com:mikedm139/UnSupportedAppstore.bundle.git",
+        "icon"            :     "icon-default.png"
+    },
+    {
         "title"           :     "SABnzbd+",
         "bundle"          :     "SABnzbd.bundle",
         "type"            :     ["Application"],
