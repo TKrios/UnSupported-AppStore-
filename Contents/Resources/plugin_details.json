@@ -30,5 +30,13 @@
         "description"     :     "Plex Media Server plugin to control basic functions of an unRAID server. ",
         "repo"            :     "git@github.com:mikedm139/unRAID.bundle.git",
         "icon"            :     "unraid-icon.png"
+    },
+    {
+        "title"           :     "Library Updater",
+        "bundle"          :     "LibraryUpdater.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "Update Plex library sections or entire library without leaving Plex interface",
+        "repo"            :     "git@github.com:mikedm139/LibraryUpdater.bundle.git",
+        "icon"            :     "libupdate-icon.png"
     }
 ]
