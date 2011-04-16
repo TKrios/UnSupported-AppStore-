@@ -147,21 +147,17 @@ def Install(plugin):
 
 def UpdateAll(sender):
     for plugin in Dict['plugins']:
-        if plugin['title'] != 'UnSupported Appstore':
-        
-            try:
-                if Dict['Installed'][plugin['title']]['installed'] == "True":
-                    Log('%s is installed. Downloading updates' % plugin['title'])
-                    update = Install(plugin)
-                else:
-                    Log('%s is not installed.' % plugin['title'])
-                    pass
-            except:
+        try:
+            if Dict['Installed'][plugin['title']]['installed'] == "True":
+                Log('%s is installed. Downloading updates' % plugin['title'])
+                update = Install(plugin)
+            else:
                 Log('%s is not installed.' % plugin['title'])
                 pass
-        else:
+        except:
+            Log('%s is not installed.' % plugin['title'])
             pass
-    
+        
     return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
     
 def UnInstallPlugin(sender, plugin):
@@ -190,4 +186,3 @@ def CheckForUpdates():
                     else:
                         Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
     return
-        
