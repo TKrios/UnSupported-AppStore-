@@ -10,9 +10,6 @@ PLUGINS     = 'plugin_details.json'
 
 PLEXPATH    = '/Library/Application Support/Plex Media Server/Plug-ins'
 
-APPSTORE    = {"title":"UnSupported Appstore","bundle":"UnSupportedAppstore.bundle","type":"Application","description":"Download, install, and update unsupported plugins for PMS",
-                "repo":"git@github.com:mikedm139/UnSupportedAppstore.bundle.git","icon":"icon-default.png"}
-
 ####################################################################################################
 
 def Start():
@@ -28,6 +25,12 @@ def Start():
     
     HTTP.CacheTime = CACHE_1HOUR
     
+    #Check the list of installed plugins
+    if Dict['Installed'] == None:
+        Dict['Installed'] = {}
+    else:
+        Log(Dict['Installed'])
+    
 def ValidatePrefs():
     #u = Prefs['username']
     #p = Prefs['password']
@@ -40,68 +43,70 @@ def ValidatePrefs():
 
 def ApplicationsMainMenu():
     
-    if Dict['installed'] == None:
-        Dict['installed'] = {}
-    else:
-        Log(Dict['installed'])
-    if not GitCheck():
-        return MessageContainer(NAME, 'git not found! please make sure git is installed and git PATH for non-terminal apps is setup.')
-    #updateSelf = UpdatePlugin(APPSTORE)
+    #Load the list of available plugins
     Dict['plugins'] = LoadData()
-    dir = MediaContainer(viewGroup="List")
+    
+    #Check for available updates
+    updates = CheckForUpdates()
+    
+    dir = MediaContainer(viewGroup="List", noCache=True)
     dir.Append(Function(DirectoryItem(AllMenu, 'All', thumb = R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Application', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Video', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Photo', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Music', thumb=R(ICON))))
+    dir.Append(Function(DirectoryItem(InstalledMenu, 'Installed', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(UpdateAll, "Download updates", "Update all installed plugins", "This may take a while and will require you to restart PMS for changes to take effect",
         thumb=R(ICON))))
     #dir.Append(PrefsItem(title="Preferences", thumb=R(PREFS_ICON)))
 
     return dir
 
-def GitCheck():
-    try:
-        if Dict['GitPath']:
-            return True
-        else:
-            pass
-    except:
-        gitpath = Helper.Run('which_git.sh')
-        if gitpath == '':
-            Log('git path not found, please install git and ensure that the PATH is setup for non-terminal programs')
-            return False
-        else:
-            Log('git path: %s' % gitpath)
-        Dict['GitPath'] = gitpath
-    return True
-
 def GenreMenu(sender):
-    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList')
+    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
     genre = sender.itemTitle
     for plugin in Dict['plugins']:
-        if genre in plugin['type']:
+        if plugin['title'] != "UnSupported Appstore":
+            if genre in plugin['type']:
+                if Installed(plugin):
+                    if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
+                        subtitle = 'Update available'
+                    else:
+                        subtitle = 'Installed'
+                else:
+                    subtitle = ''
+                dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
+    return dir
+
+def AllMenu(sender):
+    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
+    for plugin in Dict['plugins']:
+        if plugin['title'] != "UnSupported Appstore":
             if Installed(plugin):
-                subtitle = 'Installed'
+                if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
+                    subtitle = 'Update available'
+                else:
+                    subtitle = 'Installed'
             else:
                 subtitle = ''
             dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
     return dir
 
-def AllMenu(sender):
-    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList')
+def InstalledMenu(sender):
+    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
     for plugin in Dict['plugins']:
+        subtitle = ''
         if Installed(plugin):
-            subtitle = 'Installed'
-        else:
-            subtitle = ''
-        dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
+            if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
+                subtitle = 'Update available'
+            dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
     return dir
 
 def PluginMenu(sender, plugin):
-    dir = MediaContainer(title1=sender.itemTitle)
+    dir = MediaContainer(title1=sender.itemTitle, noCache=True)
     if Installed(plugin):
-        #dir.Append(Function(DirectoryItem(UpdatePlugin, title='Update'), plugin=plugin))
+        if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
+            dir.Append(Function(DirectoryItem(InstallPlugin, title='Update'), plugin=plugin))
         dir.Append(Function(DirectoryItem(UnInstallPlugin, title='UnInstall'), plugin=plugin))
     else:
         dir.Append(Function(DirectoryItem(InstallPlugin, title='Install'), plugin=plugin))
@@ -109,47 +114,52 @@ def PluginMenu(sender, plugin):
   
 def LoadData():
     userdata = Resource.Load(PLUGINS)
-    #Log('Loaded userdata: %s' % userdata)
     return JSON.ObjectFromString(userdata)
 
 def Installed(plugin):
     try:
-        if Dict['installed'][plugin['title']] == True:
+        if Dict['Installed'][plugin['title']]['installed'] == "True":
             return True
         else:
             return False
             pass
     except:
-        pass
-    if Helper.Run('exists.sh', '%s/%s' % (PLEXPATH, plugin['bundle'])):
-        title = plugin['title']
-        Dict['installed'][title] = True
-        return True
+        if Helper.Run('exists.sh', '%s/%s' % (PLEXPATH, plugin['bundle'])):
+            Dict['Installed'][plugin['title']] = {"installed":"True", "lastUpdate":"None", "updateAvailable":"True"}
+            return True
     
     return False
 
 def InstallPlugin(sender, plugin):
-    install = Helper.Run('git_clone.sh', '%s/%s' % (PLEXPATH, plugin['bundle']), plugin['repo'])
-    Log(install)
-    Dict['installed'][plugin['title']] = True
+    if Installed(plugin):
+        update = Install(plugin)
+    else:
+        install = Install(plugin)
     return MessageContainer(NAME, '%s installed, restart PMS for changes to take effect.' % sender.itemTitle)
     
-def UpdatePlugin(plugin):
-    update = Helper.Run('git_pull.sh', '%s/%s' % (PLEXPATH, plugin['bundle']), plugin['repo'])
-    Log(update)
+def Install(plugin):
+    zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+    install = Helper.Run('download_install.sh', PLEXPATH, plugin['bundle'], zipPath)
+    Log(install)
+    Dict['Installed'][plugin['title']]['lastUpdate'] = Datetime.Now()
+    Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
     return
 
 def UpdateAll(sender):
     for plugin in Dict['plugins']:
-        try:
-            if Dict['installed'][plugin['title']] == True:
-                Log('%s is installed. Downloading updates' % plugin['title'])
-                update = UpdatePlugin(plugin)
-            else:
+        if plugin['title'] != 'UnSupported Appstore':
+        
+            try:
+                if Dict['Installed'][plugin['title']]['installed'] == "True":
+                    Log('%s is installed. Downloading updates' % plugin['title'])
+                    update = Install(plugin)
+                else:
+                    Log('%s is not installed.' % plugin['title'])
+                    pass
+            except:
                 Log('%s is not installed.' % plugin['title'])
                 pass
-        except:
-            Log('%s is not installed.' % plugin['title'])
+        else:
             pass
     
     return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
@@ -157,5 +167,27 @@ def UpdateAll(sender):
 def UnInstallPlugin(sender, plugin):
     uninstall = Helper.Run('remove_plugin.sh', '%s/%s' % (PLEXPATH, plugin['bundle']))
     Log(uninstall)
-    Dict['installed'][plugin['title']] = False
+    Dict['Installed'][plugin['title']]['installed'] = "False"
     return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
+    
+def CheckForUpdates():
+    #use the github commit feed for each installed plugin to check for available updates
+    @parallelize
+    def GetUpdateList():
+        for num in range(len(Dict['plugins'])):
+            @task
+            def GetRSSFeed(num=num):
+                plugin = Dict['plugins'][num]
+                if Installed(plugin):
+                    rssURL = 'https://%s/commits/master.atom' % plugin['repo'].split('@')[1].replace(':','/')[:-4]
+                    #Log(rssURL)
+                    commits = HTML.ElementFromURL(rssURL)
+                    mostRecent = Datetime.ParseDate(commits.xpath('//entry')[0].xpath('./updated')[0].text[:-6])
+                    if Dict['Installed'][plugin['title']]['lastUpdate'] == "None":
+                        Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
+                    elif mostRecent >> Dict['Installed'][plugin['title']]['lastUpdate']:
+                        Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
+                    else:
+                        Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
+    return
+        
