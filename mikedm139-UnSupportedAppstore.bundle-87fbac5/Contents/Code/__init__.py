@@ -10,8 +10,6 @@ PLUGINS     = 'plugin_details.json'
 
 PLEXPATH    = '/Library/Application Support/Plex Media Server/Plug-ins'
 
-DEVMODE     = False
-
 ####################################################################################################
 
 def Start():
@@ -149,19 +147,10 @@ def Install(plugin):
 
 def UpdateAll(sender):
     for plugin in Dict['plugins']:
-        if DEVMODE:
-            if plugin['title'] == "UnSupported Appstore":
-                continue
-            else:
-                pass
-        
         try:
             if Dict['Installed'][plugin['title']]['installed'] == "True":
-                if Dict['Installed'][plugin['title']]['updateAvailable'] == "False":
-                    Log('%s is already up to date.' % plugin['title'])
-                else:
-                    Log('%s is installed. Downloading updates' % plugin['title'])
-                    update = Install(plugin)
+                Log('%s is installed. Downloading updates' % plugin['title'])
+                update = Install(plugin)
             else:
                 Log('%s is not installed.' % plugin['title'])
                 pass
@@ -192,13 +181,8 @@ def CheckForUpdates():
                     mostRecent = Datetime.ParseDate(commits.xpath('//entry')[0].xpath('./updated')[0].text[:-6])
                     if Dict['Installed'][plugin['title']]['lastUpdate'] == "None":
                         Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
-                    elif mostRecent > Dict['Installed'][plugin['title']]['lastUpdate']:
+                    elif mostRecent >> Dict['Installed'][plugin['title']]['lastUpdate']:
                         Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
                     else:
                         Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
-                    
-                    if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-                        Log('Update available')
-                    else:
-                        Log('Up-to-date')
     return
