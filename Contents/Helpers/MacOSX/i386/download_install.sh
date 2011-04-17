@@ -3,22 +3,17 @@
 user=`whoami`
 target=/Users/$user$1
 
-change_dir=`cd "$target"`
-echo $change_dir
+cd "$target"
 
-download_zip-`curl -o "$2.zip" -L "$3"`
-echo $download_zip
+curl -o "$2.zip" -L "$3"
 
-expand_archive=`unzip -uo "$2.zip" -d "$target/$2_temp"`
-echo $expand_archive
+unzip "$2.zip"
 
-delete_old=`rm -rf $2`
-echo $delete_old
+rm -rf $2
 
-rename_temp=`mv -f $2* ./$2`
+rm -rf "$2.zip"
 
-delete_zip=`rm "$2.zip"`
-echo $delete_zip
+mv -f *$2* $2
 
 echo Success!
 exit 0

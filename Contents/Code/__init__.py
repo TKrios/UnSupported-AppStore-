@@ -135,17 +135,18 @@ def Installed(plugin):
 def InstallPlugin(sender, plugin):
     if Installed(plugin):
         update = Install(plugin)
+        Log(update)
     else:
         install = Install(plugin)
+        Log(install)
     return MessageContainer(NAME, '%s installed, restart PMS for changes to take effect.' % sender.itemTitle)
     
 def Install(plugin):
     zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
     install = Helper.Run('download_install.sh', PLEXPATH, plugin['bundle'], zipPath)
-    Log(install)
     Dict['Installed'][plugin['title']]['lastUpdate'] = Datetime.Now()
     Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
-    return
+    return install
 
 def UpdateAll(sender):
     for plugin in Dict['plugins']:
@@ -154,21 +155,19 @@ def UpdateAll(sender):
                 continue
             else:
                 pass
-        
-        try:
-            if Dict['Installed'][plugin['title']]['installed'] == "True":
-                if Dict['Installed'][plugin['title']]['updateAvailable'] == "False":
-                    Log('%s is already up to date.' % plugin['title'])
+            try:
+                if Dict['Installed'][plugin['title']]['installed'] == "True":
+                    if Dict['Installed'][plugin['title']]['updateAvailable'] == "False":
+                        Log('%s is already up to date.' % plugin['title'])
+                    else:
+                        Log('%s is installed. Downloading updates:\n%s' % (plugin['title'], Install(plugin)))
                 else:
-                    Log('%s is installed. Downloading updates' % plugin['title'])
-                    update = Install(plugin)
-            else:
-                Log('%s is not installed.' % plugin['title'])
+                    Log('%s is not installed.' % plugin['title'])
+                    pass
+            except:
+                ('%s is not installed.' % plugin['title'])
                 pass
-        except:
-            Log('%s is not installed.' % plugin['title'])
-            pass
-        
+
     return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
     
 def UnInstallPlugin(sender, plugin):
