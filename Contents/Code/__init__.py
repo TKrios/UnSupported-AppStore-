@@ -145,7 +145,9 @@ def Install(plugin):
     zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
     install = Helper.Run('download_install.sh', PLEXPATH, plugin['bundle'], zipPath)
     Dict['Installed'][plugin['title']]['lastUpdate'] = Datetime.Now()
+    Log('%s "LastUpdate" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['lastUpdate']))
     Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
+    Log('%s "updateAvailable" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['updateAvailable']))
     return install
 
 def UpdateAll(sender):
