@@ -155,18 +155,18 @@ def UpdateAll(sender):
                 continue
             else:
                 pass
-            try:
-                if Dict['Installed'][plugin['title']]['installed'] == "True":
-                    if Dict['Installed'][plugin['title']]['updateAvailable'] == "False":
-                        Log('%s is already up to date.' % plugin['title'])
-                    else:
-                        Log('%s is installed. Downloading updates:\n%s' % (plugin['title'], Install(plugin)))
+        try:
+            if Dict['Installed'][plugin['title']]['installed'] == "True":
+                if Dict['Installed'][plugin['title']]['updateAvailable'] == "False":
+                    Log('%s is already up to date.' % plugin['title'])
                 else:
-                    Log('%s is not installed.' % plugin['title'])
-                    pass
-            except:
-                ('%s is not installed.' % plugin['title'])
+                    Log('%s is installed. Downloading updates:\n%s' % (plugin['title'], Install(plugin)))
+            else:
+                Log('%s is not installed.' % plugin['title'])
                 pass
+        except:
+            ('%s is not installed.' % plugin['title'])
+            pass
 
     return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
     
