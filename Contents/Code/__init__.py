@@ -160,7 +160,9 @@ def UpdateAll(sender):
                 if Dict['Installed'][plugin['title']]['updateAvailable'] == "False":
                     Log('%s is already up to date.' % plugin['title'])
                 else:
-                    Log('%s is installed. Downloading updates:\n%s' % (plugin['title'], Install(plugin)))
+                    Log('%s is installed. Downloading updates:\n%s' % (plugin['title']))
+                    update = Install(plugin)
+                    Log(update)
             else:
                 Log('%s is not installed.' % plugin['title'])
                 pass
