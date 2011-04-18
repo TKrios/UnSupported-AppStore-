@@ -1,15 +1,8 @@
 [
-  {
-        "id": "username",
-        "type": "text",
-        "label": "Username",
-        "default": ""
-    },
     {
-        "id": "password",
-        "type": "text",
-        "label": "Password",
-        "default": "",
-        "option": "hidden"
+        "id": "adult",
+        "type": "bool",
+        "label": "Allow Adult Plugins",
+        "default": "True"
     }
 ]

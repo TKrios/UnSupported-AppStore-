@@ -4,7 +4,7 @@ NAME = L('Title')
 
 ART         = 'art-default.jpg'
 ICON        = 'icon-default.png'
-PREFS_ICON  = 'prefs-icon.png'
+PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
 
@@ -58,9 +58,11 @@ def ApplicationsMainMenu():
     dir.Append(Function(DirectoryItem(GenreMenu, 'Photo', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Music', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(InstalledMenu, 'Installed', thumb=R(ICON))))
+    if Prefs['adult']:
+        dir.Append(Function(DirectoryItem(GenreMenu, 'Adult', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(UpdateAll, "Download updates", "Update all installed plugins", "This may take a while and will require you to restart PMS for changes to take effect",
         thumb=R(ICON))))
-    #dir.Append(PrefsItem(title="Preferences", thumb=R(PREFS_ICON)))
+    dir.Append(PrefsItem(title="Preferences", thumb=R(PREFS_ICON)))
 
     return dir
 
@@ -69,6 +71,13 @@ def GenreMenu(sender):
     genre = sender.itemTitle
     for plugin in Dict['plugins']:
         if plugin['title'] != "UnSupported Appstore":
+            if not Prefs['adult']:
+                if "Adult" in plugin['type']:
+                    continue
+                else:
+                    pass
+            else:
+                pass
             if genre in plugin['type']:
                 if Installed(plugin):
                     if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
@@ -84,6 +93,13 @@ def AllMenu(sender):
     dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
     for plugin in Dict['plugins']:
         if plugin['title'] != "UnSupported Appstore":
+            if not Prefs['adult']:
+                if "Adult" in plugin['type']:
+                    continue
+                else:
+                    pass
+            else:
+                pass
             if Installed(plugin):
                 if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
                     subtitle = 'Update available'

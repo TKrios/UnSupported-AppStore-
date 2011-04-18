@@ -2,7 +2,7 @@
     {
         "title"           :     "UnSupported Appstore",
         "bundle"          :     "UnSupportedAppstore.bundle",
-        "type"            :     "Application",
+        "type"            :     ["Application"],
         "description"     :     "Download, install, and update unsupported plugins for PMS",
         "repo"            :     "git@github.com:mikedm139/UnSupportedAppstore.bundle.git",
         "branch"          :     "master",
@@ -56,7 +56,7 @@
     {
         "title"           :     "4tube",
         "bundle"          :     "4tube.bundle",
-        "type"            :     ["Video"],
+        "type"            :     ["Video", "Adult"],
         "description"     :     "Watch xxx videos from 4tube.com",
         "repo"            :     "git@github.com:piplongrun/4tube.bundle.git",
         "branch"          :     "master",
