@@ -52,5 +52,14 @@
         "repo"            :     "git@github.com:mikedm139/LibraryUpdater.bundle.git",
         "branch"          :     "master",
         "icon"            :     "libupdate-icon.png"
+    },
+    {
+        "title"           :     "4tube",
+        "bundle"          :     "4tube.bundle",
+        "type"            :     ["Adult"],
+        "description"     :     "Watch xxx videos from 4tube.com",
+        "repo"            :     "git@github.com:piplongrun/4tube.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "4tube-icon.png"
     }
 ]
