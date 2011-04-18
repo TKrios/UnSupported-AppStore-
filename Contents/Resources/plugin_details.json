@@ -56,7 +56,7 @@
     {
         "title"           :     "4tube",
         "bundle"          :     "4tube.bundle",
-        "type"            :     ["Adult"],
+        "type"            :     ["Video"],
         "description"     :     "Watch xxx videos from 4tube.com",
         "repo"            :     "git@github.com:piplongrun/4tube.bundle.git",
         "branch"          :     "master",
