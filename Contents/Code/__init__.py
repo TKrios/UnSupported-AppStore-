@@ -87,6 +87,7 @@ def GenreMenu(sender):
                 else:
                     subtitle = ''
                 dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
+    #dir.Sort('title')
     return dir
 
 def AllMenu(sender):
@@ -108,6 +109,7 @@ def AllMenu(sender):
             else:
                 subtitle = ''
             dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
+    #dir.Sort('title')
     return dir
 
 def InstalledMenu(sender):
@@ -118,6 +120,7 @@ def InstalledMenu(sender):
             if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
                 subtitle = 'Update available'
             dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
+    #dir.Sort()
     return dir
 
 def PluginMenu(sender, plugin):
@@ -140,11 +143,9 @@ def Installed(plugin):
             return True
         else:
             return False
-            pass
     except:
-        if Helper.Run('exists.sh', '%s/%s' % (PLEXPATH, plugin['bundle'])):
-            Dict['Installed'][plugin['title']] = {"installed":"True", "lastUpdate":"None", "updateAvailable":"True"}
-            return True
+        Dict['Installed'][plugin['title']] = {"installed":"False", "lastUpdate":"None", "updateAvailable":"True"}
+        return False
     
     return False
 
