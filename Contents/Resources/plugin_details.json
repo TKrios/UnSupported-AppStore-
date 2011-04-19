@@ -70,5 +70,14 @@
         "repo"            :     "git@github.com:flownex/YouJizz.bundle.git",
         "branch"          :     "master",
         "icon"            :     "youjizz-icon.png"
+    },
+    {
+        "title"           :     "Facebook",
+        "bundle"          :     "Facebook.bundle",
+        "type"            :     ["Pictures", "Social"],
+        "description"     :     "View newsfeed and photos from Facebook",
+        "repo"            :     "git@github.com:DCstewieG/Facebook.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "facebook-icon.png"
     }
 ]
