@@ -61,5 +61,14 @@
         "repo"            :     "git@github.com:piplongrun/4tube.bundle.git",
         "branch"          :     "master",
         "icon"            :     "4tube-icon.png"
+    },
+    {
+        "title"           :     "YouJizz",
+        "bundle"          :     "YouJizz.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch XXX-Videos from YouJizz.com",
+        "repo"            :     "git@github.com:flownex/YouJizz.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "youjizz-icon.png"
     }
 ]
