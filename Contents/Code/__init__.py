@@ -52,6 +52,7 @@ def ApplicationsMainMenu():
     updates = CheckForUpdates()
     
     dir = MediaContainer(viewGroup="List", noCache=True)
+    dir.Append(Function(DirectoryItem(NewMenu, 'New', thumb = R(ICON))))
     dir.Append(Function(DirectoryItem(AllMenu, 'All', thumb = R(ICON))))
     if Prefs['adult']:
         dir.Append(Function(DirectoryItem(GenreMenu, 'Adult', thumb=R(ICON))))
@@ -69,7 +70,9 @@ def ApplicationsMainMenu():
 def GenreMenu(sender):
     dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
     genre = sender.itemTitle
-    for plugin in Dict['plugins']:
+    plugins = Dict['plugins']
+    plugins.sort()
+    for plugin in plugins:
         if plugin['title'] != "UnSupported Appstore":
             if not Prefs['adult']:
                 if "Adult" in plugin['type']:
@@ -87,12 +90,13 @@ def GenreMenu(sender):
                 else:
                     subtitle = ''
                 dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
-    #dir.Sort('title')
     return dir
 
 def AllMenu(sender):
     dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
-    for plugin in Dict['plugins']:
+    plugins = Dict['plugins']
+    plugins.sort()
+    for plugin in plugins:
         if plugin['title'] != "UnSupported Appstore":
             if not Prefs['adult']:
                 if "Adult" in plugin['type']:
@@ -109,12 +113,36 @@ def AllMenu(sender):
             else:
                 subtitle = ''
             dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
-    #dir.Sort('title')
+    return dir
+
+def NewMenu(sender):
+    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
+    plugins = Dict['plugins']
+    plugins.reverse()
+    for plugin in plugins:
+        if plugin['title'] != "UnSupported Appstore":
+            if not Prefs['adult']:
+                if "Adult" in plugin['type']:
+                    continue
+                else:
+                    pass
+            else:
+                pass
+            if Installed(plugin):
+                if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
+                    subtitle = 'Update available'
+                else:
+                    subtitle = 'Installed'
+            else:
+                subtitle = ''
+            dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
     return dir
 
 def InstalledMenu(sender):
     dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
-    for plugin in Dict['plugins']:
+    plugins = Dict['plugins']
+    plugins.sort()
+    for plugin in plugins:
         subtitle = ''
         if Installed(plugin):
             if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
