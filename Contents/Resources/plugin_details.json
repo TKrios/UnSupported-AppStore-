@@ -88,5 +88,14 @@
         "repo"            :     "git@github.com:flownex/XNXX.bundle.git",
         "branch"          :     "master",
         "icon"            :     "xnxx-icon.png"
+    },
+    {
+        "title"           :     "xHamster",
+        "bundle"          :     "xHamster.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch XXX-Videos from xHamster.com",
+        "repo"            :     "git@github.com:flownex/xHamster.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "xhamster-icon.png"
     }
 ]
