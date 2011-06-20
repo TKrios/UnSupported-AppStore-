@@ -64,6 +64,7 @@ def ApplicationsMainMenu():
     dir.Append(Function(DirectoryItem(GenreMenu, 'Application', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Video', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Pictures', thumb=R(ICON))))
+    dir.Append(Function(DirectoryItem(GenreMenu, 'Metadata Agent', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(GenreMenu, 'Music', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(InstalledMenu, 'Installed', thumb=R(ICON))))
     dir.Append(Function(DirectoryItem(UpdateAll, "Download updates", "Update all installed plugins", "This may take a while and will require you to restart PMS for changes to take effect",
