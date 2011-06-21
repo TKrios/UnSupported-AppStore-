@@ -12,9 +12,6 @@ PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
 
-PLEXPATH    = '/Library/Application Support/Plex Media Server/Plug-ins'
-plexpath    = '~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins'
-
 DEVMODE     = False
 
 ####################################################################################################
@@ -37,6 +34,9 @@ def Start():
         Dict['Installed'] = {}
     else:
         Log(Dict['Installed'])
+        
+    Log('Plex support files are at ' + Core.app_support_path)
+    Log('Plug-in bundles are located in ' + Core.config.bundles_dir_name)
     
 def ValidatePrefs():
     #u = Prefs['username']
@@ -194,7 +194,7 @@ def InstallPlugin(sender, plugin):
     
 def Install(plugin):
     zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
-    install = Helper.Run('download_install.sh', PLEXPATH, plugin['bundle'], zipPath)
+    install = Helper.Run('download_install.sh', GetPlexPath(), plugin['bundle'], zipPath)
     Dict['Installed'][plugin['title']]['installed'] = "True"
     Log('%s "Installed" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['installed']))
     Dict['Installed'][plugin['title']]['lastUpdate'] = Datetime.Now()
@@ -226,9 +226,8 @@ def UpdateAll(sender):
     return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
     
 def UnInstallPlugin(sender, plugin):
-    file = ('%s/%s' % (GetPlexPath(), plugin['bundle']))
+    file = ('%s/%s' % (GetPluginDirPath(), plugin['bundle']))
     os.remove(file)
-    #uninstall = Helper.Run('remove_plugin.sh', '%s/%s' % (PLEXPATH, plugin['bundle']))
     Log(uninstall)
     Dict['Installed'][plugin['title']]['installed'] = "False"
     return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
@@ -260,4 +259,7 @@ def CheckForUpdates():
     return
 
 def GetPlexPath():
-    return os.environ['HOME'] + PLEXPATH
+    return Core.app_support_path
+    
+def GetPluginDirPath():
+    return '%s/%s' % (Core.app_support_path, Core.config.bundles_dir_name)
