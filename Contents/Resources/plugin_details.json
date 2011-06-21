@@ -96,7 +96,7 @@
         "description"     :     "Downloads subtitles automatically from HDBits.org (Private torrent tracker)",
         "repo"            :     "git@github.com:Coi-l/HdbitsSubtitles.bundle.git",
         "branch"          :     "master",
-        "icon"            :     "default.png"
+        "icon"            :     "hdbits-icon.png"
     },
     {
         "title"           :     "xHamster",
