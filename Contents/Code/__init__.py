@@ -1,4 +1,5 @@
-import os
+import os, zipfile
+import urlgrabber
 
 ####################################################################################################
 
@@ -12,7 +13,7 @@ PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
 
-DEVMODE     = False
+DEVMODE     = True
 
 ####################################################################################################
 
@@ -193,8 +194,13 @@ def InstallPlugin(sender, plugin):
     return MessageContainer(NAME, '%s installed, restart PMS for changes to take effect.' % sender.itemTitle)
     
 def Install(plugin):
+    bundlePath = '%s/%s' % (GetPluginDirPath, plugin['bundle'])
+    Log('bundlePath = ' + bundlePath)
     zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+    Log('zipPath = ' + zipPath)
     install = Helper.Run('download_install.sh', GetPlexPath(), plugin['bundle'], zipPath)
+    #zipBundle = download???
+    #zipBundle.extractall(bundlePath)
     Dict['Installed'][plugin['title']]['installed'] = "True"
     Log('%s "Installed" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['installed']))
     Dict['Installed'][plugin['title']]['lastUpdate'] = Datetime.Now()
