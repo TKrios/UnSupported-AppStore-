@@ -90,6 +90,15 @@
         "icon"            :     "xnxx-icon.png"
     },
     {
+        "title"           :     "HDBits Subtitles",
+        "bundle"          :     "HdbitsSubtitles.bundle",
+        "type"            :     ["Metadata Agent", "Subtitles"],
+        "description"     :     "Downloads subtitles automatically from HDBits.org (Private torrent tracker)",
+        "repo"            :     "git@github.com:Coi-l/HdbitsSubtitles.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "hdbits-icon.png"
+    },
+    {
         "title"           :     "xHamster",
         "bundle"          :     "xHamster.bundle",
         "type"            :     ["Video", "Adult"],
