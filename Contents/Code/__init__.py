@@ -250,12 +250,14 @@ def DeleteFile(filePath):
     Log('Removing ' + filePath)
     os.remove(filePath)
     return
+
 def DeleteFolder(folderPath):
     for file in os.listdir(folderPath):
-      try:
-        DeleteFile(file)
-      except:
-        DeleteFolder(file)
+        path = '%s/%s' % (folderPath, file)
+        try:
+            DeleteFile(path)
+        except:
+            DeleteFolder(path)
     Log('Removing ' + folderPath)
     os.rmdir(folderPath)
     return
