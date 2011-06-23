@@ -232,12 +232,33 @@ def UpdateAll(sender):
 
     return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
     
+#def UnInstallPlugin(sender, plugin):
+#    file = ('%s/%s' % (GetPluginDirPath(), plugin['bundle']))
+#    os.remove(file)
+#    Log(uninstall)
+#    Dict['Installed'][plugin['title']]['installed'] = "False"
+#    return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
+    
 def UnInstallPlugin(sender, plugin):
-    file = ('%s/%s' % (GetPluginDirPath(), plugin['bundle']))
-    os.remove(file)
-    Log(uninstall)
+    bundlePath = ('%s/%s' % (GetPluginDirPath(), plugin['bundle']))
+    Log('Uninstalling %s' % bundlePath)
+    DeleteFolder(bundlePath)
     Dict['Installed'][plugin['title']]['installed'] = "False"
     return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
+
+def DeleteFile(filePath):
+    Log('Removing ' + filePath)
+    os.remove(filePath)
+    return
+def DeleteFolder(folderPath):
+    for file in os.listdir(folderPath):
+      try:
+        DeleteFile(file)
+      except:
+        DeleteFolder(file)
+    Log('Removing ' + folderPath)
+    os.rmdir(folderPath)
+    return
     
 def CheckForUpdates():
     #use the github commit feed for each installed plugin to check for available updates
