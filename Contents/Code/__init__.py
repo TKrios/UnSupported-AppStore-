@@ -186,29 +186,36 @@ def Installed(plugin):
 
 def InstallPlugin(sender, plugin):
     if Installed(plugin):
-        update = Install(plugin)
-        Log(update)
+        Install(plugin)
     else:
-        install = Install(plugin)
-        Log(install)
+        Install(plugin)
     return MessageContainer(NAME, '%s installed, restart PMS for changes to take effect.' % sender.itemTitle)
     
 def Install(plugin):
-    bundlePath = '%s/%s' % (GetPluginDirPath, plugin['bundle'])
-    Log('bundlePath = ' + bundlePath)
     zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
     Log('zipPath = ' + zipPath)
     #install = Helper.Run('download_install.sh', GetPlexPath(), plugin['bundle'], zipPath)
-    zipBundle = urlgrab(zipPath)
-    zipBundle.extractall(bundlePath)
+    Log('Downloading from ' + zipPath)
+    zipfile = Archive.ZipFromURL(zipPath)
+    #zipBundle = zipfile.ZipFile(urlgrabber.urlgrab(zipPath))
+    Log('Extracting to ' + GetBundlePath(plugin))
+    
+    for filename in zipfile:
+        data = zipfile[filename]
+        filename = ('/').join(filename.split('/')[1:])
+        Log(filename)
+        file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
+        Log(file_path)
+        if not os.path.isdir(file_path):
+            Core.storage.save(file_path, data)
+        
     Dict['Installed'][plugin['title']]['installed'] = "True"
     Log('%s "Installed" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['installed']))
     Dict['Installed'][plugin['title']]['lastUpdate'] = Datetime.Now()
     Log('%s "LastUpdate" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['lastUpdate']))
     Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
     Log('%s "updateAvailable" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['updateAvailable']))
-    zipBundle = None
-    return install
+    return
 
 def UpdateAll(sender):
     for plugin in Dict['plugins']:
@@ -232,17 +239,9 @@ def UpdateAll(sender):
 
     return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
     
-#def UnInstallPlugin(sender, plugin):
-#    file = ('%s/%s' % (GetPluginDirPath(), plugin['bundle']))
-#    os.remove(file)
-#    Log(uninstall)
-#    Dict['Installed'][plugin['title']]['installed'] = "False"
-#    return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
-    
 def UnInstallPlugin(sender, plugin):
-    bundlePath = ('%s/%s' % (GetPluginDirPath(), plugin['bundle']))
-    Log('Uninstalling %s' % bundlePath)
-    DeleteFolder(bundlePath)
+    Log('Uninstalling %s' % GetBundlePath(plugin))
+    DeleteFolder(GetBundlePath(plugin))
     Dict['Installed'][plugin['title']]['installed'] = "False"
     return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
 
@@ -253,7 +252,7 @@ def DeleteFile(filePath):
 
 def DeleteFolder(folderPath):
     for file in os.listdir(folderPath):
-        path = '%s/%s' % (folderPath, file)
+        path = Core.storage.join_path(folderPath, file)
         try:
             DeleteFile(path)
         except:
@@ -287,9 +286,9 @@ def CheckForUpdates():
                     else:
                         Log('Up-to-date')
     return
-
-def GetPlexPath():
-    return Core.app_support_path
     
 def GetPluginDirPath():
-    return '%s/%s' % (Core.app_support_path, Core.config.bundles_dir_name)
+    return Core.storage.join_path(Core.app_support_path, Core.config.bundles_dir_name)
+    
+def GetBundlePath(plugin):
+    return Core.storage.join_path(GetPluginDirPath(), plugin['bundle'])
