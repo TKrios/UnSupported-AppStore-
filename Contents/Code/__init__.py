@@ -202,12 +202,21 @@ def Install(plugin):
     
     for filename in zipfile:
         data = zipfile[filename]
-        filename = ('/').join(filename.split('/')[1:])
-        Log(filename)
-        file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
-        Log(file_path)
-        if not os.path.isdir(file_path):
-            Core.storage.save(file_path, data)
+        if not str(filename).endswith('/'):
+            if not str(filename.split('/')[-1]).startswith('.'):
+                filename = ('/').join(filename.split('/')[1:])
+                file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
+                Log('Extracting file' + file_path)
+                Core.storage.save(file_path, data)
+            else:
+                Log('Skipping "hidden" file: ' + filename)
+        else:
+            Log(filename.split('/')[-2])
+            if not str(filename.split('/')[-2]).startswith('.'):
+                filename = ('/').join(filename.split('/')[1:])
+                file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
+                Log('Extracting folder ' + file_path)
+                Core.storage.ensure_dirs(file_path)
         
     Dict['Installed'][plugin['title']]['installed'] = "True"
     Log('%s "Installed" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['installed']))
