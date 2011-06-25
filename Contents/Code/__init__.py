@@ -1,4 +1,5 @@
-import os
+import os, zipfile
+import urlgrabber
 
 ####################################################################################################
 
@@ -12,10 +13,7 @@ PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
 
-PLEXPATH    = '/Library/Application Support/Plex Media Server/Plug-ins'
-plexpath    = '~/Library/Application\ Support/Plex\ Media\ Server/Plug-ins'
-
-DEVMODE     = False
+DEVMODE     = True
 
 ####################################################################################################
 
@@ -37,6 +35,9 @@ def Start():
         Dict['Installed'] = {}
     else:
         Log(Dict['Installed'])
+        
+    Log('Plex support files are at ' + Core.app_support_path)
+    Log('Plug-in bundles are located in ' + Core.config.bundles_dir_name)
     
 def ValidatePrefs():
     #u = Prefs['username']
@@ -185,23 +186,45 @@ def Installed(plugin):
 
 def InstallPlugin(sender, plugin):
     if Installed(plugin):
-        update = Install(plugin)
-        Log(update)
+        Install(plugin)
     else:
-        install = Install(plugin)
-        Log(install)
+        Install(plugin)
     return MessageContainer(NAME, '%s installed, restart PMS for changes to take effect.' % sender.itemTitle)
     
 def Install(plugin):
     zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
-    install = Helper.Run('download_install.sh', PLEXPATH, plugin['bundle'], zipPath)
+    Log('zipPath = ' + zipPath)
+    #install = Helper.Run('download_install.sh', GetPlexPath(), plugin['bundle'], zipPath)
+    Log('Downloading from ' + zipPath)
+    zipfile = Archive.ZipFromURL(zipPath)
+    #zipBundle = zipfile.ZipFile(urlgrabber.urlgrab(zipPath))
+    Log('Extracting to ' + GetBundlePath(plugin))
+    
+    for filename in zipfile:
+        data = zipfile[filename]
+        if not str(filename).endswith('/'):
+            if not str(filename.split('/')[-1]).startswith('.'):
+                filename = ('/').join(filename.split('/')[1:])
+                file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
+                Log('Extracting file' + file_path)
+                Core.storage.save(file_path, data)
+            else:
+                Log('Skipping "hidden" file: ' + filename)
+        else:
+            Log(filename.split('/')[-2])
+            if not str(filename.split('/')[-2]).startswith('.'):
+                filename = ('/').join(filename.split('/')[1:])
+                file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
+                Log('Extracting folder ' + file_path)
+                Core.storage.ensure_dirs(file_path)
+        
     Dict['Installed'][plugin['title']]['installed'] = "True"
     Log('%s "Installed" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['installed']))
     Dict['Installed'][plugin['title']]['lastUpdate'] = Datetime.Now()
     Log('%s "LastUpdate" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['lastUpdate']))
     Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
     Log('%s "updateAvailable" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['updateAvailable']))
-    return install
+    return
 
 def UpdateAll(sender):
     for plugin in Dict['plugins']:
@@ -226,12 +249,26 @@ def UpdateAll(sender):
     return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
     
 def UnInstallPlugin(sender, plugin):
-    file = ('%s/%s' % (GetPlexPath(), plugin['bundle']))
-    os.remove(file)
-    #uninstall = Helper.Run('remove_plugin.sh', '%s/%s' % (PLEXPATH, plugin['bundle']))
-    Log(uninstall)
+    Log('Uninstalling %s' % GetBundlePath(plugin))
+    DeleteFolder(GetBundlePath(plugin))
     Dict['Installed'][plugin['title']]['installed'] = "False"
     return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
+
+def DeleteFile(filePath):
+    Log('Removing ' + filePath)
+    os.remove(filePath)
+    return
+
+def DeleteFolder(folderPath):
+    for file in os.listdir(folderPath):
+        path = Core.storage.join_path(folderPath, file)
+        try:
+            DeleteFile(path)
+        except:
+            DeleteFolder(path)
+    Log('Removing ' + folderPath)
+    os.rmdir(folderPath)
+    return
     
 def CheckForUpdates():
     #use the github commit feed for each installed plugin to check for available updates
@@ -258,6 +295,9 @@ def CheckForUpdates():
                     else:
                         Log('Up-to-date')
     return
-
-def GetPlexPath():
-    return os.environ['HOME'] + PLEXPATH
+    
+def GetPluginDirPath():
+    return Core.storage.join_path(Core.app_support_path, Core.config.bundles_dir_name)
+    
+def GetBundlePath(plugin):
+    return Core.storage.join_path(GetPluginDirPath(), plugin['bundle'])
