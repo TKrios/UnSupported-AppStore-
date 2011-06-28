@@ -110,7 +110,7 @@
     {
         "title"           :     "Rdio",
         "bundle"          :     "Rdio.bundle",
-        "type"            :     ["Audio"],
+        "type"            :     ["Music"],
         "description"     :     "Stream music from Rdio.com",
         "repo"            :     "git@github.com:mikedecaro/Rdio.bundle.git",
         "branch"          :     "master",
