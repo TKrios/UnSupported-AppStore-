@@ -107,4 +107,13 @@
         "branch"          :     "master",
         "icon"            :     "xhamster-icon.png"
     }
+    {
+        "title"           :     "Rdio",
+        "bundle"          :     "Rdio.bundle",
+        "type"            :     ["Audio"],
+        "description"     :     "Stream music from Rdio.com",
+        "repo"            :     "git@github.com:mikedecaro/Rdio.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "rdio-icon.png"
+    }
 ]
