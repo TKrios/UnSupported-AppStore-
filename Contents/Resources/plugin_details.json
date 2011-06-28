@@ -106,7 +106,7 @@
         "repo"            :     "git@github.com:flownex/xHamster.bundle.git",
         "branch"          :     "master",
         "icon"            :     "xhamster-icon.png"
-    }
+    },
     {
         "title"           :     "Rdio",
         "bundle"          :     "Rdio.bundle",
