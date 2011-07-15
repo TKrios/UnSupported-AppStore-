@@ -31,7 +31,7 @@ def Start():
     
     #Check the list of installed plugins
     if Dict['Installed'] == None:
-        Dict['Installed'] = {}
+        Dict['Installed'] = {'UnSupported Appstore' : {'lastUpdate': 'None', 'updateAvailable': 'False', 'installed': 'True'}}
     else:
         Log(Dict['Installed'])
         
@@ -178,7 +178,11 @@ def Installed(plugin):
         else:
             return False
     except:
-        Dict['Installed'][plugin['title']] = {"installed":"False", "lastUpdate":"None", "updateAvailable":"True"}
+        ### make sure the Appstore shows up in the list if it doesn't already ###
+        if plugin['title'] == 'UnSupported Appstore':
+            Dict['Installed'][plugin['title']] = {"installed":"True", "lastUpdate":"None", "updateAvailable":"False"}
+        else:
+            Dict['Installed'][plugin['title']] = {"installed":"False", "lastUpdate":"None", "updateAvailable":"True"}
         return False
     
     return False
@@ -290,9 +294,9 @@ def CheckForUpdates():
                         Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
                     
                     if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-                        Log('Update available')
+                        Log(plugin['title'] + ': Update available')
                     else:
-                        Log('Up-to-date')
+                        Log(plugin['title'] + ': Up-to-date')
     return
     
 def GetPluginDirPath():
