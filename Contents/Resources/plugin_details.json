@@ -115,5 +115,14 @@
         "repo"            :     "git@github.com:mikedecaro/Rdio.bundle.git",
         "branch"          :     "master",
         "icon"            :     "rdio-icon.png"
+    },
+    {
+        "title"           :     "eporner",
+        "bundle"          :     "eporner.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch XXX-Videos from EPORNER.COM",
+        "repo"            :     "git@github.com:flownex/eporner.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "eporner-icon.png"
     }
 ]
