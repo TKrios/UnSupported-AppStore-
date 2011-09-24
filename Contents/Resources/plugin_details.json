@@ -124,5 +124,14 @@
         "repo"            :     "git@github.com:flownex/eporner.bundle.git",
         "branch"          :     "master",
         "icon"            :     "eporner-icon.png"
+    },
+    {
+        "title"           :     "WorldTV",
+        "bundle"          :     "WorldTV.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch live network streams from all over the world provided by WorldTVsite.net",
+        "repo"            :     "git@github.com:mikedm139/WorldTV.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "worldtv-icon.png"
     }
 ]
