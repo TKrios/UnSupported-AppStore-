@@ -139,7 +139,7 @@
         "bundle"          :     "IceFilms.bundle",
         "type"            :     ["Video"],
         "description"     :     "Watch Movies abd TV Shows from IceFilms.info",
-        "repo"            :     "git@github.com:giticeplex/iceplex.git",
+        "repo"            :     "git@github.com:giticeplex/IceFilms.bundle.git",
         "branch"          :     "master",
         "icon"            :     "plex-ice-logo.jpg"
     }
