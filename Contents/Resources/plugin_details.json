@@ -142,5 +142,14 @@
         "repo"            :     "git@github.com:giticeplex/IceFilms.bundle.git",
         "branch"          :     "master",
         "icon"            :     "plex-ice-logo.jpg"
+    },
+    {
+        "title"           :     "Newzworthy",
+        "bundle"          :     "Newzworthy.bundle",
+        "type"            :     ["Application", "Video"],
+        "description"     :     "A Usenet-Plex integration plugin",
+        "repo"            :     "git@github.com:plexinc-plugins/Newsworthy.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "newzworthy-icon.png"
     }
 ]
