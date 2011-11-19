@@ -147,7 +147,7 @@
         "title"           :     "Newzworthy",
         "bundle"          :     "Newzworthy.bundle",
         "type"            :     ["Application", "Video"],
-        "description"     :     "A Usenet-Plex integration plugin",
+        "description"     :     "A Usenet-Plex integration plugin. Currently only supported on OSX.",
         "repo"            :     "git@github.com:plexinc-plugins/Newsworthy.bundle.git",
         "branch"          :     "master",
         "icon"            :     "newzworthy-icon.png"
