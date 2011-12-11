@@ -77,7 +77,6 @@ def GenreMenu(sender):
     dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
     genre = sender.itemTitle
     plugins = Dict['plugins']
-    plugins.sort()
     for plugin in plugins:
         if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
         else: pass
@@ -103,7 +102,6 @@ def GenreMenu(sender):
 def AllMenu(sender):
     dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
     plugins = Dict['plugins']
-    plugins.sort()
     for plugin in plugins:
         if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
         else: pass
@@ -123,14 +121,13 @@ def AllMenu(sender):
             else:
                 subtitle = ''
             dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
-    dir.Sort('title')
     return dir
 
 def NewMenu(sender):
     dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
     plugins = Dict['plugins']
-    plugins.reverse()
-    for plugin in plugins:
+    newest = sorted(plugins, key=lambda k: k['date added'])
+    for plugin in newest:
         if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
         else: pass
         if plugin['title'] != "UnSupported Appstore":
