@@ -7,7 +7,8 @@
         "repo"            :     "git@github.com:piplongrun/4tube.bundle.git",
         "branch"          :     "master",
         "icon"            :     "4tube-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 17, 2011"
     },
     {
         "title"           :     "CouchPotato",
@@ -17,7 +18,8 @@
         "repo"            :     "git@github.com:mikedm139/CouchPotato.bundle.git",
         "branch"          :     "master",
         "icon"            :     "couchpotato-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 9, 2011"
     },
     {
         "title"           :     "eporner",
@@ -27,7 +29,8 @@
         "repo"            :     "git@github.com:flownex/eporner.bundle.git",
         "branch"          :     "master",
         "icon"            :     "eporner-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "September 7, 2011"
     },
     {
         "title"           :     "Facebook",
@@ -37,7 +40,8 @@
         "repo"            :     "git@github.com:DCstewieG/Facebook.bundle.git",
         "branch"          :     "master",
         "icon"            :     "facebook-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 19, 2011"
     },
     {
         "title"           :     "HDBits Subtitles",
@@ -47,7 +51,8 @@
         "repo"            :     "git@github.com:Coi-l/HdbitsSubtitles.bundle.git",
         "branch"          :     "master",
         "icon"            :     "hdbits-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "June 21, 2011"
     },
     {
         "title"           :     "IceFilms",
@@ -57,7 +62,8 @@
         "repo"            :     "git@github.com:giticeplex/IceFilms.bundle.git",
         "branch"          :     "master",
         "icon"            :     "plex-ice-logo.jpg",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "October 2, 2011"
     },
     {
         "title"           :     "Library Updater",
@@ -67,7 +73,8 @@
         "repo"            :     "git@github.com:mikedm139/LibraryUpdater.bundle.git",
         "branch"          :     "master",
         "icon"            :     "libupdate-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 9, 2011"
     },
     {
         "title"           :     "Newzworthy",
@@ -77,7 +84,8 @@
         "repo"            :     "git@github.com:plexinc-plugins/Newsworthy.bundle.git",
         "branch"          :     "master",
         "icon"            :     "newzworthy-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "November 11, 2011"
     },
     {
         "title"           :     "Rdio",
@@ -87,7 +95,8 @@
         "repo"            :     "git@github.com:mikedecaro/Rdio.bundle.git",
         "branch"          :     "master",
         "icon"            :     "rdio-icon.png",
-        "hidden"          :     "True"
+        "hidden"          :     "True",
+        "date added"      :     "June 28, 2011"
     },
     {
         "title"           :     "SABnzbd+",
@@ -97,7 +106,8 @@
         "repo"            :     "git@github.com:mikedm139/SABnzbd.bundle.git",
         "branch"          :     "master",
         "icon"            :     "sabnzbd-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 9, 2011"
     },
     {
         "title"           :     "SickBeard",
@@ -107,7 +117,8 @@
         "repo"            :     "git@github.com:mikedm139/SickBeard.bundle.git",
         "branch"          :     "master",
         "icon"            :     "sickbeard-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 9, 2011"
     },
     {
         "title"           :     "unRAID",
@@ -117,7 +128,8 @@
         "repo"            :     "git@github.com:mikedm139/unRAID.bundle.git",
         "branch"          :     "master",
         "icon"            :     "unraid-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 9, 2011"
     },
     {
         "title"           :     "UnSupported Appstore",
@@ -127,7 +139,8 @@
         "repo"            :     "git@github.com:mikedm139/UnSupportedAppstore.bundle.git",
         "branch"          :     "master",
         "icon"            :     "icon-default.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 9, 2011"
     },
     {
         "title"           :     "WorldTV",
@@ -137,7 +150,8 @@
         "repo"            :     "git@github.com:mikedm139/WorldTV.bundle.git",
         "branch"          :     "master",
         "icon"            :     "worldtv-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "September 23, 2011"
     },
     {
         "title"           :     "xHamster",
@@ -147,7 +161,8 @@
         "repo"            :     "git@github.com:flownex/xHamster.bundle.git",
         "branch"          :     "master",
         "icon"            :     "xhamster-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 27, 2011"
     },
     {
         "title"           :     "XNXX",
@@ -157,7 +172,8 @@
         "repo"            :     "git@github.com:flownex/XNXX.bundle.git",
         "branch"          :     "master",
         "icon"            :     "xnxx-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 23, 2011"
     },
     {
         "title"           :     "YouJizz",
@@ -167,6 +183,7 @@
         "repo"            :     "git@github.com:flownex/YouJizz.bundle.git",
         "branch"          :     "master",
         "icon"            :     "youjizz-icon.png",
-        "hidden"          :     "False"
+        "hidden"          :     "False",
+        "date added"      :     "April 19, 2011"
     }
 ]
