@@ -79,6 +79,8 @@ def GenreMenu(sender):
     plugins = Dict['plugins']
     plugins.sort()
     for plugin in plugins:
+        if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
+        else: pass
         if plugin['title'] != "UnSupported Appstore":
             if not Prefs['adult']:
                 if "Adult" in plugin['type']:
@@ -103,6 +105,8 @@ def AllMenu(sender):
     plugins = Dict['plugins']
     plugins.sort()
     for plugin in plugins:
+        if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
+        else: pass
         if plugin['title'] != "UnSupported Appstore":
             if not Prefs['adult']:
                 if "Adult" in plugin['type']:
@@ -119,6 +123,7 @@ def AllMenu(sender):
             else:
                 subtitle = ''
             dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
+    dir.Sort('title')
     return dir
 
 def NewMenu(sender):
@@ -126,6 +131,8 @@ def NewMenu(sender):
     plugins = Dict['plugins']
     plugins.reverse()
     for plugin in plugins:
+        if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
+        else: pass
         if plugin['title'] != "UnSupported Appstore":
             if not Prefs['adult']:
                 if "Adult" in plugin['type']:
@@ -151,8 +158,11 @@ def InstalledMenu(sender):
     for plugin in plugins:
         subtitle = ''
         if Installed(plugin):
-            if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
+            if plugin['hidden'] == "True":
+                subtitle = 'Now available through the Plex Channel Directory'
+            elif Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
                 subtitle = 'Update available'
+            else: pass
             dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
     #dir.Sort()
     return dir
