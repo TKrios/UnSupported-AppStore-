@@ -1,21 +1,13 @@
 [
     {
-        "title"           :     "UnSupported Appstore",
-        "bundle"          :     "UnSupportedAppstore.bundle",
-        "type"            :     ["Application"],
-        "description"     :     "Download, install, and update unsupported plugins for PMS",
-        "repo"            :     "git@github.com:mikedm139/UnSupportedAppstore.bundle.git",
+        "title"           :     "4tube",
+        "bundle"          :     "4tube.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch xxx videos from 4tube.com",
+        "repo"            :     "git@github.com:piplongrun/4tube.bundle.git",
         "branch"          :     "master",
-        "icon"            :     "icon-default.png"
-    },
-    {
-        "title"           :     "SABnzbd+",
-        "bundle"          :     "SABnzbd.bundle",
-        "type"            :     ["Application"],
-        "description"     :     "Manage your SABnzbd+ queue and history from within Plex.",
-        "repo"            :     "git@github.com:mikedm139/SABnzbd.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "sabnzbd-icon.png"
+        "icon"            :     "4tube-icon.png",
+        "hidden"          :     "False"
     },
     {
         "title"           :     "CouchPotato",
@@ -24,97 +16,8 @@
         "description"     :     "View, edit and add to your CouchPotato wanted list.",
         "repo"            :     "git@github.com:mikedm139/CouchPotato.bundle.git",
         "branch"          :     "master",
-        "icon"            :     "couchpotato-icon.png"
-    },
-    {
-        "title"           :     "SickBeard",
-        "bundle"          :     "SickBeard.bundle",
-        "type"            :     ["Application"],
-        "description"     :     "A plugin for Plex media center to view and control basic functions of SickBeard",
-        "repo"            :     "git@github.com:mikedm139/SickBeard.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "sickbeard-icon.png"
-    },
-    {
-        "title"           :     "unRAID",
-        "bundle"          :     "unRAID.bundle",
-        "type"            :     ["Application"],
-        "description"     :     "Plex Media Server plugin to control basic functions of an unRAID server. ",
-        "repo"            :     "git@github.com:mikedm139/unRAID.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "unraid-icon.png"
-    },
-    {
-        "title"           :     "Library Updater",
-        "bundle"          :     "LibraryUpdater.bundle",
-        "type"            :     ["Application"],
-        "description"     :     "Update Plex library sections or entire library without leaving Plex interface",
-        "repo"            :     "git@github.com:mikedm139/LibraryUpdater.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "libupdate-icon.png"
-    },
-    {
-        "title"           :     "4tube",
-        "bundle"          :     "4tube.bundle",
-        "type"            :     ["Video", "Adult"],
-        "description"     :     "Watch xxx videos from 4tube.com",
-        "repo"            :     "git@github.com:piplongrun/4tube.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "4tube-icon.png"
-    },
-    {
-        "title"           :     "YouJizz",
-        "bundle"          :     "YouJizz.bundle",
-        "type"            :     ["Video", "Adult"],
-        "description"     :     "Watch XXX-Videos from YouJizz.com",
-        "repo"            :     "git@github.com:flownex/YouJizz.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "youjizz-icon.png"
-    },
-    {
-        "title"           :     "Facebook",
-        "bundle"          :     "Facebook.bundle",
-        "type"            :     ["Pictures", "Social"],
-        "description"     :     "View newsfeed and photos from Facebook",
-        "repo"            :     "git@github.com:DCstewieG/Facebook.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "facebook-icon.png"
-    },
-    {
-        "title"           :     "XNXX",
-        "bundle"          :     "XNXX.bundle",
-        "type"            :     ["Video", "Adult"],
-        "description"     :     "Watch XXX-Videos from XNXX.COM",
-        "repo"            :     "git@github.com:flownex/XNXX.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "xnxx-icon.png"
-    },
-    {
-        "title"           :     "HDBits Subtitles",
-        "bundle"          :     "HdbitsSubtitles.bundle",
-        "type"            :     ["Metadata Agent", "Subtitles"],
-        "description"     :     "Downloads subtitles automatically from HDBits.org (Private torrent tracker)",
-        "repo"            :     "git@github.com:Coi-l/HdbitsSubtitles.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "hdbits-icon.png"
-    },
-    {
-        "title"           :     "xHamster",
-        "bundle"          :     "xHamster.bundle",
-        "type"            :     ["Video", "Adult"],
-        "description"     :     "Watch XXX-Videos from xHamster.com",
-        "repo"            :     "git@github.com:flownex/xHamster.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "xhamster-icon.png"
-    },
-    {
-        "title"           :     "Rdio",
-        "bundle"          :     "Rdio.bundle",
-        "type"            :     ["Music"],
-        "description"     :     "Stream music from Rdio.com",
-        "repo"            :     "git@github.com:mikedecaro/Rdio.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "rdio-icon.png"
+        "icon"            :     "couchpotato-icon.png",
+        "hidden"          :     "False"
     },
     {
         "title"           :     "eporner",
@@ -123,16 +26,28 @@
         "description"     :     "Watch XXX-Videos from EPORNER.COM",
         "repo"            :     "git@github.com:flownex/eporner.bundle.git",
         "branch"          :     "master",
-        "icon"            :     "eporner-icon.png"
+        "icon"            :     "eporner-icon.png",
+        "hidden"          :     "False"
     },
     {
-        "title"           :     "WorldTV",
-        "bundle"          :     "WorldTV.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Watch live network streams from all over the world provided by WorldTVsite.net",
-        "repo"            :     "git@github.com:mikedm139/WorldTV.bundle.git",
+        "title"           :     "Facebook",
+        "bundle"          :     "Facebook.bundle",
+        "type"            :     ["Pictures", "Social"],
+        "description"     :     "View newsfeed and photos from Facebook",
+        "repo"            :     "git@github.com:DCstewieG/Facebook.bundle.git",
         "branch"          :     "master",
-        "icon"            :     "worldtv-icon.png"
+        "icon"            :     "facebook-icon.png",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "HDBits Subtitles",
+        "bundle"          :     "HdbitsSubtitles.bundle",
+        "type"            :     ["Metadata Agent", "Subtitles"],
+        "description"     :     "Downloads subtitles automatically from HDBits.org (Private torrent tracker)",
+        "repo"            :     "git@github.com:Coi-l/HdbitsSubtitles.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "hdbits-icon.png",
+        "hidden"          :     "False"
     },
     {
         "title"           :     "IceFilms",
@@ -141,7 +56,18 @@
         "description"     :     "Watch Movies abd TV Shows from IceFilms.info",
         "repo"            :     "git@github.com:giticeplex/IceFilms.bundle.git",
         "branch"          :     "master",
-        "icon"            :     "plex-ice-logo.jpg"
+        "icon"            :     "plex-ice-logo.jpg",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "Library Updater",
+        "bundle"          :     "LibraryUpdater.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "Update Plex library sections or entire library without leaving Plex interface",
+        "repo"            :     "git@github.com:mikedm139/LibraryUpdater.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "libupdate-icon.png",
+        "hidden"          :     "False"
     },
     {
         "title"           :     "Newzworthy",
@@ -150,6 +76,97 @@
         "description"     :     "A Usenet-Plex integration plugin. Currently only supported on OSX.",
         "repo"            :     "git@github.com:plexinc-plugins/Newsworthy.bundle.git",
         "branch"          :     "master",
-        "icon"            :     "newzworthy-icon.png"
+        "icon"            :     "newzworthy-icon.png",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "Rdio",
+        "bundle"          :     "Rdio.bundle",
+        "type"            :     ["Music"],
+        "description"     :     "Stream music from Rdio.com",
+        "repo"            :     "git@github.com:mikedecaro/Rdio.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "rdio-icon.png",
+        "hidden"          :     "True"
+    },
+    {
+        "title"           :     "SABnzbd+",
+        "bundle"          :     "SABnzbd.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "Manage your SABnzbd+ queue and history from within Plex.",
+        "repo"            :     "git@github.com:mikedm139/SABnzbd.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "sabnzbd-icon.png",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "SickBeard",
+        "bundle"          :     "SickBeard.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "A plugin for Plex media center to view and control basic functions of SickBeard",
+        "repo"            :     "git@github.com:mikedm139/SickBeard.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "sickbeard-icon.png",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "unRAID",
+        "bundle"          :     "unRAID.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "Plex Media Server plugin to control basic functions of an unRAID server. ",
+        "repo"            :     "git@github.com:mikedm139/unRAID.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "unraid-icon.png",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "UnSupported Appstore",
+        "bundle"          :     "UnSupportedAppstore.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "Download, install, and update unsupported plugins for PMS",
+        "repo"            :     "git@github.com:mikedm139/UnSupportedAppstore.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "icon-default.png",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "WorldTV",
+        "bundle"          :     "WorldTV.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch live network streams from all over the world provided by WorldTVsite.net",
+        "repo"            :     "git@github.com:mikedm139/WorldTV.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "worldtv-icon.png",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "xHamster",
+        "bundle"          :     "xHamster.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch XXX-Videos from xHamster.com",
+        "repo"            :     "git@github.com:flownex/xHamster.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "xhamster-icon.png",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "XNXX",
+        "bundle"          :     "XNXX.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch XXX-Videos from XNXX.COM",
+        "repo"            :     "git@github.com:flownex/XNXX.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "xnxx-icon.png",
+        "hidden"          :     "False"
+    },
+    {
+        "title"           :     "YouJizz",
+        "bundle"          :     "YouJizz.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch XXX-Videos from YouJizz.com",
+        "repo"            :     "git@github.com:flownex/YouJizz.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "youjizz-icon.png",
+        "hidden"          :     "False"
     }
 ]
