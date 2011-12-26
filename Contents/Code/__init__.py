@@ -39,12 +39,6 @@ def Start():
     Log('Plug-in bundles are located in ' + Core.config.bundles_dir_name)
     
 def ValidatePrefs():
-    #u = Prefs['username']
-    #p = Prefs['password']
-    #if( u and p ):
-    #    return MessageContainer("Success", "User and password provided ok")
-    #else:
-    #    return MessageContainer("Error", "You need to provide both a user and password")
     return
  
 
@@ -126,8 +120,17 @@ def AllMenu(sender):
 def NewMenu(sender):
     dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
     plugins = Dict['plugins']
-    newest = sorted(plugins, key=lambda k: k['date added'])
-    for plugin in newest:
+    #Log(plugins)
+    try:
+        for plugin in plugins:
+            plugin['date added'] = Datetime.TimestampFromDatetime(Datetime.ParseDate(plugin['date added']))
+    except:
+        Log.Exception("Converting dates to timestamps failed")
+    #Log(plugins)
+    date_sorted = sorted(plugins, key=lambda k: k['date added'])
+    Log(date_sorted)
+    date_sorted.reverse()
+    for plugin in date_sorted:
         if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
         else: pass
         if plugin['title'] != "UnSupported Appstore":
