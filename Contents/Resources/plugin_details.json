@@ -66,6 +66,17 @@
         "date added"      :     "October 2, 2011"
     },
     {
+        "title"           :     "Kink.com Metadata Agent",
+        "bundle"          :     "Kink.bundle",
+        "type"            :     ["Metadata Agent", "Adult"],
+        "description"     :     "Metadata agent for adult shoots from any Kink.com site",
+        "repo"            :     "git@github.com:vofik/Kink.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "kink-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "January 1, 2012"
+    },
+    {
         "title"           :     "Library Updater",
         "bundle"          :     "LibraryUpdater.bundle",
         "type"            :     ["Application"],
