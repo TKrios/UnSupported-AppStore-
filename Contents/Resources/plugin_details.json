@@ -33,6 +33,17 @@
         "date added"      :     "September 7, 2011"
     },
     {
+        "title"           :     "ExcaliburFilms Metadata Agent",
+        "bundle"          :     "ExcaliburFilms.bundle",
+        "type"            :     ["Metadata Agent", "Adult"],
+        "description"     :     "Metadata agent for adult films from ExcaliburFilms.com",
+        "repo"            :     "git@github.com:vofik/ExcaliburFilms.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "excaliburfilms-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "January 1, 2012"
+    },
+    {
         "title"           :     "Facebook",
         "bundle"          :     "Facebook.bundle",
         "type"            :     ["Pictures", "Social"],
@@ -64,6 +75,17 @@
         "icon"            :     "plex-ice-logo.jpg",
         "hidden"          :     "False",
         "date added"      :     "October 2, 2011"
+    },
+    {
+        "title"           :     "Kink.com Metadata Agent",
+        "bundle"          :     "Kink.bundle",
+        "type"            :     ["Metadata Agent", "Adult"],
+        "description"     :     "Metadata agent for adult shoots from any Kink.com site",
+        "repo"            :     "git@github.com:vofik/Kink.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "kink-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "January 1, 2012"
     },
     {
         "title"           :     "Library Updater",
