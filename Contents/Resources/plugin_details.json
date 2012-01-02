@@ -33,6 +33,17 @@
         "date added"      :     "September 7, 2011"
     },
     {
+        "title"           :     "ExcaliburFilms Metadata Agent",
+        "bundle"          :     "ExcaliburFilms.bundle",
+        "type"            :     ["Metadata Agent", "Adult"],
+        "description"     :     "Metadata agent for adult films from ExcaliburFilms.com",
+        "repo"            :     "git@github.com:vofik/ExcaliburFilms.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "excaliburfilms-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "January 1, 2012"
+    },
+    {
         "title"           :     "Facebook",
         "bundle"          :     "Facebook.bundle",
         "type"            :     ["Pictures", "Social"],
