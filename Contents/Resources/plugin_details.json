@@ -83,7 +83,7 @@
         "description"     :     "Watch Movies and TV Shows from 1Channel.ch (Let Me Watch This)",
         "repo"            :     "git@github.com:ReallyFuzzy/LetMeWatchThis.bundle.git",
         "branch"          :     "master",
-        "icon"            :     "lmwc-logo.jpg",
+        "icon"            :     "lmwt-logo.jpg",
         "hidden"          :     "False",
         "date added"      :     "January 22, 2012"
     },
