@@ -77,6 +77,17 @@
         "date added"      :     "October 2, 2011"
     },
     {
+        "title"           :     "Let Me Watch This",
+        "bundle"          :     "LetMeWatchThis.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch Movies and TV Shows from 1Channel.ch (Let Me Watch This)",
+        "repo"            :     "git@github.com:ReallyFuzzy/LetMeWatchThis.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "lmwc-logo.jpg",
+        "hidden"          :     "False",
+        "date added"      :     "January 22, 2012"
+    },
+    {
         "title"           :     "Kink.com Metadata Agent",
         "bundle"          :     "Kink.bundle",
         "type"            :     ["Metadata Agent", "Adult"],
