@@ -183,7 +183,7 @@
         "repo"            :     "git@github.com:mikedm139/WorldTV.bundle.git",
         "branch"          :     "master",
         "icon"            :     "worldtv-icon.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
         "date added"      :     "September 23, 2011"
     },
     {
