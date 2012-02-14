@@ -191,8 +191,10 @@ def Installed(plugin):
         ### make sure the Appstore shows up in the list if it doesn't already ###
         if plugin['title'] == 'UnSupported Appstore':
             Dict['Installed'][plugin['title']] = {"installed":"True", "lastUpdate":"None", "updateAvailable":"False"}
+            Dict.Save()
         else:
             Dict['Installed'][plugin['title']] = {"installed":"False", "lastUpdate":"None", "updateAvailable":"True"}
+            Dict.Save()
         return False
     
     return False
@@ -237,6 +239,7 @@ def Install(plugin):
     Log('%s "LastUpdate" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['lastUpdate']))
     Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
     Log('%s "updateAvailable" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['updateAvailable']))
+    Dict.Save()
     return
 
 def UpdateAll(sender):
@@ -265,6 +268,7 @@ def UnInstallPlugin(sender, plugin):
     Log('Uninstalling %s' % GetBundlePath(plugin))
     DeleteFolder(GetBundlePath(plugin))
     Dict['Installed'][plugin['title']]['installed'] = "False"
+    Dict.Save()
     return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
 
 def DeleteFile(filePath):
@@ -307,6 +311,7 @@ def CheckForUpdates():
                         Log(plugin['title'] + ': Update available')
                     else:
                         Log(plugin['title'] + ': Up-to-date')
+        Dict.Save()
     return
     
 def GetPluginDirPath():
