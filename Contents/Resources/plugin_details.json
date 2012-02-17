@@ -8,7 +8,8 @@
         "branch"          :     "master",
         "icon"            :     "4tube-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 17, 2011"
+        "date added"      :     "April 17, 2011",
+        "tracking url"    :     "http://bit.ly/xu6kKP"
     },
     {
         "title"           :     "CouchPotato",
@@ -19,7 +20,8 @@
         "branch"          :     "master",
         "icon"            :     "couchpotato-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 9, 2011"
+        "date added"      :     "April 9, 2011",
+        "tracking url"    :     "http://bit.ly/yXo7ir"
     },
     {
         "title"           :     "eporner",
@@ -30,7 +32,8 @@
         "branch"          :     "master",
         "icon"            :     "eporner-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "September 7, 2011"
+        "date added"      :     "September 7, 2011",
+        "tracking url"    :     "http://bit.ly/wa1kFv"
     },
     {
         "title"           :     "ExcaliburFilms Metadata Agent",
@@ -41,7 +44,8 @@
         "branch"          :     "master",
         "icon"            :     "excaliburfilms-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "January 1, 2012"
+        "date added"      :     "January 1, 2012",
+        "tracking url"    :     "http://bit.ly/x2y9Dx"
     },
     {
         "title"           :     "Facebook",
@@ -52,7 +56,8 @@
         "branch"          :     "master",
         "icon"            :     "facebook-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 19, 2011"
+        "date added"      :     "April 19, 2011",
+        "tracking url"    :     "http://bit.ly/yDjs92"
     },
     {
         "title"           :     "HDBits Subtitles",
@@ -63,7 +68,8 @@
         "branch"          :     "master",
         "icon"            :     "hdbits-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "June 21, 2011"
+        "date added"      :     "June 21, 2011",
+        "tracking url"    :     "http://bit.ly/zb8SJv"
     },
     {
         "title"           :     "IceFilms",
@@ -74,7 +80,8 @@
         "branch"          :     "master",
         "icon"            :     "plex-ice-logo.jpg",
         "hidden"          :     "False",
-        "date added"      :     "October 2, 2011"
+        "date added"      :     "October 2, 2011",
+        "tracking url"    :     "http://bit.ly/xyeW9k"
     },
     {
         "title"           :     "Let Me Watch This",
@@ -85,7 +92,8 @@
         "branch"          :     "master",
         "icon"            :     "lmwt-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "January 22, 2012"
+        "date added"      :     "January 22, 2012",
+        "tracking url"    :     "http://bit.ly/A7iSZ1"
     },
     {
         "title"           :     "Kink.com Metadata Agent",
@@ -96,7 +104,8 @@
         "branch"          :     "master",
         "icon"            :     "kink-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "January 1, 2012"
+        "date added"      :     "January 1, 2012",
+        "tracking url"    :     "http://bit.ly/ycrTaG"
     },
     {
         "title"           :     "Library Updater",
@@ -107,7 +116,8 @@
         "branch"          :     "master",
         "icon"            :     "libupdate-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 9, 2011"
+        "date added"      :     "April 9, 2011",
+        "tracking url"    :     "http://bit.ly/AiTxdI"
     },
     {
         "title"           :     "Newzworthy",
@@ -118,7 +128,8 @@
         "branch"          :     "master",
         "icon"            :     "newzworthy-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "November 11, 2011"
+        "date added"      :     "November 11, 2011",
+        "tracking url"    :     "http://bit.ly/xiXNEc"
     },
     {
         "title"           :     "Rdio",
@@ -129,7 +140,8 @@
         "branch"          :     "master",
         "icon"            :     "rdio-icon.png",
         "hidden"          :     "True",
-        "date added"      :     "June 28, 2011"
+        "date added"      :     "June 28, 2011",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "SABnzbd+",
@@ -140,7 +152,8 @@
         "branch"          :     "master",
         "icon"            :     "sabnzbd-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 9, 2011"
+        "date added"      :     "April 9, 2011",
+        "tracking url"    :     "http://bit.ly/xe2WDn"
     },
     {
         "title"           :     "SickBeard",
@@ -151,7 +164,8 @@
         "branch"          :     "master",
         "icon"            :     "sickbeard-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 9, 2011"
+        "date added"      :     "April 9, 2011",
+        "tracking url"    :     "http://bit.ly/zseDpI"
     },
     {
         "title"           :     "unRAID",
@@ -162,7 +176,8 @@
         "branch"          :     "master",
         "icon"            :     "unraid-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 9, 2011"
+        "date added"      :     "April 9, 2011",
+        "tracking url"    :     "http://bit.ly/xe8NDM"
     },
     {
         "title"           :     "UnSupported Appstore",
@@ -173,7 +188,8 @@
         "branch"          :     "master",
         "icon"            :     "icon-default.png",
         "hidden"          :     "False",
-        "date added"      :     "April 9, 2011"
+        "date added"      :     "April 9, 2011",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "WorldTV",
@@ -184,7 +200,8 @@
         "branch"          :     "master",
         "icon"            :     "worldtv-icon.png",
         "hidden"          :     "True",
-        "date added"      :     "September 23, 2011"
+        "date added"      :     "September 23, 2011",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "xHamster",
@@ -195,7 +212,8 @@
         "branch"          :     "master",
         "icon"            :     "xhamster-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 27, 2011"
+        "date added"      :     "April 27, 2011",
+        "tracking url"    :     "http://bit.ly/wqsIQd"
     },
     {
         "title"           :     "XNXX",
@@ -206,7 +224,8 @@
         "branch"          :     "master",
         "icon"            :     "xnxx-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 23, 2011"
+        "date added"      :     "April 23, 2011",
+        "tracking url"    :     "http://bit.ly/wbklZ7"
     },
     {
         "title"           :     "YouJizz",
@@ -217,6 +236,7 @@
         "branch"          :     "master",
         "icon"            :     "youjizz-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "April 19, 2011"
+        "date added"      :     "April 19, 2011",
+        "tracking url"    :     "http://bit.ly/wfDf1c"
     }
 ]
