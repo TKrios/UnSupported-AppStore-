@@ -203,16 +203,18 @@ def InstallPlugin(sender, plugin):
     if Installed(plugin):
         Install(plugin)
     else:
-        Install(plugin)
+        Install(plugin, initial_download=True)
     return MessageContainer(NAME, '%s installed, restart PMS for changes to take effect.' % sender.itemTitle)
     
-def Install(plugin):
-    zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+def Install(plugin, initial_download=False):
+    if initial_download:
+        #zipPath = ''
+        zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+    else:
+        zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
     Log('zipPath = ' + zipPath)
-    #install = Helper.Run('download_install.sh', GetPlexPath(), plugin['bundle'], zipPath)
     Log('Downloading from ' + zipPath)
     zipfile = Archive.ZipFromURL(zipPath)
-    #zipBundle = zipfile.ZipFile(urlgrabber.urlgrab(zipPath))
     Log('Extracting to ' + GetBundlePath(plugin))
     
     for filename in zipfile:
