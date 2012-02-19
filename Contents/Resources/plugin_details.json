@@ -12,6 +12,17 @@
         "tracking url"    :     "http://bit.ly/xu6kKP"
     },
     {
+        "title"           :     "AniDB.net Metadata Agent",
+        "bundle"          :     "AniDB.bundle",
+        "type"            :     ["Metadata Agent"],
+        "description"     :     "Metadata agent for anime movies and tv-shows",
+        "repo"            :     "git@github.com:bstard/AniDB.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "anidb-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 19, 2012"
+    },
+    {
         "title"           :     "CouchPotato",
         "bundle"          :     "CouchPotato.bundle",
         "type"            :     ["Application"],
