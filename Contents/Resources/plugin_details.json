@@ -218,5 +218,16 @@
         "icon"            :     "youjizz-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 19, 2011"
+    },
+    {
+        "title"           :     "AniDB.net Metadata Agent",
+        "bundle"          :     "AniDB.bundle",
+        "type"            :     ["Metadata Agent"],
+        "description"     :     "Metadata agent for anime movies and tv-shows",
+        "repo"            :     "git@github.com:bstard/AniDB.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "anidb-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 19, 2012"
     }
 ]
