@@ -20,7 +20,8 @@
         "branch"          :     "master",
         "icon"            :     "anidb-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "February 19, 2012"
+        "date added"      :     "February 19, 2012",
+        "tracking url"    :     "http://bit.ly/wCmYRM"
     },
     {
         "title"           :     "CouchPotato",
@@ -164,7 +165,7 @@
         "icon"            :     "redtube-icon.png",
         "hidden"          :     "False",
         "date added"      :     "February 28, 2012",
-        "tracking url"    :     ""
+        "tracking url"    :     "http://bit.ly/yvrDnf"
     },
     {
         "title"           :     "SABnzbd+",
