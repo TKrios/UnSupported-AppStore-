@@ -155,6 +155,18 @@
         "tracking url"    :     ""
     },
     {
+        "title"           :     "RedTube",
+        "bundle"          :     "RedTube.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch XXX-Videos from RedTube.com",
+        "repo"            :     "git@github.com:flownex/RedTube.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "redtube-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 28, 2012",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "SABnzbd+",
         "bundle"          :     "SABnzbd.bundle",
         "type"            :     ["Application"],
