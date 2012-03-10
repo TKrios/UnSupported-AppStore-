@@ -209,7 +209,7 @@ def InstallPlugin(sender, plugin):
 def Install(plugin, initial_download=False):
     if initial_download:
         #zipPath = ''
-        zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+        zipPath = plugin['tracking url']
     else:
         zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
     Log('zipPath = ' + zipPath)
