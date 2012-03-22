@@ -144,6 +144,18 @@
         "tracking url"    :     "http://bit.ly/xiXNEc"
     },
     {
+        "title"           :     "PornHub",
+        "bundle"          :     "PornHub.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch XXX-Videos from PornHub.com",
+        "repo"            :     "git@github.com:piplongrun/PornHub.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "pornhub-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 22, 2012",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Rdio",
         "bundle"          :     "Rdio.bundle",
         "type"            :     ["Music"],
