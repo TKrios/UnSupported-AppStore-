@@ -274,5 +274,17 @@
         "hidden"          :     "False",
         "date added"      :     "April 19, 2011",
         "tracking url"    :     "http://bit.ly/wfDf1c"
+    },
+    {
+        "title"           :     "YouPorn",
+        "bundle"          :     "YouPorn.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch XXX-Videos from YouPorn.com",
+        "repo"            :     "git@github.com:piplongrun/YouPorn.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "youporn-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 22, 2012",
+        "tracking url"    :     ""
     }
 ]
