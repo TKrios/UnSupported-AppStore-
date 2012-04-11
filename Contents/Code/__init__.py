@@ -27,7 +27,7 @@ def Start():
     MediaContainer.viewGroup = "List"
     MediaContainer.art = R(ART)
     
-    HTTP.CacheTime = CACHE_1HOUR
+    HTTP.CacheTime = 0
     
     #Check the list of installed plugins
     if Dict['Installed'] == None:
