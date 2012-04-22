@@ -24,6 +24,18 @@
         "tracking url"    :     "http://bit.ly/wCmYRM"
     },
     {
+        "title"           :     "beeg.com",
+        "bundle"          :     "beeg.bundle",
+        "type"            :     ["Video", "Adult"],
+        "description"     :     "Watch xxx videos from beeg.com",
+        "repo"            :     "git@github.com:piplongrun/beeg.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "beeg-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "April 22, 2011",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "CouchPotato",
         "bundle"          :     "CouchPotato.bundle",
         "type"            :     ["Application"],
