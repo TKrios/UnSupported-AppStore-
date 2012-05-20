@@ -216,6 +216,18 @@
         "tracking url"    :     "http://bit.ly/zseDpI"
     },
     {
+        "title"           :     "Unofficial IMDb API",
+        "bundle"          :     "Unofficial-IMDb-API.bundle",
+        "type"            :     ["Metadata Agent"],
+        "description"     :     "Metadata agent to retrieve film info from the Unofficial IMDb API (English only!)",
+        "repo"            :     "git@github.com:haeY/Unofficial-IMDb-API.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "uimdbama-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "May 21, 2012",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "unRAID",
         "bundle"          :     "unRAID.bundle",
         "type"            :     ["Application"],
