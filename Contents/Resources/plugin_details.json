@@ -48,6 +48,18 @@
         "tracking url"    :     "http://bit.ly/yXo7ir"
     },
     {
+        "title"           :     "Devour",
+        "bundle"          :     "Devour.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Videos worth watching from Devour.com",
+        "repo"            :     "git@github.com:mmccurdy07/Devour.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "icon-devour.png",
+        "hidden"          :     "False",
+        "date added"      :     "May 18, 2012",
+        "tracking url"    :     "http://bit.ly/K82CDB"
+    },
+    {
         "title"           :     "eporner",
         "bundle"          :     "eporner.bundle",
         "type"            :     ["Video", "Adult"],
@@ -298,17 +310,5 @@
         "hidden"          :     "False",
         "date added"      :     "March 22, 2012",
         "tracking url"    :     "http://bit.ly/GOzthf"
-    }
-    {
-        "title"           :     "Devour",
-        "bundle"          :     "Devour.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Videos worth watching from Devour.com",
-        "repo"            :     "git@github.com:mmccurdy07/Devour.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "icon-default.png",
-        "hidden"          :     "False",
-        "date added"      :     "May 18, 2012",
-        "tracking url"    :     ""
     }
 ]
