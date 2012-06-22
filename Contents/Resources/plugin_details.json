@@ -38,7 +38,7 @@
     {
         "title"           :     "CouchPotato",
         "bundle"          :     "CouchPotato.bundle",
-        "type"            :     ["Application"],
+        "type"            :     ["Application", "Video"],
         "description"     :     "View, edit and add to your CouchPotato wanted list.",
         "repo"            :     "git@github.com:mikedm139/CouchPotato.bundle.git",
         "branch"          :     "master",
