@@ -316,7 +316,7 @@
         "bundle"          :     "YouPorn.bundle",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch XXX-Videos from YouPorn.com",
-        "repo"            :     "git@github.com:piplongrun/YouPorn.bundle.git",
+        "repo"            :     "git@github.com:Gerk/YouPorn.bundle.git",
         "branch"          :     "master",
         "icon"            :     "youporn-icon.png",
         "hidden"          :     "False",
