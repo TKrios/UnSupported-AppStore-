@@ -228,6 +228,18 @@
         "tracking url"    :     "http://bit.ly/zseDpI"
     },
     {
+        "title"           :     "SS Plex",
+        "bundle"          :     "ss-plex.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch Movies and TV Shows from Icefilms, Watch Series, 1channel and more.",
+        "repo"            :     "git@github.com:mikew/ss-plex.bundle.git",
+        "branch"          :     "stable",
+        "icon"            :     "ss-plex-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "October 11, 2012",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Unofficial IMDb API",
         "bundle"          :     "Unofficial-IMDb-API.bundle",
         "type"            :     ["Metadata Agent"],
