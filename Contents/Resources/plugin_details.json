@@ -234,10 +234,10 @@
         "description"     :     "Watch Movies and TV Shows from Icefilms, Watch Series, 1channel and more.",
         "repo"            :     "git@github.com:mikew/ss-plex.bundle.git",
         "branch"          :     "stable",
-        "icon"            :     "ss-plex-icon.png",
+        "icon"            :     "icon-default.png",
         "hidden"          :     "False",
         "date added"      :     "October 11, 2012",
-        "tracking url"    :     ""
+        "tracking url"    :     "http://bit.ly/OYbhP9"
     },
     {
         "title"           :     "Unofficial IMDb API",
