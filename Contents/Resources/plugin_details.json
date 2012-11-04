@@ -120,18 +120,6 @@
         "tracking url"    :     "http://bit.ly/TrGvvg"
     },
     {
-        "title"           :     "Let Me Watch This",
-        "bundle"          :     "LetMeWatchThis.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Watch Movies and TV Shows from 1Channel.ch (Let Me Watch This)",
-        "repo"            :     "git@github.com:ReallyFuzzy/LetMeWatchThis.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "lmwt-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "January 22, 2012",
-        "tracking url"    :     "http://bit.ly/SqvbPi"
-    },
-    {
         "title"           :     "Kink.com Metadata Agent",
         "bundle"          :     "Kink.bundle",
         "type"            :     ["Metadata Agent", "Adult"],
@@ -142,6 +130,18 @@
         "hidden"          :     "False",
         "date added"      :     "January 1, 2012",
         "tracking url"    :     "http://bit.ly/VLFtdu"
+    },
+    {
+        "title"           :     "Let Me Watch This",
+        "bundle"          :     "LetMeWatchThis.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch Movies and TV Shows from 1Channel.ch (Let Me Watch This)",
+        "repo"            :     "git@github.com:ReallyFuzzy/LetMeWatchThis.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "lmwt-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "January 22, 2012",
+        "tracking url"    :     "http://bit.ly/SqvbPi"
     },
     {
         "title"           :     "Library Updater",
