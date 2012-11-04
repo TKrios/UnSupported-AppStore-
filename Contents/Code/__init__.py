@@ -211,7 +211,7 @@ def Install(plugin, initial_download=False):
         #zipPath = ''
         zipPath = plugin['tracking url']
     else:
-        zipPath = 'http://nodeload.%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+        zipPath = 'http://%s/zipball/%s' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
     Log('zipPath = ' + zipPath)
     Log('Downloading from ' + zipPath)
     zipfile = Archive.ZipFromURL(zipPath)
