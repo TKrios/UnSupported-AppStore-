@@ -9,7 +9,7 @@
         "icon"            :     "4tube-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 17, 2011",
-        "tracking url"    :     "http://bit.ly/xu6kKP"
+        "tracking url"    :     "http://bit.ly/Yq1TFe"
     },
     {
         "title"           :     "AniDB.net Metadata Agent",
@@ -21,7 +21,7 @@
         "icon"            :     "anidb-icon.png",
         "hidden"          :     "False",
         "date added"      :     "February 19, 2012",
-        "tracking url"    :     "http://bit.ly/wCmYRM"
+        "tracking url"    :     "http://bit.ly/Ua3xLR"
     },
     {
         "title"           :     "beeg.com",
@@ -33,7 +33,7 @@
         "icon"            :     "beeg-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 22, 2011",
-        "tracking url"    :     "http://bit.ly/I6iiod"
+        "tracking url"    :     "http://bit.ly/RzwyNZ"
     },
     {
         "title"           :     "CouchPotato",
@@ -45,7 +45,7 @@
         "icon"            :     "couchpotato-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
-        "tracking url"    :     "http://bit.ly/yXo7ir"
+        "tracking url"    :     "http://bit.ly/TsnkiY"
     },
     {
         "title"           :     "Devour",
@@ -57,7 +57,7 @@
         "icon"            :     "icon-devour.png",
         "hidden"          :     "True",
         "date added"      :     "May 18, 2012",
-        "tracking url"    :     "http://bit.ly/K82CDB"
+        "tracking url"    :     ""
     },
     {
         "title"           :     "eporner",
@@ -69,7 +69,7 @@
         "icon"            :     "eporner-icon.png",
         "hidden"          :     "False",
         "date added"      :     "September 7, 2011",
-        "tracking url"    :     "http://bit.ly/wa1kFv"
+        "tracking url"    :     "http://bit.ly/TsniaA"
     },
     {
         "title"           :     "ExcaliburFilms Metadata Agent",
@@ -81,7 +81,7 @@
         "icon"            :     "excaliburfilms-icon.png",
         "hidden"          :     "False",
         "date added"      :     "January 1, 2012",
-        "tracking url"    :     "http://bit.ly/x2y9Dx"
+        "tracking url"    :     "http://bit.ly/Tsnkzs"
     },
     {
         "title"           :     "Facebook",
@@ -93,7 +93,7 @@
         "icon"            :     "facebook-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 19, 2011",
-        "tracking url"    :     "http://bit.ly/yDjs92"
+        "tracking url"    :     "http://bit.ly/Vqol1E"
     },
     {
         "title"           :     "HDBits Subtitles",
@@ -105,7 +105,7 @@
         "icon"            :     "hdbits-icon.png",
         "hidden"          :     "False",
         "date added"      :     "June 21, 2011",
-        "tracking url"    :     "http://bit.ly/zb8SJv"
+        "tracking url"    :     "http://bit.ly/R5pW8F"
     },
     {
         "title"           :     "IceFilms",
@@ -117,7 +117,7 @@
         "icon"            :     "plex-ice-logo.jpg",
         "hidden"          :     "False",
         "date added"      :     "October 2, 2011",
-        "tracking url"    :     "http://bit.ly/xyeW9k"
+        "tracking url"    :     "http://bit.ly/TrGvvg"
     },
     {
         "title"           :     "Let Me Watch This",
@@ -129,7 +129,7 @@
         "icon"            :     "lmwt-icon.png",
         "hidden"          :     "False",
         "date added"      :     "January 22, 2012",
-        "tracking url"    :     "http://bit.ly/A7iSZ1"
+        "tracking url"    :     "http://bit.ly/SqvbPi"
     },
     {
         "title"           :     "Kink.com Metadata Agent",
@@ -141,7 +141,7 @@
         "icon"            :     "kink-icon.png",
         "hidden"          :     "False",
         "date added"      :     "January 1, 2012",
-        "tracking url"    :     "http://bit.ly/ycrTaG"
+        "tracking url"    :     "http://bit.ly/VLFtdu"
     },
     {
         "title"           :     "Library Updater",
@@ -165,7 +165,7 @@
         "icon"            :     "newzworthy-icon.png",
         "hidden"          :     "False",
         "date added"      :     "November 11, 2011",
-        "tracking url"    :     "http://bit.ly/xiXNEc"
+        "tracking url"    :     "http://bit.ly/YEYUIc"
     },
     {
         "title"           :     "PornHub",
@@ -177,7 +177,7 @@
         "icon"            :     "pornhub-icon.png",
         "hidden"          :     "False",
         "date added"      :     "March 22, 2012",
-        "tracking url"    :     "http://bit.ly/GQBIgL"
+        "tracking url"    :     "http://bit.ly/RCmX7s"
     },
     {
         "title"           :     "Rdio",
@@ -201,7 +201,7 @@
         "icon"            :     "redtube-icon.png",
         "hidden"          :     "False",
         "date added"      :     "February 28, 2012",
-        "tracking url"    :     "http://bit.ly/yvrDnf"
+        "tracking url"    :     "http://bit.ly/TrKkkc"
     },
     {
         "title"           :     "SABnzbd+",
@@ -237,7 +237,7 @@
         "icon"            :     "icon-default.png",
         "hidden"          :     "False",
         "date added"      :     "October 11, 2012",
-        "tracking url"    :     "http://bit.ly/OYbhP9"
+        "tracking url"    :     "http://bit.ly/TrKCHP"
     },
     {
         "title"           :     "Unofficial IMDb API",
@@ -249,7 +249,7 @@
         "icon"            :     "uimdbama-icon.png",
         "hidden"          :     "False",
         "date added"      :     "May 21, 2012",
-        "tracking url"    :     "http://bit.ly/JrMpfX"
+        "tracking url"    :     "http://bit.ly/WmUqZr"
     },
     {
         "title"           :     "unRAID",
@@ -297,7 +297,7 @@
         "icon"            :     "xhamster-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 27, 2011",
-        "tracking url"    :     "http://bit.ly/wqsIQd"
+        "tracking url"    :     "http://bit.ly/PvWLxl"
     },
     {
         "title"           :     "XNXX",
@@ -309,7 +309,7 @@
         "icon"            :     "xnxx-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 23, 2011",
-        "tracking url"    :     "http://bit.ly/wbklZ7"
+        "tracking url"    :     "http://bit.ly/YF0CcD"
     },
     {
         "title"           :     "YouJizz",
@@ -321,7 +321,7 @@
         "icon"            :     "youjizz-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 19, 2011",
-        "tracking url"    :     "http://bit.ly/wfDf1c"
+        "tracking url"    :     "http://bit.ly/R5uN9R"
     },
     {
         "title"           :     "YouPorn",
@@ -333,6 +333,6 @@
         "icon"            :     "youporn-icon.png",
         "hidden"          :     "False",
         "date added"      :     "March 22, 2012",
-        "tracking url"    :     "http://bit.ly/GOzthf"
+        "tracking url"    :     "http://bit.ly/Xbs97u"
     }
 ]
