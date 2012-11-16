@@ -242,7 +242,7 @@
     {
         "title"           :     "Trakt.tv plugin",
         "bundle"          :     "trakttv.bundle",
-        "type"            :     ["Aplication"],
+        "type"            :     ["Application"],
         "description"     :     "Sync what you are watching to Trakt.",
         "repo"            :     "git@github.com:tester22/Trakttv.bundle.git",
         "branch"          :     "master",
