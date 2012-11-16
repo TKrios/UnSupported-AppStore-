@@ -246,7 +246,7 @@
         "description"     :     "Sync what you are watching to Trakt.",
         "repo"            :     "git@github.com:tester22/Trakttv.bundle.git",
         "branch"          :     "master",
-        "icon"            :     "icon-default.png",
+        "icon"            :     "trakttv-icon.png",
         "hidden"          :     "False",
         "date added"      :     "November 16, 2012",
         "tracking url"    :     "http://bit.ly/RHQihj"
