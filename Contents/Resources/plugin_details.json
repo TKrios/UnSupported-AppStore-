@@ -240,6 +240,18 @@
         "tracking url"    :     "http://bit.ly/TrKCHP"
     },
     {
+        "title"           :     "Trakt.tv plugin",
+        "bundle"          :     "trakttv.bundle",
+        "type"            :     ["Aplication"],
+        "description"     :     "Sync what you are watching to Trakt.",
+        "repo"            :     "git@github.com:tester22/Trakttv.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "icon-default.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 16, 2012",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Unofficial IMDb API",
         "bundle"          :     "Unofficial-IMDb-API.bundle",
         "type"            :     ["Metadata Agent"],
