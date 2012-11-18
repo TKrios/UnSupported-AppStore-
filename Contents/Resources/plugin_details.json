@@ -213,7 +213,7 @@
         "icon"            :     "sabnzbd-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
-        "tracking url"    :     "http://bit.ly/xe2WDn"
+        "tracking url"    :     "http://bit.ly/Ut07yg"
     },
     {
         "title"           :     "SickBeard",
@@ -225,7 +225,7 @@
         "icon"            :     "sickbeard-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
-        "tracking url"    :     "http://bit.ly/zseDpI"
+        "tracking url"    :     "http://bit.ly/RHJz4A"
     },
     {
         "title"           :     "SS Plex",
@@ -281,7 +281,7 @@
         "type"            :     ["Application"],
         "description"     :     "Download, install, and update unsupported plugins for PMS",
         "repo"            :     "git@github.com:mikedm139/UnSupportedAppstore.bundle.git",
-        "branch"          :     "master",
+        "branch"          :     "applications",
         "icon"            :     "icon-default.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
