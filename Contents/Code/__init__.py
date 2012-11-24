@@ -298,7 +298,7 @@ def CheckForUpdates():
             def GetRSSFeed(num=num):
                 plugin = Dict['plugins'][num]
                 if Installed(plugin):
-                    rssURL = 'https://%s/commits/master.atom' % plugin['repo'].split('@')[1].replace(':','/')[:-4]
+                    rssURL = 'https://%s/commits/%s.atom' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
                     #Log(rssURL)
                     commits = HTML.ElementFromURL(rssURL)
                     mostRecent = Datetime.ParseDate(commits.xpath('//entry')[0].xpath('./updated')[0].text[:-6])
