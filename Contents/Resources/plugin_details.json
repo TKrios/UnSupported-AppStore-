@@ -252,11 +252,11 @@
         "tracking url"    :     "http://bit.ly/RHQihj"
     },
     {
-        "title"           :     "Unofficial IMDb API",
-        "bundle"          :     "Unofficial-IMDb-API.bundle",
+        "title"           :     "Open Movie Database",
+        "bundle"          :     "OpenMovieDatabase.bundle",
         "type"            :     ["Metadata Agent"],
-        "description"     :     "Metadata agent to retrieve film info from the Unofficial IMDb API (English only!)",
-        "repo"            :     "git@github.com:haeY/Unofficial-IMDb-API.bundle.git",
+        "description"     :     "Metadata agent to retrieve film info from the Open Movie Database (English only!)",
+        "repo"            :     "git@github.com:haeY/OpenMovieDatabase.bundle.git",
         "branch"          :     "master",
         "icon"            :     "uimdbama-icon.png",
         "hidden"          :     "False",
