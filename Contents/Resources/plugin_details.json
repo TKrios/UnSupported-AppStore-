@@ -267,7 +267,7 @@
         "title"           :     "Unofficial IMDb API",
         "bundle"          :     "Unofficial-IMDb-API.bundle",
         "type"            :     ["Metadata Agent"],
-        "description"     :     "Metadata agent to retrieve film info from the Unofficial IMDb API (English only!)",
+        "description"     :     "Has Been replaced by the Open Movie Database agent, please install that to receive future updates.",
         "repo"            :     "git@github.com:haeY/Unofficial-IMDb-API.bundle.git",
         "branch"          :     "master",
         "icon"            :     "uimdbama-icon.png",
