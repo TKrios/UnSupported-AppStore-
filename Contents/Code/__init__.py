@@ -4,7 +4,7 @@ import os
 
 APPLICATIONS_PREFIX = "/applications/unsupportedappstore"
 
-NAME = L('Title')
+NAME = 'UnSupported AppStore'
 
 ART         = 'art-default.jpg'
 ICON        = 'icon-default.png'
