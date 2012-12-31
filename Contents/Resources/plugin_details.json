@@ -47,6 +47,54 @@
         "date added"      :     "April 9, 2011",
         "tracking url"    :     "http://bit.ly/TsnkiY"
     },
+     {
+        "title"           :     "Channel7",
+        "bundle"          :     "Channel7.bundle",
+        "type"            :     ["Application", "Video"],
+        "description"     :     "View Australian TV Prime 7 on demand ",
+        "repo"            :     "https://github.com:adamrumbold/Channel7.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "seven.png",
+        "hidden"          :     "False",
+        "date added"      :     "December 30, 2012",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "SBS",
+        "bundle"          :     "SBS.bundle",
+        "type"            :     ["Application", "Video"],
+        "description"     :     "View Australian TV SBS on demand ",
+        "repo"            :     "https://github.com:adamrumbold/SBS.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "sbs.png",
+        "hidden"          :     "False",
+        "date added"      :     "December 30, 2012",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "Channel9",
+        "bundle"          :     "Channel9.bundle",
+        "type"            :     ["Application", "Video"],
+        "description"     :     "View Australian TV Channel 9 on demand ",
+        "repo"            :     "https://github.com:adamrumbold/Channel9.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "nine.png",
+        "hidden"          :     "False",
+        "date added"      :     "December 30, 2012",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "Channel10",
+        "bundle"          :     "Channel10.bundle",
+        "type"            :     ["Application", "Video"],
+        "description"     :     "View Australian TV Channel 10 on demand ",
+        "repo"            :     "https://github.com:adamrumbold/Channel10.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "ten.png",
+        "hidden"          :     "False",
+        "date added"      :     "December 30, 2012",
+        "tracking url"    :     ""
+    },
     {
         "title"           :     "Devour",
         "bundle"          :     "Devour.bundle",
