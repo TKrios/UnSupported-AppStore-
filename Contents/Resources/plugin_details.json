@@ -156,6 +156,18 @@
         "tracking url"    :     "http://bit.ly/AiTxdI"
     },
     {
+        "title"           :     "Navi-X",
+        "bundle"          :     "navix.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch user verified media from Navi-Xtreme",
+        "repo"            :     "git@github.com:kriska/navix.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "navix-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 08, 2013",
+        "tracking url"    :     "http://bit.ly/12ZBKm3"
+    },
+    {
         "title"           :     "Newzworthy",
         "bundle"          :     "Newzworthy.bundle",
         "type"            :     ["Application", "Video"],
@@ -358,17 +370,5 @@
         "hidden"          :     "False",
         "date added"      :     "March 22, 2012",
         "tracking url"    :     "http://bit.ly/Xbs97u"
-    },
-    {
-        "title"           :     "Navi-X",
-        "bundle"          :     "navix.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Watch user verified media from Navi-Xtreme",
-        "repo"            :     "git@github.com:kriska/navix.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "navix-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "March 08, 2013",
-        "tracking url"    :     ""
     }
 ]
