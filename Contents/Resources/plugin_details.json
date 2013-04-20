@@ -120,6 +120,18 @@
         "tracking url"    :     "http://bit.ly/TrGvvg"
     },
     {
+        "title"           :     "IMDb HD Trailers",
+        "bundle"          :     "IMDb-Trailers.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch movie trailers from IMDb in HD",
+        "repo"            :     "git@github.com:mikedm139/IMDb-Trailers.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "IMDB-Trailers-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "April 20, 2013",
+        "tracking url"    :     "http://bit.ly/11vtl2P"
+    },
+    {
         "title"           :     "Kink.com Metadata Agent",
         "bundle"          :     "Kink.bundle",
         "type"            :     ["Metadata Agent", "Adult"],
@@ -149,11 +161,11 @@
         "type"            :     ["Application"],
         "description"     :     "Update Plex library sections or entire library without leaving Plex interface",
         "repo"            :     "git@github.com:mikedm139/LibraryUpdater.bundle.git",
-        "branch"          :     "master",
+        "branch"          :     "applications",
         "icon"            :     "libupdate-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
-        "tracking url"    :     "http://bit.ly/AiTxdI"
+        "tracking url"    :     "http://bit.ly/SGgQAx"
     },
     {
         "title"           :     "Navi-X",
@@ -233,7 +245,7 @@
         "type"            :     ["Application"],
         "description"     :     "Manage your SABnzbd+ queue and history from within Plex.",
         "repo"            :     "git@github.com:mikedm139/SABnzbd.bundle.git",
-        "branch"          :     "master",
+        "branch"          :     "applications",
         "icon"            :     "sabnzbd-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
@@ -245,7 +257,7 @@
         "type"            :     ["Application"],
         "description"     :     "A plugin for Plex media center to view and control basic functions of SickBeard",
         "repo"            :     "git@github.com:mikedm139/SickBeard.bundle.git",
-        "branch"          :     "master",
+        "branch"          :     "applications",
         "icon"            :     "sickbeard-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
@@ -297,7 +309,7 @@
         "icon"            :     "unraid-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
-        "tracking url"    :     "http://bit.ly/xe8NDM"
+        "tracking url"    :     "http://bit.ly/TDCWV7"
     },
     {
         "title"           :     "UnSupported Appstore",
