@@ -48,52 +48,40 @@
         "tracking url"    :     "http://bit.ly/TsnkiY"
     },
      {
-        "title"           :     "Channel7",
+        "title"           :     "Channel7 (AU)",
         "bundle"          :     "Channel7.bundle",
-        "type"            :     ["Application", "Video"],
+        "type"            :     ["Video"],
         "description"     :     "View Australian TV Prime 7 on demand ",
         "repo"            :     "https://github.com:adamrumbold/Channel7.bundle.git",
         "branch"          :     "master",
         "icon"            :     "seven.png",
         "hidden"          :     "False",
-        "date added"      :     "December 30, 2012",
-        "tracking url"    :     ""
+        "date added"      :     "May 5, 2013",
+        "tracking url"    :     "http://bit.ly/13WVxPd"
     },
     {
-        "title"           :     "SBS",
-        "bundle"          :     "SBS.bundle",
-        "type"            :     ["Application", "Video"],
-        "description"     :     "View Australian TV SBS on demand ",
-        "repo"            :     "https://github.com:adamrumbold/SBS.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "sbs.png",
-        "hidden"          :     "False",
-        "date added"      :     "December 30, 2012",
-        "tracking url"    :     ""
-    },
-    {
-        "title"           :     "Channel9",
+        "title"           :     "Channel9 (AU)",
         "bundle"          :     "Channel9.bundle",
-        "type"            :     ["Application", "Video"],
+        "type"            :     ["Video"],
         "description"     :     "View Australian TV Channel 9 on demand ",
         "repo"            :     "https://github.com:adamrumbold/Channel9.bundle.git",
         "branch"          :     "master",
         "icon"            :     "nine.png",
         "hidden"          :     "False",
-        "date added"      :     "December 30, 2012",
-        "tracking url"    :     ""
+        "date added"      :     "May 5, 2013",
+        "tracking url"    :     "http://bit.ly/16ajXZT"
     },
     {
-        "title"           :     "Channel10",
+        "title"           :     "Channel10 (AU)",
         "bundle"          :     "Channel10.bundle",
-        "type"            :     ["Application", "Video"],
+        "type"            :     ["Video"],
         "description"     :     "View Australian TV Channel 10 on demand ",
         "repo"            :     "https://github.com:adamrumbold/Channel10.bundle.git",
         "branch"          :     "master",
         "icon"            :     "ten.png",
         "hidden"          :     "False",
-        "date added"      :     "December 30, 2012",
-        "tracking url"    :     ""
+        "date added"      :     "May 5, 2013",
+        "tracking url"    :     "http://bit.ly/YxSYFa"
     },
     {
         "title"           :     "Devour",
@@ -298,6 +286,18 @@
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
         "tracking url"    :     "http://bit.ly/Ut07yg"
+    },
+    {
+        "title"           :     "SBS (AU)",
+        "bundle"          :     "SBS.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "View Australian TV SBS on demand ",
+        "repo"            :     "https://github.com:adamrumbold/SBS.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "sbs.png",
+        "hidden"          :     "False",
+        "date added"      :     "May 5, 2013",
+        "tracking url"    :     "http://bit.ly/12Guohc"
     },
     {
         "title"           :     "SickBeard",
