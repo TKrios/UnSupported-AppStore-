@@ -448,7 +448,7 @@
         "bundle"          :     "Data18-Content.bundle",
         "type"            :     ["Metadata Agent", "Adult"],
         "description"     :     "Metadata agent for adult Content from Data18.com",
-        "repo"            :     "git://github.com/chidychi/Data18-Content.git",
+        "repo"            :     "git://github.com/chidychi/Data18-Content.bundle.git",
         "branch"          :     "master",
         "icon"            :     "data18-content-icon.png",
         "hidden"          :     "False",
