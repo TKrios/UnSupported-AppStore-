@@ -436,11 +436,11 @@
         "bundle"          :     "Data18.bundle",
         "type"            :     ["Metadata Agent", "Adult"],
         "description"     :     "Metadata agent for adult films from Data18.com",
-        "repo"            :     "git://github.com/chidychi/Plex-Data18-Agent-Adult.git",
+        "repo"            :     "git://github.com/chidychi/Data18.bundle.git",
         "branch"          :     "master",
         "icon"            :     "data18-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "June 2, 2013",
+        "date added"      :     "June 24, 2013",
         "tracking url"    :     ""
     },
     {
@@ -448,11 +448,11 @@
         "bundle"          :     "Data18-Content.bundle",
         "type"            :     ["Metadata Agent", "Adult"],
         "description"     :     "Metadata agent for adult Content from Data18.com",
-        "repo"            :     "git://github.com/chidychi/Plex-Data18-Agent-Adult.git",
+        "repo"            :     "git://github.com/chidychi/Data18-Content.git",
         "branch"          :     "master",
         "icon"            :     "data18-content-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "June 2, 2013",
+        "date added"      :     "June 24, 2013",
         "tracking url"    :     ""
     }
 ]
