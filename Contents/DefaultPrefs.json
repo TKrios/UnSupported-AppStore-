@@ -10,5 +10,11 @@
         "type": "bool",
         "label": "Enable Debug Logging",
         "default": "False"
+    },
+    {
+        "id": "auto-update",
+        "type": "bool",
+        "label": "Automatically update the U-Appstore",
+        "default": "True"
     }
 ]
