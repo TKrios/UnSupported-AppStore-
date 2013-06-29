@@ -4,5 +4,11 @@
         "type": "bool",
         "label": "Allow Adult Plugins",
         "default": "True"
+    },
+    {
+        "id": "debug",
+        "type": "bool",
+        "label": "Enable Debug Logging",
+        "default": "False"
     }
 ]
