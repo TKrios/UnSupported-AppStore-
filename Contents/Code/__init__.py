@@ -10,7 +10,7 @@ PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
 
-DEV_MODE    = False
+DEV_MODE    = True
 
 ####################################################################################################
 
@@ -30,7 +30,7 @@ def Start():
 def ValidatePrefs():
     return
  
-@handler(PREFIX, NAME)
+@handler(PREFIX, NAME, "icon-default.png", "art-default.jpg")
 def MainMenu():
     
     #Load the list of available plugins
@@ -42,7 +42,7 @@ def MainMenu():
     oc = ObjectContainer(no_cache=True)
     
     oc.add(DirectoryObject(key=Callback(GenreMenu, genre='New'), title='New'))
-    oc.add(DirectoryObject(key=Callback(GenreMenuMenu, genre='All'), title='All'))
+    oc.add(DirectoryObject(key=Callback(GenreMenu, genre='All'), title='All'))
     if Prefs['adult']:
         oc.add(DirectoryObject(key=Callback(GenreMenu, genre='Adult'), title='Adult'))
     oc.add(DirectoryObject(key=Callback(GenreMenu, genre='Application'), title='Application'))
