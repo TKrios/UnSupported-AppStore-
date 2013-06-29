@@ -2,47 +2,34 @@ import os
 
 ####################################################################################################
 
-APPLICATIONS_PREFIX = "/applications/unsupportedappstore"
+PREFIX = "/applications/unsupportedappstore"
 
 NAME = 'UnSupported AppStore'
 
-ART         = 'art-default.jpg'
-ICON        = 'icon-default.png'
 PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
-
-DEVMODE     = False
 
 ####################################################################################################
 
 def Start():
 
-    Plugin.AddPrefixHandler(APPLICATIONS_PREFIX, ApplicationsMainMenu, NAME, ICON, ART)
-
-    Plugin.AddViewGroup("InfoList", viewMode="InfoList", mediaType="items")
-    Plugin.AddViewGroup("List", viewMode="List", mediaType="items")
-    
-    MediaContainer.title1 = NAME
-    MediaContainer.viewGroup = "List"
-    MediaContainer.art = R(ART)
-    
     HTTP.CacheTime = 0
     
     #Check the list of installed plugins
     if Dict['Installed'] == None:
         Dict['Installed'] = {'UnSupported Appstore' : {'lastUpdate': 'None', 'updateAvailable': 'False', 'installed': 'True'}}
     else:
-        Log(Dict['Installed'])
+        Logger(Dict['Installed'])
         
-    Log('Plex support files are at ' + Core.app_support_path)
-    Log('Plug-in bundles are located in ' + Core.config.bundles_dir_name)
+    Logger('Plex support files are at ' + Core.app_support_path)
+    Logger('Plug-in bundles are located in ' + Core.config.bundles_dir_name)
     
 def ValidatePrefs():
     return
  
-
-def ApplicationsMainMenu():
+@handler(PREFIX, NAME)
+def MainMenu():
     
     #Load the list of available plugins
     Dict['plugins'] = LoadData()
@@ -50,27 +37,39 @@ def ApplicationsMainMenu():
     #Check for available updates
     updates = CheckForUpdates()
     
-    dir = MediaContainer(viewGroup="List", noCache=True)
-    dir.Append(Function(DirectoryItem(NewMenu, 'New', thumb = R(ICON))))
-    dir.Append(Function(DirectoryItem(AllMenu, 'All', thumb = R(ICON))))
+    oc = ObjectContainer(no_cache=True)
+    
+    oc.add(DirectoryObject(key=Callback(GenreMenu, genre='New'), title='New'))
+    oc.add(DirectoryObject(key=Callback(GenreMenuMenu, genre='All'), title='All'))
     if Prefs['adult']:
-        dir.Append(Function(DirectoryItem(GenreMenu, 'Adult', thumb=R(ICON))))
-    dir.Append(Function(DirectoryItem(GenreMenu, 'Application', thumb=R(ICON))))
-    dir.Append(Function(DirectoryItem(GenreMenu, 'Video', thumb=R(ICON))))
-    dir.Append(Function(DirectoryItem(GenreMenu, 'Pictures', thumb=R(ICON))))
-    dir.Append(Function(DirectoryItem(GenreMenu, 'Metadata Agent', thumb=R(ICON))))
-    dir.Append(Function(DirectoryItem(GenreMenu, 'Music', thumb=R(ICON))))
-    dir.Append(Function(DirectoryItem(InstalledMenu, 'Installed', thumb=R(ICON))))
-    dir.Append(Function(DirectoryItem(UpdateAll, "Download updates", "Update all installed plugins", "This may take a while and will require you to restart PMS for changes to take effect",
-        thumb=R(ICON))))
-    dir.Append(PrefsItem(title="Preferences", thumb=R(PREFS_ICON)))
+        oc.add(DirectoryObject(key=Callback(GenreMenu, genre='Adult'), title='Adult'))
+    oc.add(DirectoryObject(key=Callback(GenreMenu, genre='Application'), title='Application'))
+    oc.add(DirectoryObject(key=Callback(GenreMenu, genre='Video'), title='Video'))
+    oc.add(DirectoryObject(key=Callback(GenreMenu, genre='Pictures'), title='Pictures'))
+    oc.add(DirectoryObject(key=Callback(GenreMenu, genre='Metadata Agent'), title='Metadata Agent'))
+    oc.add(DirectoryObject(key=Callback(GenreMenu, genre='Music'), title='Music'))
+    oc.add(DirectoryObject(key=Callback(InstalledMenu), title='Installed'))
+    oc.add(DirectoryObject(key=Callback(UpdateAll), title='Download updates',
+        summary="Update all installed plugins.\nThis may take a while and will require you to restart PMS for changes to take effect"))
+    oc.add(PrefsObject(title="Preferences", thumb=R(PREFS_ICON)))
 
-    return dir
+    return oc
 
-def GenreMenu(sender):
-    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
-    genre = sender.itemTitle
+@route(PREFIX + '/genre')
+def GenreMenu(genre):
+    oc = ObjectContainer(title2=genre, no_cache=True)
     plugins = Dict['plugins']
+    if genre == 'New':
+        try:
+            for plugin in plugins:
+                plugin['date added'] = Datetime.TimestampFromDatetime(Datetime.ParseDate(plugin['date added']))
+        except:
+            Log.Exception("Converting dates to timestamps failed")
+        date_sorted = sorted(plugins, key=lambda k: k['date added'])
+        Logger(date_sorted)
+        date_sorted.reverse()
+        plugins = date_sorted
+    
     for plugin in plugins:
         if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
         else: pass
@@ -82,105 +81,52 @@ def GenreMenu(sender):
                     pass
             else:
                 pass
-            if genre in plugin['type']:
+            if genre == 'All' or genre == 'New' or genre in plugin['type']:
                 if Installed(plugin):
                     if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-                        subtitle = 'Update available'
+                        subtitle = 'Update available\n'
                     else:
-                        subtitle = 'Installed'
+                        subtitle = 'Installed\n'
                 else:
                     subtitle = ''
-                dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
-    return dir
+                oc.add(PopupDirectoryObject(key=Callback(PluginMenu, plugin=plugin), title=plugin['title'],
+                    summary=subtitle + plugin['description'], thumb=R(plugin['icon'])))
+    return oc
 
-def AllMenu(sender):
-    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
-    plugins = Dict['plugins']
-    for plugin in plugins:
-        if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
-        else: pass
-        if plugin['title'] != "UnSupported Appstore":
-            if not Prefs['adult']:
-                if "Adult" in plugin['type']:
-                    continue
-                else:
-                    pass
-            else:
-                pass
-            if Installed(plugin):
-                if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-                    subtitle = 'Update available'
-                else:
-                    subtitle = 'Installed'
-            else:
-                subtitle = ''
-            dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
-    return dir
-
-def NewMenu(sender):
-    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
-    plugins = Dict['plugins']
-    #Log(plugins)
-    try:
-        for plugin in plugins:
-            plugin['date added'] = Datetime.TimestampFromDatetime(Datetime.ParseDate(plugin['date added']))
-    except:
-        Log.Exception("Converting dates to timestamps failed")
-    #Log(plugins)
-    date_sorted = sorted(plugins, key=lambda k: k['date added'])
-    Log(date_sorted)
-    date_sorted.reverse()
-    for plugin in date_sorted:
-        if plugin['hidden'] == "True": continue ### Don't display plugins which are "hidden"
-        else: pass
-        if plugin['title'] != "UnSupported Appstore":
-            if not Prefs['adult']:
-                if "Adult" in plugin['type']:
-                    continue
-                else:
-                    pass
-            else:
-                pass
-            if Installed(plugin):
-                if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-                    subtitle = 'Update available'
-                else:
-                    subtitle = 'Installed'
-            else:
-                subtitle = ''
-            dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
-    return dir
-
-def InstalledMenu(sender):
-    dir = MediaContainer(title2=sender.itemTitle, viewGroup='InfoList', noCache=True)
+@route(PREFIX + '/installed')
+def InstalledMenu():
+    oc = ObjectContainer(title2="Installed", no_cache=True)
     plugins = Dict['plugins']
     plugins.sort()
     for plugin in plugins:
-        subtitle = ''
+        summary = ''
         if Installed(plugin):
             if plugin['hidden'] == "True":
-                subtitle = 'Now available through the Plex Channel Directory'
+                summary = 'No longer available through the Unsupported Appstore'
             elif Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-                subtitle = 'Update available'
+                summary = 'Update available'
             else: pass
-            dir.Append(Function(PopupDirectoryItem(PluginMenu, title=plugin['title'], subtitle=subtitle, summary=plugin['description'], thumb=R(plugin['icon'])), plugin=plugin))
-    #dir.Sort()
-    return dir
+            oc.add(PopupDirectoryObject(key=Callback(PluginMenu, plugin=plugin), title=plugin['title'],summary=summary,
+                thumb=R(plugin['icon'])))
+    return oc
 
-def PluginMenu(sender, plugin):
-    dir = MediaContainer(title1=sender.itemTitle, noCache=True)
+@route(PREFIX + '/popup')
+def PluginMenu(plugin):
+    oc = ObjectContainer(title1=plugin['title'], no_cache=True)
     if Installed(plugin):
         if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-            dir.Append(Function(DirectoryItem(InstallPlugin, title='Update'), plugin=plugin))
-        dir.Append(Function(DirectoryItem(UnInstallPlugin, title='UnInstall'), plugin=plugin))
+            oc.add(DirectoryObject(key=Callback(InstallPlugin, plugin=plugin), title="Update"))
+        oc.add(DirectoryObject(key=Callback(UnInstallPlugin, plugin=plugin), title="UnInstall"))
     else:
-        dir.Append(Function(DirectoryItem(InstallPlugin, title='Install'), plugin=plugin))
-    return dir
+        oc.add(DirectoryObject(key=Callback(InstallPlugin, plugin=plugin), title="Install"))
+    return oc
   
+@route(PREFIX + '/load')
 def LoadData():
     userdata = Resource.Load(PLUGINS)
     return JSON.ObjectFromString(userdata)
 
+@route(PREFIX + '/installedcheck')
 def Installed(plugin):
     try:
         if Dict['Installed'][plugin['title']]['installed'] == "True":
@@ -199,23 +145,24 @@ def Installed(plugin):
     
     return False
 
-def InstallPlugin(sender, plugin):
+@route(PREFIX + '/installplugin')
+def InstallPlugin(plugin):
     if Installed(plugin):
         Install(plugin)
     else:
         Install(plugin, initial_download=True)
-    return MessageContainer(NAME, '%s installed, restart PMS for changes to take effect.' % sender.itemTitle)
+    return ObjectContainer(header=NAME, message='%s installed, restart PMS for changes to take effect.' % plugin['title'])
     
+@route(PREFIX + '/install')
 def Install(plugin, initial_download=False):
     if initial_download:
-        #zipPath = ''
         zipPath = plugin['tracking url']
     else:
         zipPath = 'http://%s/archive/%s.zip' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
-    Log('zipPath = ' + zipPath)
-    Log('Downloading from ' + zipPath)
+    Logger('zipPath = ' + zipPath)
+    Logger('Downloading from ' + zipPath)
     zipfile = Archive.ZipFromURL(zipPath)
-    Log('Extracting to ' + GetBundlePath(plugin))
+    Logger('Extracting to ' + GetBundlePath(plugin))
     
     for filename in zipfile:
         data = zipfile[filename]
@@ -223,61 +170,61 @@ def Install(plugin, initial_download=False):
             if not str(filename.split('/')[-1]).startswith('.'):
                 filename = ('/').join(filename.split('/')[1:])
                 file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
-                Log('Extracting file' + file_path)
+                Logger('Extracting file' + file_path)
                 Core.storage.save(file_path, data)
             else:
-                Log('Skipping "hidden" file: ' + filename)
+                Logger('Skipping "hidden" file: ' + filename)
         else:
-            Log(filename.split('/')[-2])
+            Logger(filename.split('/')[-2])
             if not str(filename.split('/')[-2]).startswith('.'):
                 filename = ('/').join(filename.split('/')[1:])
                 file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
-                Log('Extracting folder ' + file_path)
+                Logger('Extracting folder ' + file_path)
                 Core.storage.ensure_dirs(file_path)
         
     Dict['Installed'][plugin['title']]['installed'] = "True"
-    Log('%s "Installed" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['installed']))
+    Logger('%s "Installed" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['installed']))
     Dict['Installed'][plugin['title']]['lastUpdate'] = Datetime.Now()
-    Log('%s "LastUpdate" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['lastUpdate']))
+    Logger('%s "LastUpdate" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['lastUpdate']))
     Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
-    Log('%s "updateAvailable" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['updateAvailable']))
+    Logger('%s "updateAvailable" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['updateAvailable']))
     Dict.Save()
     return
 
-def UpdateAll(sender):
+@route(PREFIX + '/updateall')
+def UpdateAll():
     for plugin in Dict['plugins']:
-        if DEVMODE:
-            if plugin['title'] == "UnSupported Appstore":
-                continue
-            else:
-                pass
-        else:
-            pass
         if Dict['Installed'][plugin['title']]['installed'] == "True":
             if Dict['Installed'][plugin['title']]['updateAvailable'] == "False":
-                Log('%s is already up to date.' % plugin['title'])
+                Logger('%s is already up to date.' % plugin['title'])
             else:
-                Log('%s is installed. Downloading updates:' % (plugin['title']))
+                Logger('%s is installed. Downloading updates:' % (plugin['title']))
                 update = Install(plugin)
-                Log(update)
+                Logger(update)
         else:
-            Log('%s is not installed.' % plugin['title'])
+            Logger('%s is not installed.' % plugin['title'])
             pass
 
-    return MessageContainer(NAME, 'Updates have been applied. Restart PMS for changes to take effect.')
-    
-def UnInstallPlugin(sender, plugin):
-    Log('Uninstalling %s' % GetBundlePath(plugin))
-    DeleteFolder(GetBundlePath(plugin))
+    return ObjectContainer(header=NAME, message='Updates have been applied. Restart PMS for changes to take effect.')
+
+@route(PREFIX + '/uninstall')
+def UnInstallPlugin(plugin):
+    Logger('Uninstalling %s' % GetBundlePath(plugin))
+    try:
+        DeleteFolder(GetBundlePath(plugin))
+    except:
+        Logger("Failed to remove all the bundle's files but we'll mark it uninstalled anyway.")
     Dict['Installed'][plugin['title']]['installed'] = "False"
     Dict.Save()
-    return MessageContainer(NAME, '%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
+    return ObjectContainer(header=NAME, message='%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
 
+@route(PREFIX + '/deletefile')
 def DeleteFile(filePath):
-    Log('Removing ' + filePath)
+    Logger('Removing ' + filePath)
     os.remove(filePath)
     return
 
+@route(PREFIX + '/deletefolder')
 def DeleteFolder(folderPath):
     for file in os.listdir(folderPath):
         path = Core.storage.join_path(folderPath, file)
@@ -285,10 +232,11 @@ def DeleteFolder(folderPath):
             DeleteFile(path)
         except:
             DeleteFolder(path)
-    Log('Removing ' + folderPath)
+    Logger('Removing ' + folderPath)
     os.rmdir(folderPath)
     return
     
+@route(PREFIX + '/updatecheck')
 def CheckForUpdates():
     #use the github commit feed for each installed plugin to check for available updates
     @parallelize
@@ -299,7 +247,6 @@ def CheckForUpdates():
                 plugin = Dict['plugins'][num]
                 if Installed(plugin):
                     rssURL = 'https://%s/commits/%s.atom' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
-                    #Log(rssURL)
                     commits = HTML.ElementFromURL(rssURL)
                     mostRecent = Datetime.ParseDate(commits.xpath('//entry')[0].xpath('./updated')[0].text[:-6])
                     if Dict['Installed'][plugin['title']]['lastUpdate'] == "None":
@@ -310,14 +257,26 @@ def CheckForUpdates():
                         Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
                     
                     if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-                        Log(plugin['title'] + ': Update available')
+                        Logger(plugin['title'] + ': Update available')
+                        if plugin['title'] == 'UnSupported Appstore' and Prefs['auto-update']:
+                            update = Install(plugin)
+                            Logger(update)            
                     else:
-                        Log(plugin['title'] + ': Up-to-date')
+                        Logger(plugin['title'] + ': Up-to-date')
         Dict.Save()
     return
     
+@route(PREFIX + '/plugindir')
 def GetPluginDirPath():
     return Core.storage.join_path(Core.app_support_path, Core.config.bundles_dir_name)
-    
+
+@route(PREFIX + '/bundlepath')    
 def GetBundlePath(plugin):
     return Core.storage.join_path(GetPluginDirPath(), plugin['bundle'])
+
+@route(PREFIX + '/logger')
+def Logger(message):
+    if Prefs['debug']:
+        Logger(message)
+    else:
+        pass
