@@ -116,6 +116,7 @@
         "branch"          :     "master",
         "icon"            :     "icon-devour.png",
         "hidden"          :     "True",
+        "reason_hidden"   :     "available in Channel Directory",
         "date added"      :     "May 18, 2012",
         "tracking url"    :     ""
     },
@@ -284,6 +285,7 @@
         "branch"          :     "master",
         "icon"            :     "rdio-icon.png",
         "hidden"          :     "True",
+        "reason_hidden"   :     "available in Channel Directory",
         "date added"      :     "June 28, 2011",
         "tracking url"    :     ""
     },
@@ -367,7 +369,8 @@
         "repo"            :     "git@github.com:haeY/Unofficial-IMDb-API.bundle.git",
         "branch"          :     "master",
         "icon"            :     "uimdbama-icon.png",
-        "hidden"          :     "True", //renamed "Open Movie Database"
+        "hidden"          :     "True",
+        "reason_hidden"   :     "renamed 'Open Movie Database'",
         "date added"      :     "May 21, 2012",
         "tracking url"    :     ""
     },
@@ -404,6 +407,7 @@
         "branch"          :     "master",
         "icon"            :     "worldtv-icon.png",
         "hidden"          :     "True",
+        "reason_hidden"   :     "no longer supported",
         "date added"      :     "September 23, 2011",
         "tracking url"    :     ""
     },
