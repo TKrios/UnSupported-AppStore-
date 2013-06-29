@@ -84,6 +84,30 @@
         "tracking url"    :     "http://bit.ly/YxSYFa"
     },
     {
+        "title"           :     "Data18 Metadata Agent",
+        "bundle"          :     "Data18.bundle",
+        "type"            :     ["Metadata Agent", "Adult"],
+        "description"     :     "Metadata agent for adult films from Data18.com",
+        "repo"            :     "git@github.com:chidychi/Data18.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "data18-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "June 24, 2013",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "Data18-Content Metadata Agent",
+        "bundle"          :     "Data18-Content.bundle",
+        "type"            :     ["Metadata Agent", "Adult"],
+        "description"     :     "Metadata agent for adult Content from Data18.com",
+        "repo"            :     "git@github.com:chidychi/Data18-Content.bundle.git",
+        "branch"          :     "master",
+        "icon"            :     "data18-content-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "June 24, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Devour",
         "bundle"          :     "Devour.bundle",
         "type"            :     ["Video"],
@@ -430,29 +454,5 @@
         "hidden"          :     "False",
         "date added"      :     "March 22, 2012",
         "tracking url"    :     "http://bit.ly/Xbs97u"
-    },
-    {
-        "title"           :     "Data18 Metadata Agent",
-        "bundle"          :     "Data18.bundle",
-        "type"            :     ["Metadata Agent", "Adult"],
-        "description"     :     "Metadata agent for adult films from Data18.com",
-        "repo"            :     "git@github.com:chidychi/Data18.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "data18-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "June 24, 2013",
-        "tracking url"    :     ""
-    },
-    {
-        "title"           :     "Data18-Content Metadata Agent",
-        "bundle"          :     "Data18-Content.bundle",
-        "type"            :     ["Metadata Agent", "Adult"],
-        "description"     :     "Metadata agent for adult Content from Data18.com",
-        "repo"            :     "git@github.com:chidychi/Data18-Content.bundle.git",
-        "branch"          :     "master",
-        "icon"            :     "data18-content-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "June 24, 2013",
-        "tracking url"    :     ""
     }
 ]
