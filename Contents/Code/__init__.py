@@ -10,7 +10,7 @@ PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
 
-DEV_MODE    = True
+DEV_MODE    = False
 
 ####################################################################################################
 
@@ -26,9 +26,6 @@ def Start():
         
     Logger('Plex support files are at ' + Core.app_support_path)
     Logger('Plug-in bundles are located in ' + Core.config.bundles_dir_name)
-    
-def ValidatePrefs():
-    return
  
 @handler(PREFIX, NAME, "icon-default.png", "art-default.jpg")
 def MainMenu():
@@ -93,6 +90,8 @@ def GenreMenu(genre):
                     subtitle = ''
                 oc.add(PopupDirectoryObject(key=Callback(PluginMenu, plugin=plugin), title=plugin['title'],
                     summary=subtitle + plugin['description'], thumb=R(plugin['icon'])))
+    if len(oc) < 1:
+        return ObjectContainer(header=NAME, message='There are no plugins to display in the list: "%s"' % genre)
     return oc
 
 @route(PREFIX + '/installed')
@@ -112,9 +111,9 @@ def InstalledMenu():
                 thumb=R(plugin['icon'])))
     return oc
 
-@route(PREFIX + '/popup')
+@route(PREFIX + '/popup', plugin=dict)
 def PluginMenu(plugin):
-    oc = ObjectContainer(title1=plugin['title'], no_cache=True)
+    oc = ObjectContainer(no_cache=True)
     if Installed(plugin):
         if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
             oc.add(DirectoryObject(key=Callback(InstallPlugin, plugin=plugin), title="Update"))
@@ -128,7 +127,7 @@ def LoadData():
     userdata = Resource.Load(PLUGINS)
     return JSON.ObjectFromString(userdata)
 
-@route(PREFIX + '/installedcheck')
+@route(PREFIX + '/installedcheck', plugin=dict)
 def Installed(plugin):
     try:
         if Dict['Installed'][plugin['title']]['installed'] == "True":
@@ -147,7 +146,7 @@ def Installed(plugin):
     
     return False
 
-@route(PREFIX + '/installplugin')
+@route(PREFIX + '/installplugin', plugin=dict)
 def InstallPlugin(plugin):
     if Installed(plugin):
         Install(plugin)
@@ -155,7 +154,7 @@ def InstallPlugin(plugin):
         Install(plugin, initial_download=True)
     return ObjectContainer(header=NAME, message='%s installed, restart PMS for changes to take effect.' % plugin['title'])
     
-@route(PREFIX + '/install')
+@route(PREFIX + '/install', plugin=dict)
 def Install(plugin, initial_download=False):
     if initial_download:
         zipPath = plugin['tracking url']
@@ -209,7 +208,7 @@ def UpdateAll():
 
     return ObjectContainer(header=NAME, message='Updates have been applied. Restart PMS for changes to take effect.')
 
-@route(PREFIX + '/uninstall')
+@route(PREFIX + '/uninstall', plugin=dict)
 def UnInstallPlugin(plugin):
     Logger('Uninstalling %s' % GetBundlePath(plugin))
     try:
