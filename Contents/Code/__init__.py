@@ -113,7 +113,7 @@ def InstalledMenu():
 
 @route(PREFIX + '/popup', plugin=dict)
 def PluginMenu(plugin):
-    oc = ObjectContainer(no_cache=True)
+    oc = ObjectContainer(title2=plugin['title'], no_cache=True)
     if Installed(plugin):
         if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
             oc.add(DirectoryObject(key=Callback(InstallPlugin, plugin=plugin), title="Update"))
