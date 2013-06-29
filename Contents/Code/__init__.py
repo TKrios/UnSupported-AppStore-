@@ -10,6 +10,8 @@ PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
 
+DEV_MODE    = False
+
 ####################################################################################################
 
 def Start():
@@ -259,8 +261,9 @@ def CheckForUpdates():
                     if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
                         Logger(plugin['title'] + ': Update available')
                         if plugin['title'] == 'UnSupported Appstore' and Prefs['auto-update']:
-                            update = Install(plugin)
-                            Logger(update)            
+                            if not DEV_MODE:
+                                update = Install(plugin)
+                                Logger(update)            
                     else:
                         Logger(plugin['title'] + ': Up-to-date')
         Dict.Save()
