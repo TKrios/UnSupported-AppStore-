@@ -30,7 +30,8 @@ def Start():
         Logger(Dict['Installed'])
         
     Logger('Plex support files are at ' + Core.app_support_path)
-    Logger('Plug-in bundles are located in ' + Core.config.bundles_dir_name)
+    Logger('Plug-in bundles are located in ' + Core.storage.join_path(Core.app_support_path, Core.config.bundles_dir_name))
+    Logger('Plug-in support files are located in ' + Core.storage.join_path(Core.app_support_path, Core.config.plugin_support_dir_name))
  
 @handler(PREFIX, NAME, "icon-default.png", "art-default.jpg")
 def MainMenu():
@@ -277,9 +278,13 @@ def CheckForUpdates():
 def GetPluginDirPath():
     return Core.storage.join_path(Core.app_support_path, Core.config.bundles_dir_name)
 
-@route(PREFIX + '/bundlepath')    
+@route(PREFIX + '/bundlepath', plugin=dict)    
 def GetBundlePath(plugin):
     return Core.storage.join_path(GetPluginDirPath(), plugin['bundle'])
+
+@route(PREFIX + '/supportpath', plugin=dict)
+def GetSupportPath(plugin):
+    return Core.storage.join_path(Core.app_support_path, Core.config.plugin_support_dir_name, plugin['identifier'])
 
 @route(PREFIX + '/logger')
 def Logger(message):
