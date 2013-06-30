@@ -16,5 +16,11 @@
         "type": "bool",
         "label": "Automatically update the U-Appstore",
         "default": "True"
+    },
+    {
+        "id": "delete_data",
+        "type": "bool",
+        "label": "Delete plugin data when uninstalling",
+        "default": "True"
     }
 ]
