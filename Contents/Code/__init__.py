@@ -160,7 +160,7 @@ def InstallPlugin(plugin):
         Install(plugin, initial_download=True)
     return ObjectContainer(header=NAME, message='%s installed, restart PMS for changes to take effect.' % plugin['title'])
     
-@route(PREFIX + '/install', plugin=dict)
+@route(PREFIX + '/install', plugin=dict, initial_download=bool)
 def Install(plugin, initial_download=False):
     if initial_download:
         zipPath = plugin['tracking url']
@@ -219,7 +219,12 @@ def UnInstallPlugin(plugin):
     Logger('Uninstalling %s' % GetBundlePath(plugin))
     try:
         if Prefs['delete_data']:
-            DeleteFolder(GetSupportPath(plugin))
+            try:
+                DeleteFolder(GetSupportPath('Caches', plugin))
+                DeleteFolder(GetSupportPath('Data', plugin))
+                DeleteFolder(GetSupportPath('Preferences', plugin))
+            except:
+                Logger("Failed to remove support files. Attempting to uninstall plugin anyway.")
         DeleteFolder(GetBundlePath(plugin))
     except:
         Logger("Failed to remove all the bundle's files but we'll mark it uninstalled anyway.")
@@ -235,14 +240,18 @@ def DeleteFile(filePath):
 
 @route(PREFIX + '/deletefolder')
 def DeleteFolder(folderPath):
-    for file in os.listdir(folderPath):
-        path = Core.storage.join_path(folderPath, file)
-        try:
-            DeleteFile(path)
-        except:
-            DeleteFolder(path)
-    Logger('Removing ' + folderPath)
-    os.rmdir(folderPath)
+    Logger('Attempting to delete %s' % folderPath)
+    if os.path.exists(folderPath):
+        for file in os.listdir(folderPath):
+            path = Core.storage.join_path(folderPath, file)
+            try:
+                DeleteFile(path)
+            except:
+                DeleteFolder(path)
+        Logger('Removing ' + folderPath)
+        os.rmdir(folderPath)
+    else:
+        Logger("%s doesn not exist so we don't need to remove it" % folderPath)
     return
     
 @route(PREFIX + '/updatecheck')
@@ -285,8 +294,11 @@ def GetBundlePath(plugin):
     return Core.storage.join_path(GetPluginDirPath(), plugin['bundle'])
 
 @route(PREFIX + '/supportpath', plugin=dict)
-def GetSupportPath(plugin):
-    return Core.storage.join_path(Core.app_support_path, Core.config.plugin_support_dir_name, plugin['identifier'])
+def GetSupportPath(directory, plugin):
+    if directory == 'Preferences':
+        return Core.storage.join_path(Core.app_support_path, Core.config.plugin_support_dir_name, directory, (plugin['identifier'] + '.xml'))
+    else:
+        return Core.storage.join_path(Core.app_support_path, Core.config.plugin_support_dir_name, directory, plugin['identifier'])
 
 @route(PREFIX + '/logger')
 def Logger(message):
