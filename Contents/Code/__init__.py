@@ -218,6 +218,8 @@ def UpdateAll():
 def UnInstallPlugin(plugin):
     Logger('Uninstalling %s' % GetBundlePath(plugin))
     try:
+        if Prefs['delete_data']:
+            DeleteFolder(GetSupportPath(plugin))
         DeleteFolder(GetBundlePath(plugin))
     except:
         Logger("Failed to remove all the bundle's files but we'll mark it uninstalled anyway.")
