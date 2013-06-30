@@ -284,6 +284,6 @@ def GetBundlePath(plugin):
 @route(PREFIX + '/logger')
 def Logger(message):
     if Prefs['debug']:
-        Logger(message)
+        Log(message)
     else:
         pass
