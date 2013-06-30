@@ -306,3 +306,11 @@ def Logger(message):
         Log(message)
     else:
         pass
+
+'''allow plugins to mark themselves updated externally'''
+@route('%s/mark-updated/{title}' % PREFIX)
+def MarkUpdated(title):
+    Dict['Installed'][title]['installed'] = "True"
+    Dict['Installed'][title]['lastUpdate'] = Datetime.Now()
+    Dict['Installed'][title]['updateAvailable'] = "False"
+    Dict.Save()
