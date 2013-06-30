@@ -6,6 +6,8 @@ PREFIX = "/applications/unsupportedappstore"
 
 NAME = 'UnSupported AppStore'
 
+ART         = 'art-default.jpg'
+ICON        = 'icon-default.png'
 PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
@@ -17,6 +19,9 @@ DEV_MODE    = False
 def Start():
 
     HTTP.CacheTime = 0
+    
+    DirectoryObject.thumb = R(ICON)
+    ObjectContainer.art = R(ART)
     
     #Check the list of installed plugins
     if Dict['Installed'] == None:
