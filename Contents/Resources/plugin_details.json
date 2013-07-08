@@ -91,6 +91,19 @@
         "tracking url"    :     "http://bit.ly/YxSYFa"
     },
     {
+        "title"           :     "Crunchyroll",
+        "bundle"          :     "Crunchyroll.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch over 20,000 episodes of popular Anime & Drama 1-Hour after TV broadcast from the website Crunchyroll.com.",
+        "repo"            :     "git@github.com:MattRK/Crunchyroll.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.crunchyroll",
+        "icon"            :     "crunchyroll.png",
+        "hidden"          :     "False",
+        "date added"      :     "July 7, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Data18 Metadata Agent",
         "bundle"          :     "Data18.bundle",
         "type"            :     ["Metadata Agent", "Adult"],
