@@ -216,7 +216,7 @@
         "repo"            :     "git@github.com:ReallyFuzzy/IceFilms.bundle.git",
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.icefilms",
-        "icon"            :     "plex-ice-logo.jpg",
+        "icon"            :     "icefilms-logo.png",
         "hidden"          :     "False",
         "date added"      :     "October 2, 2011",
         "tracking url"    :     "http://bit.ly/TrGvvg"
