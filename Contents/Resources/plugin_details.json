@@ -235,6 +235,19 @@
         "tracking url"    :     "http://bit.ly/11vtl2P"
     },
     {
+        "title"           :     "ITV Player (UK)",
+        "bundle"          :     "ITV-Player.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "ITV Player has your favourite shows ready to watch whenever you want them. Browse and search for shows from all ITV channels from the last 31 days.",
+        "repo"            :     "git@github.com:ReallyFuzzy/ITV-Player.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.itvplayer",
+        "icon"            :     "ITV-Player-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "August 1, 2013",
+        "tracking url"    :     "http://bit.ly/"
+    },
+    {
         "title"           :     "Kink.com Metadata Agent",
         "bundle"          :     "Kink.bundle",
         "type"            :     ["Metadata Agent", "Adult"],
