@@ -248,6 +248,19 @@
         "tracking url"    :     "http://bit.ly/SGgQAx"
     },
     {
+        "title"           :     "Movie2k",
+        "bundle"          :     "MOVIE2K.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch Movies and TV Show Series from Movie4k.to.",
+        "repo"            :     "git@github.com:Joecowboy/MOVIE2K.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.movie2k",
+        "icon"            :     "movie2k-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "August 4, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Navi-X",
         "bundle"          :     "navix.bundle",
         "type"            :     ["Video"],
