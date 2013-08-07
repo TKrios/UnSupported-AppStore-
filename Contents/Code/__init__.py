@@ -27,6 +27,8 @@ def Start():
     if Dict['Installed'] == None:
         Dict['Installed'] = {'UnSupported Appstore' : {'lastUpdate': 'None', 'updateAvailable': 'False', 'installed': 'True'}}
     else:
+        if Dict['plugins']['UnSupported Appstore']['installed'] != 'True':
+            Dict['plugins']['UnSupported Appstore']['installed'] = 'True'
         Logger(Dict['Installed'])
         
     Logger('Plex support files are at ' + Core.app_support_path)
