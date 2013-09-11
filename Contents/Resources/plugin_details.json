@@ -379,6 +379,19 @@
         "tracking url"    :     "http://bit.ly/TrKkkc"
     },
     {
+        "title"           :     "RSS Feeds",
+        "bundle"          :     "RSSFeed.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch your favorite RSS Feeds",
+        "repo"            :     "git@github.com:shopgirl284/RSSFeed.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.rssfeeds",
+        "icon"            :     "rss-feed-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "September 11, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "SABnzbd+",
         "bundle"          :     "SABnzbd.bundle",
         "type"            :     ["Application"],
@@ -481,6 +494,19 @@
         "icon"            :     "icon-default.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "Webisodes",
+        "bundle"          :     "Webisodes.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch your favorite web series from Yahoo Screens, BlipTV, Vimeo, YouTube, as well as RSS Feeds",
+        "repo"            :     "git@github.com:shopgirl284/Webisodes.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.webisodes",
+        "icon"            :     "webisodes-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "September 11, 2013",
         "tracking url"    :     ""
     },
     {
