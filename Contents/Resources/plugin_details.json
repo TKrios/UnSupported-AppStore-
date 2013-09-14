@@ -148,13 +148,13 @@
         "bundle"          :     "Discovery.bundle",
         "type"            :     ["Video"],
         "description"     :     "Watch full episodes and clips from various Discovery Channels",
-        "repo"            :     "https://github.com/meriko/Discovery.bundle.git",
+        "repo"            :     "git@github.com:meriko/Discovery.bundle.git",
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.discovery",
         "icon"            :     "icon-discovery.png",
         "hidden"          :     "False",
-        "date added"      :     "Jul 15, 2013",
-        "tracking url"    :     ""
+        "date added"      :     "Sep 14, 2013",
+        "tracking url"    :     "http://bit.ly/1412CAz"
     },
     {
         "title"           :     "eporner",
