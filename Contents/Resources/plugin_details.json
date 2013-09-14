@@ -479,7 +479,8 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.unraid",
         "icon"            :     "unraid-icon.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
+        "reason_hidden"   :     "no longer supported",
         "date added"      :     "April 9, 2011",
         "tracking url"    :     "http://bit.ly/TDCWV7"
     },
