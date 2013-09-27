@@ -326,6 +326,19 @@
         "tracking url"    :     "http://bit.ly/YEYUIc"
     },
     {
+        "title"           :     "NHL",
+        "bundle"          :     "NHL.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Requires a subscription to NHL GameCenter\nWatch live out-of-market, regular season games in HD-quality and choose between the home or away team's broadcast.\nWatch on-demand full-length and condensed replays\nWatch classic games from the NHL Vault.",
+        "repo"            :     "git@github.com:mikedm139/NHL.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.nhl",
+        "icon"            :     "nhl-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "September 27, 2013",
+        "tracking url"    :     "http://bit.ly/18ap0bt"
+    },
+    {
         "title"           :     "Open Movie Database",
         "bundle"          :     "OpenMovieDatabase.bundle",
         "type"            :     ["Metadata Agent"],
