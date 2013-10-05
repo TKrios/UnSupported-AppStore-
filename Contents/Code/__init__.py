@@ -190,14 +190,10 @@ def Install(plugin, initial_download=False):
                 file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
                 Logger('Extracting folder ' + file_path)
                 Core.storage.ensure_dirs(file_path)
-        
-    Dict['Installed'][plugin['title']]['installed'] = "True"
-    Logger('%s "Installed" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['installed']))
-    Dict['Installed'][plugin['title']]['lastUpdate'] = Datetime.Now()
-    Logger('%s "LastUpdate" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['lastUpdate']))
-    Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
-    Logger('%s "updateAvailable" set to: %s' % (plugin['title'], Dict['Installed'][plugin['title']]['updateAvailable']))
-    Dict.Save()
+    
+    MarkUpdated(plugin['title'])
+    # "touch" the bundle to update the timestamp
+    os.utime(GetBundlePath(plugin), none)
     return
 
 @route(PREFIX + '/updateall')
@@ -313,6 +309,10 @@ def Logger(message):
 @route('%s/mark-updated/{title}' % PREFIX)
 def MarkUpdated(title):
     Dict['Installed'][title]['installed'] = "True"
+    Logger('%s "Installed" set to: %s' % (title, Dict['Installed'][title]['installed']))
     Dict['Installed'][title]['lastUpdate'] = Datetime.Now()
+    Logger('%s "LastUpdate" set to: %s' % (title, Dict['Installed'][title]['lastUpdate']))
     Dict['Installed'][title]['updateAvailable'] = "False"
+    Logger('%s "updateAvailable" set to: %s' % (title, Dict['Installed'][title]['updateAvailable']))
     Dict.Save()
+    
