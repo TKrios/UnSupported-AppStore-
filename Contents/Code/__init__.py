@@ -193,7 +193,7 @@ def Install(plugin, initial_download=False):
     
     MarkUpdated(plugin['title'])
     # "touch" the bundle to update the timestamp
-    os.utime(GetBundlePath(plugin), none)
+    os.utime(GetBundlePath(plugin), None)
     return
 
 @route(PREFIX + '/updateall')
