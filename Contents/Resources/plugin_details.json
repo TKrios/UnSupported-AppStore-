@@ -26,6 +26,19 @@
         "tracking url"    :     "http://bit.ly/Ua3xLR"
     },
     {
+        "title"           :     "Bay FM 99.9FM",
+        "bundle"          :     "BayFM999.bundle",
+        "type"            :     ["Music"],
+        "description"     :     "Plex plugin for Bay FM 99.9 Byron Bay, Australia",
+        "repo"            :     "git@github.com:jab-au/BayFM999.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.BayFM999",
+        "icon"            :     "bayfm999-icon.jpg",
+        "hidden"          :     "False",
+        "date added"      :     "October 25, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "beeg.com",
         "bundle"          :     "beeg.bundle",
         "type"            :     ["Video", "Adult"],
