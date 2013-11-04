@@ -537,6 +537,58 @@
         "tracking url"    :     "http://bit.ly/17WUG4H"
     },
     {
+        "title"           :     "Logo TV",
+        "bundle"          :     "LogoTV.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch shows from www.logotv.com",
+        "repo"            :     "git@github.com:shopgirl284/LogoTV.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.logotv",
+        "icon"            :     "logotv-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 04, 2013",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "MTV Shows",
+        "bundle"          :     "MTVShows.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch shows from www.mtv.com",
+        "repo"            :     "git@github.com:shopgirl284/MTVShows.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.mtvshows",
+        "icon"            :     "mtvshows-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 04, 2013",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "CMT Shows",
+        "bundle"          :     "CMT.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch shows from www.cmt.com",
+        "repo"            :     "git@github.com:shopgirl284/CMT.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.cmt",
+        "icon"            :     "cmt-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 04, 2013",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "VH1",
+        "bundle"          :     "VH1.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch shows from www.vh1.com",
+        "repo"            :     "git@github.com:shopgirl284/VH1.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.vh1",
+        "icon"            :     "vh1-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 04, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "WorldTV",
         "bundle"          :     "WorldTV.bundle",
         "type"            :     ["Video"],
