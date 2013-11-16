@@ -2,7 +2,7 @@ import os
 
 ####################################################################################################
 
-PREFIX = "/videos/unsupportedappstore"
+PREFIX = "/video/unsupportedappstore"
 
 NAME = 'UnSupported AppStore'
 
