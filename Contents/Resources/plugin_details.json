@@ -52,19 +52,6 @@
         "tracking url"    :     "http://bit.ly/RzwyNZ"
     },
     {
-        "title"           :     "CouchPotato",
-        "bundle"          :     "CouchPotato.bundle",
-        "type"            :     ["Application", "Video"],
-        "description"     :     "View, edit and add to your CouchPotato wanted list.",
-        "repo"            :     "git@github.com:mikedm139/CouchPotato.bundle.git",
-        "branch"          :     "master",
-        "identifier"      :     "com.plexapp.plugins.couchpotato",
-        "icon"            :     "couchpotato-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "April 9, 2011",
-        "tracking url"    :     "http://bit.ly/TsnkiY"
-    },
-     {
         "title"           :     "Channel7 (AU)",
         "bundle"          :     "Channel7.bundle",
         "type"            :     ["Video"],
@@ -102,6 +89,32 @@
         "hidden"          :     "False",
         "date added"      :     "May 5, 2013",
         "tracking url"    :     "http://bit.ly/YxSYFa"
+    },
+    {
+        "title"           :     "CMT Shows",
+        "bundle"          :     "CMT.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch shows from www.cmt.com",
+        "repo"            :     "git@github.com:shopgirl284/CMT.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.cmt",
+        "icon"            :     "cmt-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 04, 2013",
+        "tracking url"    :     "http://bit.ly/1hNRuPT"
+    },
+    {
+        "title"           :     "CouchPotato",
+        "bundle"          :     "CouchPotato.bundle",
+        "type"            :     ["Application", "Video"],
+        "description"     :     "View, edit and add to your CouchPotato wanted list.",
+        "repo"            :     "git@github.com:mikedm139/CouchPotato.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.couchpotato",
+        "icon"            :     "couchpotato-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "April 9, 2011",
+        "tracking url"    :     "http://bit.ly/TsnkiY"
     },
     {
         "title"           :     "Crunchyroll",
@@ -300,6 +313,19 @@
         "tracking url"    :     "http://bit.ly/SGgQAx"
     },
     {
+        "title"           :     "Logo TV",
+        "bundle"          :     "LogoTV.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch shows from www.logotv.com",
+        "repo"            :     "git@github.com:shopgirl284/LogoTV.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.logotv",
+        "icon"            :     "logotv-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 04, 2013",
+        "tracking url"    :     "http://bit.ly/19tdh5o"
+    },
+    {
         "title"           :     "Movie2k",
         "bundle"          :     "MOVIE2K.bundle",
         "type"            :     ["Video"],
@@ -311,6 +337,19 @@
         "hidden"          :     "False",
         "date added"      :     "August 4, 2013",
         "tracking url"    :     "http://bit.ly/13IkZGU"
+    },
+    {
+        "title"           :     "MTV Shows",
+        "bundle"          :     "MTVShows.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch shows from www.mtv.com",
+        "repo"            :     "git@github.com:shopgirl284/MTVShows.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.mtvshows",
+        "icon"            :     "mtvshows-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 04, 2013",
+        "tracking url"    :     "http://bit.ly/I6PmCs"
     },
     {
         "title"           :     "Navi-X",
@@ -524,6 +563,19 @@
         "tracking url"    :     ""
     },
     {
+        "title"           :     "VH1",
+        "bundle"          :     "VH1.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch shows from www.vh1.com",
+        "repo"            :     "git@github.com:shopgirl284/VH1.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.vh1",
+        "icon"            :     "vh1-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 04, 2013",
+        "tracking url"    :     "http://bit.ly/18DJcRj"
+    },
+    {
         "title"           :     "Webisodes",
         "bundle"          :     "Webisodes.bundle",
         "type"            :     ["Video"],
@@ -535,58 +587,6 @@
         "hidden"          :     "False",
         "date added"      :     "September 14, 2013",
         "tracking url"    :     "http://bit.ly/17WUG4H"
-    },
-    {
-        "title"           :     "Logo TV",
-        "bundle"          :     "LogoTV.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Watch shows from www.logotv.com",
-        "repo"            :     "git@github.com:shopgirl284/LogoTV.bundle.git",
-        "branch"          :     "master",
-        "identifier"      :     "com.plexapp.plugins.logotv",
-        "icon"            :     "logotv-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "November 04, 2013",
-        "tracking url"    :     ""
-    },
-    {
-        "title"           :     "MTV Shows",
-        "bundle"          :     "MTVShows.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Watch shows from www.mtv.com",
-        "repo"            :     "git@github.com:shopgirl284/MTVShows.bundle.git",
-        "branch"          :     "master",
-        "identifier"      :     "com.plexapp.plugins.mtvshows",
-        "icon"            :     "mtvshows-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "November 04, 2013",
-        "tracking url"    :     ""
-    },
-    {
-        "title"           :     "CMT Shows",
-        "bundle"          :     "CMT.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Watch shows from www.cmt.com",
-        "repo"            :     "git@github.com:shopgirl284/CMT.bundle.git",
-        "branch"          :     "master",
-        "identifier"      :     "com.plexapp.plugins.cmt",
-        "icon"            :     "cmt-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "November 04, 2013",
-        "tracking url"    :     ""
-    },
-    {
-        "title"           :     "VH1",
-        "bundle"          :     "VH1.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Watch shows from www.vh1.com",
-        "repo"            :     "git@github.com:shopgirl284/VH1.bundle.git",
-        "branch"          :     "master",
-        "identifier"      :     "com.plexapp.plugins.vh1",
-        "icon"            :     "vh1-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "November 04, 2013",
-        "tracking url"    :     ""
     },
     {
         "title"           :     "WorldTV",
