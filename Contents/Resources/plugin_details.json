@@ -435,13 +435,13 @@
         "bundle"          :     "RedTube.bundle",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch XXX-Videos from RedTube.com",
-        "repo"            :     "git@github.com:blaresteep/RedTube.bundle.git",
+        "repo"            :     "git@github.com:flownex/RedTube.bundle.git",
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.redtube",
         "icon"            :     "redtube-icon.png",
         "hidden"          :     "False",
-        "date added"      :     "November 12, 2013",
-        "tracking url"    :     "http://bit.ly/1fJxWI7"
+        "date added"      :     "February 28, 2012",
+        "tracking url"    :     "http://bit.ly/TrKkkc"
     },
     {
         "title"           :     "RSS Feeds",
