@@ -512,14 +512,14 @@
         "title"           :     "Trakt.tv plugin",
         "bundle"          :     "trakttv.bundle",
         "type"            :     ["Application"],
-        "description"     :     "Sync what you are watching to Trakt.",
-        "repo"            :     "git@github.com:tester22/Trakttv.bundle.git",
+        "description"     :     "Automatically scrobble all TV episodes and movies you are watching to trakt.tv!",
+        "repo"            :     "git@github.com:trakt/Plex-Trakt-Scrobbler.git",
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.trakttv",
         "icon"            :     "trakttv-icon.png",
         "hidden"          :     "False",
         "date added"      :     "November 16, 2012",
-        "tracking url"    :     "http://bit.ly/RHQihj"
+        "tracking url"    :     "http://bit.ly/18vC90y"
     },
     {
         "title"           :     "Unofficial IMDb API",
