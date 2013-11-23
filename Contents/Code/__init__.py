@@ -161,7 +161,17 @@ def InstallPlugin(plugin):
     else:
         Install(plugin, initial_download=True)
     return ObjectContainer(header=NAME, message='%s installed, restart PMS for changes to take effect.' % plugin['title'])
-    
+
+def JoinBundlePath(plugin, path):
+    bundle_path = GetBundlePath(plugin)
+    fragments = path.split('/')[1:]
+
+    # Remove the first fragment if it matches the bundle name
+    if len(fragments) and fragments[0].lower() == plugin['bundle'].lower():
+        fragments = fragments[1:]
+
+    return Core.storage.join_path(bundle_path, *fragments)
+
 @route(PREFIX + '/install', plugin=dict, initial_download=bool)
 def Install(plugin, initial_download=False):
     if initial_download:
@@ -171,29 +181,33 @@ def Install(plugin, initial_download=False):
     Logger('zipPath = ' + zipPath)
     Logger('Downloading from ' + zipPath)
     zipfile = Archive.ZipFromURL(zipPath)
-    Logger('Extracting to ' + GetBundlePath(plugin))
+
+    bundle_path = GetBundlePath(plugin)
+    Logger('Extracting to ' + bundle_path)
     
     for filename in zipfile:
         data = zipfile[filename]
+
         if not str(filename).endswith('/'):
             if not str(filename.split('/')[-1]).startswith('.'):
-                filename = ('/').join(filename.split('/')[1:])
-                file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
-                Logger('Extracting file' + file_path)
-                Core.storage.save(file_path, data)
+                path = JoinBundlePath(plugin, filename)
+
+                Logger('Extracting file' + path)
+                Core.storage.save(path, data)
             else:
                 Logger('Skipping "hidden" file: ' + filename)
         else:
             Logger(filename.split('/')[-2])
+
             if not str(filename.split('/')[-2]).startswith('.'):
-                filename = ('/').join(filename.split('/')[1:])
-                file_path = Core.storage.join_path(GetBundlePath(plugin), *filename.split('/'))
-                Logger('Extracting folder ' + file_path)
-                Core.storage.ensure_dirs(file_path)
+                path = JoinBundlePath(plugin, filename)
+
+                Logger('Extracting folder ' + path)
+                Core.storage.ensure_dirs(path)
     
     MarkUpdated(plugin['title'])
     # "touch" the bundle to update the timestamp
-    os.utime(GetBundlePath(plugin), None)
+    os.utime(bundle_path, None)
     return
 
 @route(PREFIX + '/updateall')
