@@ -222,6 +222,19 @@
         "tracking url"    :     "http://bit.ly/Vqol1E"
     },
     {
+        "title"           :     "Full Movies on Reddit",
+        "bundle"          :     "FullMoviesOnReddit.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch full movies found on /r/fullmoviesonyoutube",
+        "repo"            :     "git@github.com:jwdempsey/FullMoviesOnReddit.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.fullmoviesonreddit",
+        "icon"            :     "fullmoviesonreddit-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 26, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "HDBits Subtitles",
         "bundle"          :     "HdbitsSubtitles.bundle",
         "type"            :     ["Metadata Agent", "Subtitles"],
@@ -326,6 +339,19 @@
         "tracking url"    :     "http://bit.ly/19tdh5o"
     },
     {
+        "title"           :     "MediaPortal",
+        "bundle"          :     "MediaPortal.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch Live TV from a MediaPortal server",
+        "repo"            :     "git@github.com:jwdempsey/MediaPortal.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.mediaportal",
+        "icon"            :     "mediaportal-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 26, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Movie2k",
         "bundle"          :     "MOVIE2K.bundle",
         "type"            :     ["Video"],
@@ -402,6 +428,19 @@
         "hidden"          :     "False",
         "date added"      :     "May 21, 2012",
         "tracking url"    :     "http://bit.ly/Tx1Ntt"
+    },
+    {
+        "title"           :     "Plex Tools",
+        "bundle"          :     "PlexTools.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Download subtitles and convert videos to MP4",
+        "repo"            :     "git@github.com:jwdempsey/PlexTools.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.plextools",
+        "icon"            :     "plextools-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 26, 2013",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "PornHub",
@@ -560,6 +599,19 @@
         "icon"            :     "icon-default.png",
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "USTVnow",
+        "bundle"          :     "USTVnow.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch Live TV from ustvnow.com",
+        "repo"            :     "git@github.com:jwdempsey/USTVnow.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.ustvnow",
+        "icon"            :     "ustvnow-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "November 26, 2013",
         "tracking url"    :     ""
     },
     {
