@@ -11,5 +11,7 @@
 	<string>Elevated</string>
 	<key>PlexClientPlatforms</key>
 	<string>*</string>
+	<key>PlexPluginMode</key>
+	<string>Daemon</string>
 </dict>
 </plist>

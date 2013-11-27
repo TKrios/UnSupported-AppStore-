@@ -14,7 +14,7 @@
     {
         "id": "auto-update",
         "type": "bool",
-        "label": "Automatically update the U-Appstore",
+        "label": "Automatically update plugins in the background",
         "default": "True"
     },
     {

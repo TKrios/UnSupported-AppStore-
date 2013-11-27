@@ -1,4 +1,4 @@
-import os
+import os, time, random
 
 ####################################################################################################
 
@@ -34,6 +34,9 @@ def Start():
     Logger('Plex support files are at ' + Core.app_support_path)
     Logger('Plug-in bundles are located in ' + Core.storage.join_path(Core.app_support_path, Core.config.bundles_dir_name))
     Logger('Plug-in support files are located in ' + Core.storage.join_path(Core.app_support_path, Core.config.plugin_support_dir_name))
+    
+    if Prefs['auto-update']:
+        Thread.Create(BackgroundUpdater)
  
 @handler(PREFIX, NAME, "icon-default.png", "art-default.jpg")
 def MainMenu():
@@ -267,7 +270,7 @@ def DeleteFolder(folderPath):
     return
     
 @route(PREFIX + '/updatecheck')
-def CheckForUpdates():
+def CheckForUpdates(install=False):
     #use the github commit feed for each installed plugin to check for available updates
     @parallelize
     def GetUpdateList():
@@ -288,13 +291,36 @@ def CheckForUpdates():
                     
                     if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
                         Logger(plugin['title'] + ': Update available')
-                        if plugin['title'] == 'UnSupported Appstore' and Prefs['auto-update']:
-                            if not DEV_MODE:
+                        #if plugin['title'] == 'UnSupported Appstore' and Prefs['auto-update']:
+                        if install:
+                            if plugin['title'] == 'UnSupported Appstore' and DEV_MODE:
+                                pass
+                            else:
                                 update = Install(plugin)
                                 Logger(update)            
                     else:
                         Logger(plugin['title'] + ': Up-to-date')
         Dict.Save()
+    return
+
+
+@route(PREFIX + '/updater')
+def BackgroundUpdater():
+    while Prefs['auto-update']:
+        Logger("Running auto-update.")
+        CheckForUpdates(install=True)
+        # check for updates every 24hours... give or take 30 minutes to avoid hammering GitHub
+        sleep_time = 24*60*60 + (random.randint(-30,30))*60
+        hours, minutes = divmod(sleep_time/60, 60)
+        Logger("Updater will run again in %d hours and %d minutes" % (hours, minutes))
+        while sleep_time > 0:
+            remainder = sleep_time%(3600)
+            if  remainder > 0:
+                time.sleep(remainder)
+                sleep_time = sleep_time - remainder
+            Logger("Time until next auto-update = %d hours" % (int(sleep_time)/3600))
+            sleep_time = sleep_time - 3600
+            time.sleep(3600)
     return
     
 @route(PREFIX + '/plugindir')
