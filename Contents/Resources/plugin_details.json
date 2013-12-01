@@ -391,6 +391,19 @@
         "tracking url"    :     "http://bit.ly/12ZBKm3"
     },
     {
+        "title"           :     "NBCSports",
+        "bundle"          :     "NBCSports.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Video highlights from NBCSports.com",
+        "repo"            :     "git@github.com:datvance/NBCSports.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.nbcsports",
+        "icon"            :     "nbcsports-icon.jpg",
+        "hidden"          :     "False",
+        "date added"      :     "December 01, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Newzworthy",
         "bundle"          :     "Newzworthy.bundle",
         "type"            :     ["Application", "Video"],
