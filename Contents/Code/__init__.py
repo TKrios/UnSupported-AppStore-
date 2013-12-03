@@ -44,11 +44,9 @@ def MainMenu():
     #Load the list of available plugins
     Dict['plugins'] = LoadData()
     
-    #Check for available updates
-    updates = CheckForUpdates()
-    
     oc = ObjectContainer(no_cache=True)
     
+    oc.add(DirectoryObject(key=Callback(CheckForUpdates, return_message=True), title="Check for updates"))
     oc.add(DirectoryObject(key=Callback(GenreMenu, genre='New'), title='New'))
     oc.add(DirectoryObject(key=Callback(GenreMenu, genre='All'), title='All'))
     if Prefs['adult']:
@@ -270,7 +268,7 @@ def DeleteFolder(folderPath):
     return
     
 @route(PREFIX + '/updatecheck')
-def CheckForUpdates(install=False):
+def CheckForUpdates(install=False, return_message=False):
     #use the github commit feed for each installed plugin to check for available updates
     @parallelize
     def GetUpdateList():
@@ -291,7 +289,6 @@ def CheckForUpdates(install=False):
                     
                     if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
                         Logger(plugin['title'] + ': Update available')
-                        #if plugin['title'] == 'UnSupported Appstore' and Prefs['auto-update']:
                         if install:
                             if plugin['title'] == 'UnSupported Appstore' and DEV_MODE:
                                 pass
@@ -301,7 +298,10 @@ def CheckForUpdates(install=False):
                     else:
                         Logger(plugin['title'] + ': Up-to-date')
         Dict.Save()
-    return
+    if return_message:
+        return ObjectContainer(header="Unsupported Appstore", message="Update check complete.")
+    else:
+        return
 
 
 @route(PREFIX + '/updater')
