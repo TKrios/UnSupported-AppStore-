@@ -51,6 +51,19 @@
         "date added"      :     "April 22, 2011",
         "tracking url"    :     "http://bit.ly/RzwyNZ"
     },
+        {
+        "title"           :     "BringThePopcorn",
+        "bundle"          :     "BringThePopcorn.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch Movies from www.bringthepopcorn.net",
+        "repo"            :     "git@github.com:MaZZly/BringThePopcorn.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.bringthepopcorn",
+        "icon"            :     "bringthepopcorn-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "December 18, 2013",
+        "tracking url"    :     ""
+    },
     {
         "title"           :     "Channel7 (AU)",
         "bundle"          :     "Channel7.bundle",
