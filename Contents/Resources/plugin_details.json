@@ -62,7 +62,7 @@
         "icon"            :     "bringthepopcorn-icon.png",
         "hidden"          :     "False",
         "date added"      :     "December 18, 2013",
-        "tracking url"    :     ""
+        "tracking url"    :     "http://bit.ly/1dRo0ut"
     },
     {
         "title"           :     "Channel7 (AU)",
@@ -754,7 +754,8 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.findUnmatch",
         "icon"            :     "icon-FindUnmatched.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
+        "reason_hidden"   :     "duplicate entry... should not have been pushed in the first place :-/",
         "date added"      :     "December 9, 2013",
         "tracking url"    :     ""
     }
