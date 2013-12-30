@@ -300,6 +300,19 @@
         "tracking url"    :     "http://bit.ly/11vtl2P"
     },
     {
+        "title"           :     "IPTV",
+        "bundle"          :     "IPTV.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Plugin to play network streams (a.k.a. IPTV) from a M3U playlist",
+        "repo"            :     "git@github.com:Cigaras/IPTV.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.iptv",
+        "icon"            :     "iptv-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "December 30, 2013",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "ITV Player (UK)",
         "bundle"          :     "ITV-Player.bundle",
         "type"            :     ["Video"],
