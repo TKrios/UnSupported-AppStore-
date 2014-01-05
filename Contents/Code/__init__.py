@@ -58,7 +58,7 @@ def MainMenu():
     oc.add(DirectoryObject(key=Callback(GenreMenu, genre='Music'), title='Music'))
     oc.add(DirectoryObject(key=Callback(InstalledMenu), title='Installed'))
     oc.add(DirectoryObject(key=Callback(UpdateAll), title='Download updates',
-        summary="Update all installed plugins.\nThis may take a while and will require you to restart PMS for changes to take effect"))
+        summary="Update all installed plugins.\nThis may take a while."))
     oc.add(PrefsObject(title="Preferences", thumb=R(PREFS_ICON)))
 
     return oc
@@ -126,6 +126,8 @@ def PluginMenu(plugin):
     if Installed(plugin):
         if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
             oc.add(DirectoryObject(key=Callback(InstallPlugin, plugin=plugin), title="Update"))
+        else:
+            oc.add(DirectoryObject(key=Callback(CheckForUpdates, plugin=plugin, return_message=True, install=True), title="Check for Updates"))
         oc.add(DirectoryObject(key=Callback(UnInstallPlugin, plugin=plugin), title="UnInstall"))
     else:
         oc.add(DirectoryObject(key=Callback(InstallPlugin, plugin=plugin), title="Install"))
@@ -161,7 +163,7 @@ def InstallPlugin(plugin):
         Install(plugin)
     else:
         Install(plugin, initial_download=True)
-    return ObjectContainer(header=NAME, message='%s installed, restart PMS for changes to take effect.' % plugin['title'])
+    return ObjectContainer(header=NAME, message='%s installed.' % plugin['title'])
 
 def JoinBundlePath(plugin, path):
     bundle_path = GetBundlePath(plugin)
@@ -209,6 +211,13 @@ def Install(plugin, initial_download=False):
     MarkUpdated(plugin['title'])
     # "touch" the bundle to update the timestamp
     os.utime(bundle_path, None)
+    # To help installs/updates register without rebooting PMS...
+    # reload the system service if installing a new plugin
+    if initial_download:
+        HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
+    # or, if just applying an update, restart the updated plugin
+    else:
+        HTTP.Request('http://127.0.0.1:32400/:/plugins/%s/reloadServices' % plugin['identifier'], cacheTime=0, immediate=True)
     return
 
 @route(PREFIX + '/updateall')
@@ -225,7 +234,7 @@ def UpdateAll():
             Logger('%s is not installed.' % plugin['title'])
             pass
 
-    return ObjectContainer(header=NAME, message='Updates have been applied. Restart PMS for changes to take effect.')
+    return ObjectContainer(header=NAME, message='Updates have been applied.')
 
 @route(PREFIX + '/uninstall', plugin=dict)
 def UnInstallPlugin(plugin):
@@ -243,7 +252,8 @@ def UnInstallPlugin(plugin):
         Logger("Failed to remove all the bundle's files but we'll mark it uninstalled anyway.")
     Dict['Installed'][plugin['title']]['installed'] = "False"
     Dict.Save()
-    return ObjectContainer(header=NAME, message='%s uninstalled. Restart PMS for changes to take effect.' % plugin['title'])
+    HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
+    return ObjectContainer(header=NAME, message='%s uninstalled.' % plugin['title'])
 
 @route(PREFIX + '/deletefile')
 def DeleteFile(filePath):
@@ -267,48 +277,60 @@ def DeleteFolder(folderPath):
         Logger("%s doesn not exist so we don't need to remove it" % folderPath)
     return
     
-@route(PREFIX + '/updatecheck')
-def CheckForUpdates(install=False, return_message=False):
+@route(PREFIX + '/updatecheck', plugin=dict)
+def CheckForUpdates(install=False, return_message=False, plugin=None):
     #use the github commit feed for each installed plugin to check for available updates
-    @parallelize
-    def GetUpdateList():
-        for num in range(len(Dict['plugins'])):
-            @task
-            def GetRSSFeed(num=num):
-                plugin = Dict['plugins'][num]
-                if Installed(plugin):
-                    rssURL = 'https://%s/commits/%s.atom' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
-                    commits = HTML.ElementFromURL(rssURL)
-                    mostRecent = Datetime.ParseDate(commits.xpath('//entry')[0].xpath('./updated')[0].text[:-6])
-                    if Dict['Installed'][plugin['title']]['lastUpdate'] == "None":
-                        Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
-                    elif mostRecent > Dict['Installed'][plugin['title']]['lastUpdate']:
-                        Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
-                    else:
-                        Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
-                    
-                    if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-                        Logger(plugin['title'] + ': Update available')
-                        if install:
-                            if plugin['title'] == 'UnSupported Appstore' and DEV_MODE:
-                                pass
-                            else:
-                                update = Install(plugin)
-                                Logger(update)            
-                    else:
-                        Logger(plugin['title'] + ': Up-to-date')
-        Dict.Save()
-    if return_message:
-        return ObjectContainer(header="Unsupported Appstore", message="Update check complete.")
+    if plugin:
+        GetRSSFeed(plugin=plugin, install=install)
+        if return_message:
+            return ObjectContainer(header="Unsupported Appstore", message="%s : Up-to-date" % plugin['title'])
     else:
-        return
+        @parallelize
+        def GetUpdateList():
+            for num in range(len(Dict['plugins'])):
+                @task
+                def ParallelUpdater(num):
+                    plugin = Dict['plugins'][num]
+                    if Installed(plugin):
+                        GetRSSFeed(plugin=plugin, install=install)
+        if return_message:
+            return ObjectContainer(header="Unsupported Appstore", message="Update check complete.")
+        else:
+            return
 
+@route(PREFIX + '/GetFeed', plugin=dict)
+def GetRSSFeed(plugin, install=False):
+    rssURL = 'https://%s/commits/%s.atom' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+    commits = HTML.ElementFromURL(rssURL)
+    mostRecent = Datetime.ParseDate(commits.xpath('//entry')[0].xpath('./updated')[0].text[:-6])
+    if Dict['Installed'][plugin['title']]['lastUpdate'] == "None":
+        Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
+    elif mostRecent > Dict['Installed'][plugin['title']]['lastUpdate']:
+        Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
+    else:
+        Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
+
+    if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
+        Logger(plugin['title'] + ': Update available')
+        if install:
+            if plugin['title'] == 'UnSupported Appstore' and DEV_MODE:
+                pass
+            else:
+                Install(plugin)        
+    else:
+        Logger(plugin['title'] + ': Up-to-date')
+    
+    Dict.Save()
+    
+    return
 
 @route(PREFIX + '/updater')
 def BackgroundUpdater():
     while Prefs['auto-update']:
         Logger("Running auto-update.")
-        CheckForUpdates(install=True)
+        for plugin in Dict['plugins']:
+            if Installed(plugin):
+                GetRSSFeed(plugin=plugin, install=True)
         # check for updates every 24hours... give or take 30 minutes to avoid hammering GitHub
         sleep_time = 24*60*60 + (random.randint(-30,30))*60
         hours, minutes = divmod(sleep_time/60, 60)
@@ -355,4 +377,5 @@ def MarkUpdated(title):
     Dict['Installed'][title]['updateAvailable'] = "False"
     Logger('%s "updateAvailable" set to: %s' % (title, Dict['Installed'][title]['updateAvailable']))
     Dict.Save()
+    return
     
