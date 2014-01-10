@@ -26,6 +26,19 @@
         "tracking url"    :     "http://bit.ly/Ua3xLR"
     },
     {
+        "title"           :     "AnimePlus.tv",
+        "bundle"          :     "AnimePlus.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch anime shows and movies from AnimePlus.tv",
+        "repo"            :     "git@github.com:TehCrucible/AnimePlus.bundle",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.animeplus",
+        "icon"            :     "animeplus-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "January 10, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Bay FM 99.9FM",
         "bundle"          :     "BayFM999.bundle",
         "type"            :     ["Music"],
