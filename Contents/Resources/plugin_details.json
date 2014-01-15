@@ -600,6 +600,19 @@
         "tracking url"    :     "http://bit.ly/UsZJzI"
     },
     {
+        "title"           :     "Srt2Utf-8",
+        "bundle"          :     "SRT2UTF-8.bundle",
+        "type"            :     ["Agent"],
+        "description"     :     "Plex Media Agent, that'll convert sidecar subtitle files into UTF-8, if not",
+        "repo"            :     "git@github.com:ukdtom/SRT2UTF-8.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.agents.srt2utf8",
+        "icon"            :     "srt2utf-8.png",
+        "hidden"          :     "False",
+        "date added"      :     "January 15, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "SS Plex",
         "bundle"          :     "ss-plex.bundle",
         "type"            :     ["Video"],
