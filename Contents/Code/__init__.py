@@ -240,16 +240,20 @@ def UpdateAll():
 def UnInstallPlugin(plugin):
     Logger('Uninstalling %s' % GetBundlePath(plugin))
     try:
-        if Prefs['delete_data']:
-            try:
-                DeleteFolder(GetSupportPath('Caches', plugin))
-                DeleteFolder(GetSupportPath('Data', plugin))
-                DeleteFolder(GetSupportPath('Preferences', plugin))
-            except:
-                Logger("Failed to remove support files. Attempting to uninstall plugin anyway.")
         DeleteFolder(GetBundlePath(plugin))
     except:
         Logger("Failed to remove all the bundle's files but we'll mark it uninstalled anyway.")
+    if Prefs['delete_data']:
+        try:
+            try: DeleteFile(GetSupportPath('Preferences', plugin))
+            except: Logger("Failed to remove Preferences.")
+            try: DeleteFolder(GetSupportPath('Data', plugin))
+            except: Logger("Failed to remove Data.")
+            try: DeleteFolder(GetSupportPath('Caches', plugin))
+            except: Logger("Failed to remove Caches.")
+        except:
+            Logger("Failed to remove support files. Attempting to uninstall plugin anyway.")
+
     Dict['Installed'][plugin['title']]['installed'] = "False"
     Dict.Save()
     HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
@@ -267,14 +271,22 @@ def DeleteFolder(folderPath):
     if os.path.exists(folderPath):
         for file in os.listdir(folderPath):
             path = Core.storage.join_path(folderPath, file)
-            try:
-                DeleteFile(path)
-            except:
-                DeleteFolder(path)
-        Logger('Removing ' + folderPath)
-        os.rmdir(folderPath)
+            # If the path is a file then call DeleteFile or if it is a path call DeleteFolder.
+            # try/execpt here to not stop the whole operation if the delete fails.
+            if os.path.isfile(path):
+                Logger('Removing ' + path)
+                try: DeleteFile(path)
+                except: Logger('Failed to remove ' + path)
+            elif os.path.isdir(path):
+                Logger('Removing ' + path)
+                try: DeleteFolder(path)
+                except: Logger('Failed to remove ' + path)
+            else:
+                Logger('Do not know what to do with ' + path)
+        try:os.rmdir(folderPath)
+        except: Logger('Failed to remove ' + folderPath); explode
     else:
-        Logger("%s doesn not exist so we don't need to remove it" % folderPath)
+        Logger("%s does not exist so we don't need to remove it" % folderPath)
     return
     
 @route(PREFIX + '/updatecheck', plugin=dict)
