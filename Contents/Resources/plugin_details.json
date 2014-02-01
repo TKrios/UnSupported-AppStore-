@@ -508,6 +508,19 @@
         "tracking url"    :     "http://bit.ly/196niWR"
     },
     {
+        "title"           :     "Podnapisi Subtitles",
+        "bundle"          :     "PodnapisiSubtitles.bundle",
+        "type"            :     ["Metadata Agent", "Subtitles"],
+        "description"     :     "Downloads subtitles automatically from Podnapisi.net",
+        "repo"            :     "git@github.com:Coi-l/PodnapisiSubtitles.bundle.git",
+        "identifier"      :     "com.plexapp.agents.podnapisi",
+        "branch"          :     "master",
+        "icon"            :     "podnapisi-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "January 31, 2014",
+        "tracking url"    :     "http://bit.ly/1a7oCyU"
+    },
+    {
         "title"           :     "PornHub",
         "bundle"          :     "PornHub.bundle",
         "type"            :     ["Video", "Adult"],
