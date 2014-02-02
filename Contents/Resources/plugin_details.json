@@ -772,6 +772,19 @@
         "tracking url"    :     "http://bit.ly/YF0CcD"
     },
     {
+        "title"           :     "Yify",
+        "bundle"          :     "Yify.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch full movies from Yify TV",
+        "repo"            :     "git@github.com:piplongrun/Yify.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.yify",
+        "icon"            :     "yify-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 2, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "YouJizz",
         "bundle"          :     "YouJizz.bundle",
         "type"            :     ["Video", "Adult"],
