@@ -811,7 +811,7 @@
         "tracking url"    :     "http://bit.ly/Xbs97u"
     },
     {
-        "title"           :     "FindUnmatched",
+        "title"           :     "FindUnmatched - Duplicate Entry",
         "bundle"          :     "Plex-FindUnmatched.bundle",
         "type"            :     ["Application"],
         "description"     :     "Scan your medias, and report medias missing from the database.",
