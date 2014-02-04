@@ -65,6 +65,19 @@
         "tracking url"    :     "http://bit.ly/RzwyNZ"
     },
         {
+        "title"           :     "Big 12 Sports",
+        "bundle"          :     "Big12Sports.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Highlights and Replays from big12sports.com",
+        "repo"            :     "https://github.com/datvance/Big12Sports.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.big12sports",
+        "icon"            :     "big12sports-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 3, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "BringThePopcorn",
         "bundle"          :     "BringThePopcorn.bundle",
         "type"            :     ["Video"],
@@ -115,6 +128,19 @@
         "hidden"          :     "False",
         "date added"      :     "May 5, 2013",
         "tracking url"    :     "http://bit.ly/YxSYFa"
+    },
+    {
+        "title"           :     "Christian Science",
+        "bundle"          :     "ChristianScience.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Lectures, church services and other media about Christian Science",
+        "repo"            :     "https://github.com/datvance/ChristianScience.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.christianscience",
+        "icon"            :     "christianscience-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 3, 2014",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "CMT Shows",
@@ -611,6 +637,19 @@
         "hidden"          :     "False",
         "date added"      :     "April 9, 2011",
         "tracking url"    :     "http://bit.ly/UsZJzI"
+    },
+    {
+        "title"           :     "SmugMug",
+        "bundle"          :     "SmugMug.bundle",
+        "type"            :     ["Pictures"],
+        "description"     :     "Photo Galleries from SmugMug",
+        "repo"            :     "https://github.com/datvance/SmugMug.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.smugmug",
+        "icon"            :     "smugmug-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 3, 2014",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "Srt2Utf-8",
