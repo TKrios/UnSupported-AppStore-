@@ -779,7 +779,7 @@
         "repo"            :     "git@github.com:piplongrun/Yify.bundle.git",
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.yify",
-        "icon"            :     "yify-icon.png",
+        "icon"            :     "yify-icon.jpg",
         "hidden"          :     "False",
         "date added"      :     "February 2, 2014",
         "tracking url"    :     "http://bit.ly/LsQOR8"
