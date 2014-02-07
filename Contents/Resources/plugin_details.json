@@ -785,6 +785,32 @@
         "tracking url"    :     ""
     },
     {
+        "title"           :     "XBMCnfoMoviesImporter",
+        "bundle"          :     "XBMCnfoMoviesImporter.bundle",
+        "type"            :     ["Agent"],
+        "description"     :     "Import Movies information from locally exported XBMC database.",
+        "repo"            :     "git@github.com:gboudreau/XBMCnfoMoviesImporter.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.agents.xbmcnfo",
+        "icon"            :     "xbmcnfomoviesimporter-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 07, 2014",
+        "tracking url"    :     ""
+    },
+    {
+        "title"           :     "XBMCnfoTVImporter",
+        "bundle"          :     "XBMCnfoTVImporter.bundle",
+        "type"            :     ["Agent"],
+        "description"     :     "Import TVShow information from locally exported XBMC database.",
+        "repo"            :     "git@github.com:gboudreau/XBMCnfoTVImporter.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.agents.xbmcnfotv",
+        "icon"            :     "xbmcnfotvimporter-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 07, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "xHamster",
         "bundle"          :     "xHamster.bundle",
         "type"            :     ["Video", "Adult"],
