@@ -239,34 +239,42 @@ def UpdateAll():
 @route(PREFIX + '/uninstall', plugin=dict)
 def UnInstallPlugin(plugin):
     Logger('Uninstalling %s' % GetBundlePath(plugin))
+    # Generate and set a key to use to verify DeleteFile and DeleteFolder were called from within this plugin.
+    code = genCode()
+    Dict['deleteCode'] = code
     try:
         DeleteFolder(GetBundlePath(plugin))
     except:
         Logger("Failed to remove all the bundle's files but we'll mark it uninstalled anyway.")
     if Prefs['delete_data']:
         try:
-            try: DeleteFile(GetSupportPath('Preferences', plugin))
+            try: DeleteFile(GetSupportPath('Preferences', plugin), code)
             except: Logger("Failed to remove Preferences.")
-            try: DeleteFolder(GetSupportPath('Data', plugin))
+            try: DeleteFolder(GetSupportPath('Data', plugin), code)
             except: Logger("Failed to remove Data.")
-            try: DeleteFolder(GetSupportPath('Caches', plugin))
+            try: DeleteFolder(GetSupportPath('Caches', plugin), code)
             except: Logger("Failed to remove Caches.")
         except:
             Logger("Failed to remove support files. Attempting to uninstall plugin anyway.")
 
     Dict['Installed'][plugin['title']]['installed'] = "False"
+    Dict['deleteCode'] = '' # Clear the key
     Dict.Save()
     HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
     return ObjectContainer(header=NAME, message='%s uninstalled.' % plugin['title'])
 
 @route(PREFIX + '/deletefile')
-def DeleteFile(filePath):
+def DeleteFile(filePath, code):
+    # Verify we were given a good key
+    if code != Dict['deleteCode']: Logger("DeleteFile received incorrect code"); return
     Logger('Removing ' + filePath)
     os.remove(filePath)
     return
 
 @route(PREFIX + '/deletefolder')
-def DeleteFolder(folderPath):
+def DeleteFolder(folderPath, code):
+    # Verify we were given a good key
+    if code != Dict['deleteCode']: Logger("DeleteFolder received incorrect code"); return
     Logger('Attempting to delete %s' % folderPath)
     if os.path.exists(folderPath):
         for file in os.listdir(folderPath):
@@ -275,11 +283,11 @@ def DeleteFolder(folderPath):
             # try/execpt here to not stop the whole operation if the delete fails.
             if os.path.isfile(path):
                 Logger('Removing ' + path)
-                try: DeleteFile(path)
+                try: DeleteFile(path, code)
                 except: Logger('Failed to remove ' + path)
             elif os.path.isdir(path):
                 Logger('Removing ' + path)
-                try: DeleteFolder(path)
+                try: DeleteFolder(path, code)
                 except: Logger('Failed to remove ' + path)
             else:
                 Logger('Do not know what to do with ' + path)
@@ -288,7 +296,14 @@ def DeleteFolder(folderPath):
     else:
         Logger("%s does not exist so we don't need to remove it" % folderPath)
     return
-    
+
+@route(PREFIX + '/genCode')
+def genCode(length=20):
+    # Generate and return a random alphanumeric key.
+    chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    code = ''.join(random.choice(chars) for x in range(length))
+    return code
+
 @route(PREFIX + '/updatecheck', plugin=dict)
 def CheckForUpdates(install=False, return_message=False, plugin=None):
     #use the github commit feed for each installed plugin to check for available updates
