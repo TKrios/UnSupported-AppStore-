@@ -1,4 +1,4 @@
-import os, time, random
+import os, time, random, urllib
 
 ####################################################################################################
 
@@ -62,6 +62,19 @@ def MainMenu():
     oc.add(PrefsObject(title="Preferences", thumb=R(PREFS_ICON)))
 
     return oc
+
+@route(PREFIX + '/ValidatePrefs')
+def ValidatePrefs():
+    # If Prefs['clear_dict'] is True clear the Dict file and reset the Pref
+    if Prefs['clear_dict']:
+        Logger("Resetting Dict[]")
+        Dict.Reset() # This doesn't seem to work, but new values are set below anyways.
+        Dict.Save()
+        # Note: Setting lastUpdate to None causes an update to run. Which is probably a good thing if the Dict[] needs to be reset.
+        Dict['Installed'] = {'UnSupported Appstore' : {'lastUpdate': 'None', 'updateAvailable': 'False', 'installed': 'True'}}
+        Dict['plugins'] = LoadData()
+        # Reset Prefs['clear_dict'] to false.
+        urllib.urlopen('http://localhost:32400/:/plugins/com.plexapp.plugins.unsupportedappstore/prefs/set?clear_dict=False')
 
 @route(PREFIX + '/genre')
 def GenreMenu(genre):
