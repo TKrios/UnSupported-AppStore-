@@ -1,4 +1,4 @@
-import os, time, random, urllib
+import os, time, random
 
 ####################################################################################################
 
@@ -74,7 +74,7 @@ def ValidatePrefs():
         Dict['Installed'] = {'UnSupported Appstore' : {'lastUpdate': 'None', 'updateAvailable': 'False', 'installed': 'True'}}
         Dict['plugins'] = LoadData()
         # Reset Prefs['clear_dict'] to false.
-        urllib.urlopen('http://localhost:32400/:/plugins/com.plexapp.plugins.unsupportedappstore/prefs/set?clear_dict=False')
+        HTTP.Request('http://localhost:32400/:/plugins/com.plexapp.plugins.unsupportedappstore/prefs/set?clear_dict=False', immediate=True)
 
 @route(PREFIX + '/genre')
 def GenreMenu(genre):
