@@ -143,6 +143,19 @@
         "tracking url"    :     "http://bit.ly/1lQMPim"
     },
     {
+        "title"           :     "ClickPlay",
+        "bundle"          :     "ClickPlay.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch TV series from clickplay.to",
+        "repo"            :     "git@github.com:piplongrun/ClickPlay.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.clickplay",
+        "icon"            :     "clickplay-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 20, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "CMT Shows",
         "bundle"          :     "CMT.bundle",
         "type"            :     ["Video"],
@@ -350,6 +363,19 @@
         "hidden"          :     "False",
         "date added"      :     "December 30, 2013",
         "tracking url"    :     "http://bit.ly/1cImRXU"
+    },
+    {
+        "title"           :     "iSho.ws",
+        "bundle"          :     "iSho-ws.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch TV series from iSho.ws",
+        "repo"            :     "git@github.com:piplongrun/iSho-ws.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.ishows",
+        "icon"            :     "isho-ws-icon.jpg",
+        "hidden"          :     "False",
+        "date added"      :     "February 20, 2014",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "ITV Player (UK)",
@@ -676,6 +702,19 @@
         "hidden"          :     "False",
         "date added"      :     "October 11, 2012",
         "tracking url"    :     "http://bit.ly/UksVwo"
+    },
+    {
+        "title"           :     "Sweflix",
+        "bundle"          :     "Sweflix.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch movies from Sweflix.com",
+        "repo"            :     "git@github.com:piplongrun/Sweflix.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.sweflix",
+        "icon"            :     "sweflix-icon.jpg",
+        "hidden"          :     "False",
+        "date added"      :     "February 20, 2014",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "Trakt.tv plugin",
