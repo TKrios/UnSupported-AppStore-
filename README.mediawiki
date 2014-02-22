@@ -17,3 +17,5 @@ If you have authored a plugin and would like for it to appear in the UnSupported
 Once the changes have been reviewed, they will be merged and your plugin will appear in the UnSupported AppStore. Please keep in mind for future development that, since the AppStore pulls updates directly from your plugins git repository that until any code changes are tested, it is best to work in a branch other than 'master'.
 
 As a general rule, I suggest that channels be designated to work on all Plex clients unless there are known issues with a particular client-type. This will decrease users' reliance on the "Disable Capability Checking" option which otherwise opens the door for them to have more troubles with other channels (both official and unofficial). To make sure all clients are supported, just set the string value for the "PlexClientPlatforms" key to "*" in your plugin's Info.plist.
+
+Developers, feel free to check the download stats for your plugin using the bit.ly link in the plugin_details.json. The stats page for each link can be accessed by appending '+' to the URL.
