@@ -35,8 +35,12 @@ def Start():
     Logger('Plug-in bundles are located in ' + Core.storage.join_path(Core.app_support_path, Core.config.bundles_dir_name))
     Logger('Plug-in support files are located in ' + Core.storage.join_path(Core.app_support_path, Core.config.plugin_support_dir_name))
     
+    updater_running = False
+    
     if Prefs['auto-update']:
-        Thread.Create(BackgroundUpdater)
+        if not updater_running:
+            updater_running = True
+            Thread.Create(BackgroundUpdater)
  
 @handler(PREFIX, NAME, "icon-default.png", "art-default.jpg")
 def MainMenu():
