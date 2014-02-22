@@ -63,6 +63,19 @@ def MainMenu():
 
     return oc
 
+@route(PREFIX + '/ValidatePrefs')
+def ValidatePrefs():
+    # If Prefs['clear_dict'] is True clear the Dict file and reset the Pref
+    if Prefs['clear_dict']:
+        Logger("Resetting Dict[]")
+        Dict.Reset() # This doesn't seem to work, but new values are set below anyways.
+        Dict.Save()
+        # Note: Setting lastUpdate to None causes an update to run. Which is probably a good thing if the Dict[] needs to be reset.
+        Dict['Installed'] = {'UnSupported Appstore' : {'lastUpdate': 'None', 'updateAvailable': 'False', 'installed': 'True'}}
+        Dict['plugins'] = LoadData()
+        # Reset Prefs['clear_dict'] to false.
+        HTTP.Request('http://localhost:32400/:/plugins/com.plexapp.plugins.unsupportedappstore/prefs/set?clear_dict=False', immediate=True)
+
 @route(PREFIX + '/genre')
 def GenreMenu(genre):
     oc = ObjectContainer(title2=genre, no_cache=True)
