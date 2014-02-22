@@ -560,6 +560,19 @@
         "tracking url"    :     "http://bit.ly/196niWR"
     },
     {
+        "title"           :     "PLinkTV - Plex Link TV",
+        "bundle"          :     "PLinkTV.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Build your own VOD service by hosting the media at any cloud service.",
+        "repo"            :     "git@github.com:realriot/PLinkTV.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.plinktv",
+        "icon"            :     "plinktv-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 21, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Podnapisi Subtitles",
         "bundle"          :     "PodnapisiSubtitles.bundle",
         "type"            :     ["Metadata Agent", "Subtitles"],
@@ -926,19 +939,6 @@
         "hidden"          :     "True",
         "reason_hidden"   :     "duplicate entry... should not have been pushed in the first place :-/",
         "date added"      :     "December 9, 2013",
-        "tracking url"    :     ""
-    },
-    {
-        "title"           :     "PLinkTV - Plex Link TV",
-        "bundle"          :     "PLinkTV.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Build your own VOD service by hosting the media at any cloud service.",
-        "repo"            :     "git@github.com:realriot/PLinkTV.bundle.git",
-        "branch"          :     "master",
-        "identifier"      :     "com.plexapp.plugins.plinktv",
-        "icon"            :     "plinktv-icon.png",
-        "hidden"          :     "False",
-        "date added"      :     "February 21, 2014",
         "tracking url"    :     ""
     }
 ]
