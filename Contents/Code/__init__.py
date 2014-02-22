@@ -370,6 +370,8 @@ def GetRSSFeed(plugin, install=False):
 
 @route(PREFIX + '/updater')
 def BackgroundUpdater():
+    if not Dict['plugins']:
+        Dict['plugins'] = LoadData()
     while Prefs['auto-update']:
         Logger("Running auto-update.")
         for plugin in Dict['plugins']:
