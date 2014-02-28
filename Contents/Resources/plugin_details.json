@@ -248,6 +248,19 @@
         "tracking url"    :     "http://bit.ly/1412CAz"
     },
     {
+        "title"           :     "Dropbox",
+        "bundle"          :     "Dropbox.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Browse your Dropbox content direclty from any Plex device.",
+        "repo"            :     "git@github.com:realriot/Dropbox.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.dropbox",
+        "icon"            :     "dropbox-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "February 28, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "eporner",
         "bundle"          :     "eporner.bundle",
         "type"            :     ["Video", "Adult"],
