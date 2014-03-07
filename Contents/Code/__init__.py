@@ -333,7 +333,7 @@ def CheckForUpdates(install=False, return_message=False, plugin=None):
         def GetUpdateList():
             for num in range(len(Dict['plugins'])):
                 @task
-                def ParallelUpdater(num):
+                def ParallelUpdater(num=num):
                     plugin = Dict['plugins'][num]
                     if Installed(plugin):
                         GetRSSFeed(plugin=plugin, install=install)
