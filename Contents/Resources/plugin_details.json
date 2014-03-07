@@ -150,7 +150,7 @@
         "repo"            :     "git@github.com:piplongrun/ClickPlay.bundle.git",
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.clickplay",
-        "icon"            :     "clickplay-icon.png",
+        "icon"            :     "clickplay-icon.jpg",
         "hidden"          :     "False",
         "date added"      :     "February 20, 2014",
         "tracking url"    :     "http://bit.ly/1cbMQDP"
@@ -359,7 +359,7 @@
         "repo"            :     "git@github.com:mikedm139/IMDb-Trailers.bundle.git",
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.imdbtrailers",
-        "icon"            :     "IMDB-Trailers-icon.png",
+        "icon"            :     "IMDb-Trailers-icon.png",
         "hidden"          :     "False",
         "date added"      :     "April 20, 2013",
         "tracking url"    :     "http://bit.ly/11vtl2P"
