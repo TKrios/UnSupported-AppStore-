@@ -260,7 +260,7 @@ def UnInstallPlugin(plugin):
     code = genCode()
     Dict['deleteCode'] = code
     try:
-        DeleteFolder(GetBundlePath(plugin))
+        DeleteFolder(GetBundlePath(plugin), code)
     except:
         Logger("Failed to remove all the bundle's files but we'll mark it uninstalled anyway.")
     if Prefs['delete_data']:
