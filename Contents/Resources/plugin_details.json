@@ -665,6 +665,19 @@
         "tracking url"    :     "http://bit.ly/TrKkkc"
     },
     {
+        "title"           :     "Rooster Teeth",
+        "bundle"          :     "RoosterTeeth.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch videos from Red vs. Blue, Achievement Hunter, RT Shorts, RWBY, and lots more",
+        "repo"            :     "git@github.com:meriko/RoosterTeeth.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.roosterteeth",
+        "icon"            :     "roosterteeth-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 08, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "RSS Feeds",
         "bundle"          :     "RSSFeed.bundle",
         "type"            :     ["Video"],
