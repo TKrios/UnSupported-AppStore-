@@ -456,6 +456,19 @@
         "tracking url"    :     "http://bit.ly/1lFSWox"
     },
     {
+        "title"           :     "Link TV",
+        "bundle"          :     "LinkTV.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Link TV broadcasts programs that engage, educate and activate viewers to become involved in the world. These programs provide a unique perspective on international news, current events, and diverse cultures, presenting issues not often covered in the US media.",
+        "repo"            :     "git@github.com:meriko/LinkTV.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.linktv",
+        "icon"            :     "linktv-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 08, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "LiveLeak",
         "bundle"          :     "LiveLeak.bundle",
         "type"            :     ["Video"],
