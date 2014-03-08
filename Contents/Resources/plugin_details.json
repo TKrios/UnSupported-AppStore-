@@ -810,6 +810,19 @@
         "tracking url"    :     "http://bit.ly/1c9977Z"
     },
     {
+        "title"           :     "Vice",
+        "bundle"          :     "Vice.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Online den of nefarious activities, investigative journalism, and enlightening documentaries. (US version)",
+        "repo"            :     "git@github.com:meriko/Vice.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.vice",
+        "icon"            :     "vice-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 08, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "VH1",
         "bundle"          :     "VH1.bundle",
         "type"            :     ["Video"],
