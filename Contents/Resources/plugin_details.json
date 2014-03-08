@@ -300,6 +300,19 @@
         "tracking url"    :     "http://bit.ly/Vqol1E"
     },
     {
+        "title"           :     "FilmOn",
+        "bundle"          :     "FilmOn.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch over 600 Free Live TV Channels",
+        "repo"            :     "git@github.com:meriko/FilmOn.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.filmon",
+        "icon"            :     "filmon-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 08, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "FindUnmatched",
         "bundle"          :     "Plex-FindUnmatched.bundle",
         "type"            :     ["Application"],
