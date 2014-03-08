@@ -521,6 +521,19 @@
         "tracking url"    :     "http://bit.ly/1bBXhoq"
     },
     {
+        "title"           :     "NewsLook",
+        "bundle"          :     "NewsLook.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Breaking Video News Online",
+        "repo"            :     "git@github.com:meriko/NewsLook.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.newslook",
+        "icon"            :     "newslook-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 08, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Newzworthy",
         "bundle"          :     "Newzworthy.bundle",
         "type"            :     ["Application", "Video"],
