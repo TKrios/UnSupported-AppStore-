@@ -443,6 +443,19 @@
         "tracking url"    :     "http://bit.ly/1lFSWox"
     },
     {
+        "title"           :     "LiveLeak",
+        "bundle"          :     "LiveLeak.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Redefining the Media",
+        "repo"            :     "git@github.com:meriko/LiveLeak.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.liveleak",
+        "icon"            :     "liveleak-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 08, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Logo TV",
         "bundle"          :     "LogoTV.bundle",
         "type"            :     ["Video"],
