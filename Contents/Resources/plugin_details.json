@@ -365,6 +365,19 @@
         "tracking url"    :     "http://bit.ly/11vtl2P"
     },
     {
+        "title"           :     "Internet Archive",
+        "bundle"          :     "InternetArchive.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch and listen to free videos and music from the non-profit digital online library: Internet Archive",
+        "repo"            :     "git@github.com:meriko/InternetArchive.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.internetarchive",
+        "icon"            :     "internetarchive-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 08, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "IPTV",
         "bundle"          :     "IPTV.bundle",
         "type"            :     ["Video"],
