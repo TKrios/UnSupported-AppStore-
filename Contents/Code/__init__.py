@@ -29,7 +29,12 @@ def Start():
     else:
         if not Dict['Installed']['UnSupported Appstore']['installed']:
             Dict['Installed']['UnSupported Appstore']['installed'] = True
-        Logger(Dict['Installed'])
+    
+    try: version = Dict['installed']['UnSupported Appstore']['version']
+    except: version = 'unknown'
+    Logger('UnSupported Appstore version: %s' % version, force=True) 
+    
+    Logger(Dict['Installed'])
         
     Logger('Plex support files are at ' + Core.app_support_path)
     Logger('Plug-in bundles are located in ' + Core.storage.join_path(Core.app_support_path, Core.config.bundles_dir_name))
@@ -182,6 +187,7 @@ def InstallPlugin(plugin):
         Install(plugin, initial_download=True)
     return ObjectContainer(header=NAME, message='%s installed.' % plugin['title'])
 
+@route(PREFIX + '/joinpath', plugin=dict)
 def JoinBundlePath(plugin, path):
     bundle_path = GetBundlePath(plugin)
     fragments = path.split('/')[1:]
@@ -193,9 +199,12 @@ def JoinBundlePath(plugin, path):
     return Core.storage.join_path(bundle_path, *fragments)
 
 @route(PREFIX + '/install', plugin=dict, initial_download=bool)
-def Install(plugin, initial_download=False):
+def Install(plugin, version=None, initial_download=False):
     if initial_download:
         zipPath = plugin['tracking url']
+        rssURL = 'https://%s/commits/%s.atom' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+        commits = HTML.ElementFromURL(rssURL)
+        version = commits.xpath('//entry')[0].xpath('./id')[0].text.split('/')[-1][:10]
     else:
         zipPath = 'http://%s/archive/%s.zip' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
     Logger('zipPath = ' + zipPath)
@@ -225,7 +234,7 @@ def Install(plugin, initial_download=False):
                 Logger('Extracting folder ' + path)
                 Core.storage.ensure_dirs(path)
     
-    MarkUpdated(plugin['title'])
+    MarkUpdated(plugin['title'], version=version)
     # "touch" the bundle to update the timestamp
     os.utime(bundle_path, None)
     # To help installs/updates register without rebooting PMS...
@@ -255,7 +264,7 @@ def UpdateAll():
 
 @route(PREFIX + '/uninstall', plugin=dict)
 def UnInstallPlugin(plugin):
-    Logger('Uninstalling %s' % GetBundlePath(plugin))
+    Logger('Uninstalling %s' % GetBundlePath(plugin), force=True)
     # Generate and set a key to use to verify DeleteFile and DeleteFolder were called from within this plugin.
     code = genCode()
     Dict['deleteCode'] = code
@@ -275,6 +284,7 @@ def UnInstallPlugin(plugin):
             Logger("Failed to remove support files. Attempting to uninstall plugin anyway.")
 
     Dict['Installed'][plugin['title']]['installed'] = "False"
+    Dict['Installed'][plugin['title']]['version'] = None
     Dict['deleteCode'] = '' # Clear the key
     Dict.Save()
     HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
@@ -347,22 +357,32 @@ def GetRSSFeed(plugin, install=False):
     rssURL = 'https://%s/commits/%s.atom' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
     commits = HTML.ElementFromURL(rssURL)
     mostRecent = Datetime.ParseDate(commits.xpath('//entry')[0].xpath('./updated')[0].text[:-6])
+    commitHash = commits.xpath('//entry')[0].xpath('./id')[0].text.split('/')[-1][:10]
     if Dict['Installed'][plugin['title']]['lastUpdate'] == "None":
         Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
     elif mostRecent > Dict['Installed'][plugin['title']]['lastUpdate']:
         Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
     else:
         Dict['Installed'][plugin['title']]['updateAvailable'] = "False"
+        # start adding version hashes to already installed plugins by checking if the key exists
+        if 'version' not in Dict['Installed'][plugin['title']]:
+            Dict['Installed'][plugin['title']]['version'] = commitHash
+        else:
+            version = Dict['Installed'][plugin['title']]['version']
+            # compared stored version to latest commitHash
+            if version != commitHash: #if they don't match better update for good measure
+                Dict['Installed'][plugin['title']]['updateAvailable'] = "True"
+        
 
     if Dict['Installed'][plugin['title']]['updateAvailable'] == "True":
-        Logger(plugin['title'] + ': Update available')
+        Logger(plugin['title'] + ': Update available', force=True)
         if install:
             if plugin['title'] == 'UnSupported Appstore' and DEV_MODE:
                 pass
             else:
-                Install(plugin)        
+                Install(plugin, version=commitHash)
     else:
-        Logger(plugin['title'] + ': Up-to-date')
+        Logger(plugin['title'] + ': Up-to-date; Version %s' % commitHash, force=True)
     
     Dict.Save()
     
@@ -373,14 +393,14 @@ def BackgroundUpdater():
     if not Dict['plugins']:
         Dict['plugins'] = LoadData()
     while Prefs['auto-update']:
-        Logger("Running auto-update.")
+        Logger("Running auto-update.", force=True)
         for plugin in Dict['plugins']:
             if Installed(plugin):
                 GetRSSFeed(plugin=plugin, install=True)
         # check for updates every 24hours... give or take 30 minutes to avoid hammering GitHub
         sleep_time = 24*60*60 + (random.randint(-30,30))*60
         hours, minutes = divmod(sleep_time/60, 60)
-        Logger("Updater will run again in %d hours and %d minutes" % (hours, minutes))
+        Logger("Updater will run again in %d hours and %d minutes" % (hours, minutes), force=True)
         while sleep_time > 0:
             remainder = sleep_time%(3600)
             if  remainder > 0:
@@ -407,21 +427,24 @@ def GetSupportPath(directory, plugin):
         return Core.storage.join_path(Core.app_support_path, Core.config.plugin_support_dir_name, directory, plugin['identifier'])
 
 @route(PREFIX + '/logger')
-def Logger(message):
-    if Prefs['debug']:
-        Log(message)
+def Logger(message, force=False):
+    if force or Prefs['debug']:
+        Log.Debug(message)
     else:
         pass
 
 '''allow plugins to mark themselves updated externally'''
 @route('%s/mark-updated/{title}' % PREFIX)
-def MarkUpdated(title):
+def MarkUpdated(title, version=None):
     Dict['Installed'][title]['installed'] = "True"
     Logger('%s "Installed" set to: %s' % (title, Dict['Installed'][title]['installed']))
     Dict['Installed'][title]['lastUpdate'] = Datetime.Now()
     Logger('%s "LastUpdate" set to: %s' % (title, Dict['Installed'][title]['lastUpdate']))
     Dict['Installed'][title]['updateAvailable'] = "False"
     Logger('%s "updateAvailable" set to: %s' % (title, Dict['Installed'][title]['updateAvailable']))
+    if version:
+        Dict['Installed'][title]['version'] = version
+        Logger('%s "version" set to: %s' % (title, Dict['Installed'][title]['version']))
     Dict.Save()
     return
     
