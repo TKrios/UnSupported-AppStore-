@@ -25,7 +25,7 @@
         "date added"      :     "February 19, 2012",
         "tracking url"    :     "http://bit.ly/Ua3xLR"
     },
-    {
+	{
         "title"           :     "AnimePlus.tv",
         "bundle"          :     "AnimePlus.bundle",
         "type"            :     ["Video"],
@@ -37,6 +37,19 @@
         "hidden"          :     "False",
         "date added"      :     "January 10, 2014",
         "tracking url"    :     "http://bit.ly/1iZEGWr"
+    },
+	{
+        "title"           :     "AnimeToon.tv",
+        "bundle"          :     "AnimeToon.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch cartoons and English dubbed anime from AnimeToon.tv",
+        "repo"            :     "git@github.com:TehCrucible/AnimeToon.bundle",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.animetoon",
+        "icon"            :     "animetoon-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 11, 2014",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "Bay FM 99.9FM",
