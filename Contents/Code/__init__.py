@@ -200,13 +200,14 @@ def JoinBundlePath(plugin, path):
 
 @route(PREFIX + '/install', plugin=dict, initial_download=bool)
 def Install(plugin, version=None, initial_download=False):
+    repo = GetRepo(plugin)
     if initial_download:
         zipPath = plugin['tracking url']
-        rssURL = 'https://%s/commits/%s.atom' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+        rssURL = '%s/commits/%s.atom' % (repo, plugin['branch'])
         commits = HTML.ElementFromURL(rssURL)
         version = commits.xpath('//entry')[0].xpath('./id')[0].text.split('/')[-1][:10]
     else:
-        zipPath = 'http://%s/archive/%s.zip' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+        zipPath = '%s/archive/%s.zip' % (repo, plugin['branch'])
     Logger('zipPath = ' + zipPath)
     Logger('Downloading from ' + zipPath)
     zipfile = Archive.ZipFromURL(zipPath)
@@ -357,7 +358,8 @@ def CheckForUpdates(install=False, return_message=False, plugin=None):
 
 @route(PREFIX + '/GetFeed', plugin=dict)
 def GetRSSFeed(plugin, install=False):
-    rssURL = 'https://%s/commits/%s.atom' % (plugin['repo'].split('@')[1].replace(':','/')[:-4], plugin['branch'])
+    repo = GetRepo(plugin)
+    rssURL = '%s/commits/%s.atom' % (repo, plugin['branch'])
     commits = HTML.ElementFromURL(rssURL)
     mostRecent = Datetime.ParseDate(commits.xpath('//entry')[0].xpath('./updated')[0].text[:-6])
     commitHash = commits.xpath('//entry')[0].xpath('./id')[0].text.split('/')[-1][:10]
@@ -390,6 +392,22 @@ def GetRSSFeed(plugin, install=False):
     Dict.Save()
     
     return
+
+@route(PREFIX + '/repo', plugin=dict)
+def GetRepo(plugin):
+    repo = plugin['repo']
+    if repo.startswith("git@github.com"):
+        repo = repo.replace('git@github.com:', 'https://github.com/')
+    elif repo.startswith("https://github.com/"):
+        pass
+    else:
+        Logger("Error in repo URL format. Please report this https://github.com/mikedm139/UnSupportedAppstore.bundle/issues", force=True)
+    
+    if repo.endswith(".git"):
+        repo = repo.split(".git")[0]
+        
+    return repo
+
 
 @route(PREFIX + '/updater')
 def BackgroundUpdater():
