@@ -43,7 +43,7 @@
         "bundle"          :     "AnimeToon.bundle",
         "type"            :     ["Video"],
         "description"     :     "Watch cartoons and English dubbed anime from AnimeToon.tv",
-        "repo"            :     "git@github.com:TehCrucible/AnimeToon.bundle",
+        "repo"            :     "git@github.com:TehCrucible/AnimeToon.bundle.git",
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.animetoon",
         "icon"            :     "animetoon-icon.png",
