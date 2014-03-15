@@ -25,7 +25,7 @@
         "date added"      :     "February 19, 2012",
         "tracking url"    :     "http://bit.ly/Ua3xLR"
     },
-	{
+    {
         "title"           :     "AnimePlus.tv",
         "bundle"          :     "AnimePlus.bundle",
         "type"            :     ["Video"],
@@ -38,7 +38,7 @@
         "date added"      :     "January 10, 2014",
         "tracking url"    :     "http://bit.ly/1iZEGWr"
     },
-	{
+    {
         "title"           :     "AnimeToon.tv",
         "bundle"          :     "AnimeToon.bundle",
         "type"            :     ["Video"],
@@ -77,7 +77,7 @@
         "date added"      :     "April 22, 2011",
         "tracking url"    :     "http://bit.ly/RzwyNZ"
     },
-        {
+    {
         "title"           :     "Big 12 Sports",
         "bundle"          :     "Big12Sports.bundle",
         "type"            :     ["Video"],
