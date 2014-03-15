@@ -91,6 +91,19 @@
         "tracking url"    :     "http://bit.ly/1eFWqEL"
     },
     {
+        "title"           :     "BitTorrent",
+        "bundle"          :     "BitTorrent.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch videos directly from BitTorrent",
+        "repo"            :     "https://github.com/sharkone/BitTorrent.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.bittorrent",
+        "icon"            :     "bittorrent-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 15, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "BringThePopcorn",
         "bundle"          :     "BringThePopcorn.bundle",
         "type"            :     ["Video"],
