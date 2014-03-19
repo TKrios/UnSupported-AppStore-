@@ -803,9 +803,10 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.smugmug",
         "icon"            :     "smugmug-icon.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
+        "reason_hidden"   :     "'official' version available elsewhere",
         "date added"      :     "February 3, 2014",
-        "tracking url"    :     "http://bit.ly/1ksOmto"
+        "tracking url"    :     ""
     },
     {
         "title"           :     "Srt2Utf-8",
