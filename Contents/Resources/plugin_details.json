@@ -651,6 +651,19 @@
         "tracking url"    :     "http://bit.ly/Tx1Ntt"
     },
     {
+        "title"           :     "Plex2CSV",
+        "bundle"          :     "Plex2csv.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "Will export selected sections into a CSV file",
+        "repo"            :     "git@github.com:ukdtom/plex2csv.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.Plex2csv",
+        "icon"            :     "icon-Plex2csv.png",
+        "hidden"          :     "False",
+        "date added"      :     "Marts 21, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Plex Tools",
         "bundle"          :     "PlexTools.bundle",
         "type"            :     ["Video"],
