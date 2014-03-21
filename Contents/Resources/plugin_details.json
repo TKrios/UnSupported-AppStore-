@@ -702,6 +702,19 @@
         "date added"      :     "March 22, 2012",
         "tracking url"    :     "http://bit.ly/RCmX7s"
     },
+	{
+        "title"           :     "rawrANIME.tv",
+        "bundle"          :     "rawrANIME.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch HD subbed and dubbed anime from rawrANIME.tv",
+        "repo"            :     "git@github.com:TehCrucible/rawrANIME.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.rawranime",
+        "icon"            :     "rawranime-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 21, 2014",
+        "tracking url"    :     ""
+    },
     {
         "title"           :     "Rdio",
         "bundle"          :     "Rdio.bundle",
