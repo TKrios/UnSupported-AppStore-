@@ -90,11 +90,11 @@ def GenreMenu(genre):
     oc = ObjectContainer(title2=genre, no_cache=True)
     plugins = Dict['plugins']
     if genre == 'New':
-        try:
-            for plugin in plugins:
+        for plugin in plugins:
+            try:
                 plugin['date added'] = Datetime.TimestampFromDatetime(Datetime.ParseDate(plugin['date added']))
-        except:
-            Log.Exception("Converting dates to timestamps failed")
+            except:
+                Log.Exception('Converting date "%s" to timestamp failed' % plugin['date added'])
         date_sorted = sorted(plugins, key=lambda k: k['date added'])
         Logger(date_sorted)
         date_sorted.reverse()
