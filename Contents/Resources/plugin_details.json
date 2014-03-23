@@ -352,6 +352,19 @@
         "tracking url"    :     "http://bit.ly/1jX0CAs"
     },
     {
+        "title"           :     "FindMissing",
+        "bundle"          :     "FindMissing.bundle",
+        "type"            :     ["Application"],
+        "description"     :     "List any files that are missing.",
+        "repo"            :     "git@github.com:srazer/FindMissing.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.findMissing",
+        "icon"            :     "icon-FindMissing.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 23, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Full Movies on Reddit",
         "bundle"          :     "FullMoviesOnReddit.bundle",
         "type"            :     ["Video"],
