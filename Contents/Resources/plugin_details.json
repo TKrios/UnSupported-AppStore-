@@ -941,6 +941,19 @@
         "tracking url"    :     "http://bit.ly/1c9977Z"
     },
     {
+        "title"           :     "Viaplay",
+        "bundle"          :     "Viaplay.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch TV, Movies and Sports from Viaplay",
+        "repo"            :     "git@github.com:JeppeTh/Viaplay.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.viaplay",
+        "icon"            :     "viaplay-icon.jpg",
+        "hidden"          :     "False",
+        "date added"      :     "March 22, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Vice",
         "bundle"          :     "Vice.bundle",
         "type"            :     ["Video"],
@@ -1097,18 +1110,4 @@
         "reason_hidden"   :     "duplicate entry... should not have been pushed in the first place :-/",
         "date added"      :     "December 9, 2013",
         "tracking url"    :     ""
-    },
-    {
-        "title"           :     "Viaplay",
-        "bundle"          :     "Viaplay.bundle",
-        "type"            :     ["Video"],
-        "description"     :     "Watch TV, Movies and Sports from Viaplay",
-        "repo"            :     "git@github.com:JeppeTh/Viaplay.bundle.git",
-        "branch"          :     "master",
-        "identifier"      :     "com.plexapp.plugins.viaplay",
-        "icon"            :     "viaplay-icon.jpg",
-        "hidden"          :     "False",
-        "date added"      :     "March 22, 2014",
-        "tracking url"    :     ""
-    }
-]
+    }]
