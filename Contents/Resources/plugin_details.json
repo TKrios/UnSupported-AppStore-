@@ -1059,6 +1059,19 @@
         "tracking url"    :     "http://bit.ly/PvWLxl"
     },
     {
+        "title"           :     "xkcd",
+        "bundle"          :     "xkcd.bundle",
+        "type"            :     ["Pictures"],
+        "description"     :     "Strips from xkcd website",
+        "repo"            :     "git@github.com:sengian/xkcd.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.xkcd",
+        "icon"            :     "xkcd-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 24, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "XNXX",
         "bundle"          :     "XNXX.bundle",
         "type"            :     ["Video", "Adult"],
