@@ -651,6 +651,19 @@
         "tracking url"    :     "http://bit.ly/18ap0bt"
     },
     {
+        "title"           :     "Old Movie Time",
+        "bundle"          :     "OldMovieTime.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch classic movies for free online!\nThe best of the thirties, forties, fifties, and sixties.",
+        "repo"            :     "git@github.com:meriko/OldMovieTime.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.oldmovietime",
+        "icon"            :     "oldmovietime-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "March 26, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Open Movie Database",
         "bundle"          :     "OpenMovieDatabase.bundle",
         "type"            :     ["Metadata Agent"],
