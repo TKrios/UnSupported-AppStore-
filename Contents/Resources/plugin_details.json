@@ -737,7 +737,7 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.pornhub",
         "icon"            :     "pornhub-icon.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
         "date added"      :     "March 22, 2012",
         "tracking url"    :     "http://bit.ly/RCmX7s"
     },
