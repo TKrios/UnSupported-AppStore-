@@ -291,7 +291,11 @@ def UnInstallPlugin(plugin):
     Dict['Installed'][plugin['title']]['version'] = None
     Dict['deleteCode'] = '' # Clear the key
     Dict.Save()
-    HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
+    try:
+        Logger("Attempting to restart the system bundle to force changes to register.", force=True)
+        HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
+    except:
+        pass
     return ObjectContainer(header=NAME, message='%s uninstalled.' % plugin['title'])
 
 @route(PREFIX + '/deletefile')
@@ -322,7 +326,9 @@ def DeleteFolder(folderPath, code):
                 except: Logger('Failed to remove ' + path)
             else:
                 Logger('Do not know what to do with ' + path)
-        try:os.rmdir(folderPath)
+        try:
+            Logger('Removing ' + folderPath)
+            os.rmdir(folderPath)
         except: Logger('Failed to remove ' + folderPath); explode
     else:
         Logger("%s does not exist so we don't need to remove it" % folderPath)
@@ -449,6 +455,8 @@ def GetSupportPath(directory, plugin):
 
 @route(PREFIX + '/logger')
 def Logger(message, force=False):
+    if DEV_MODE:
+        force = True
     if force or Prefs['debug']:
         Log.Debug(message)
     else:
