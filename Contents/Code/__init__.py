@@ -30,7 +30,7 @@ def Start():
         if not Dict['Installed']['UnSupported Appstore']['installed']:
             Dict['Installed']['UnSupported Appstore']['installed'] = True
     
-    try: version = Dict['installed']['UnSupported Appstore']['version']
+    try: version = Dict['Installed']['UnSupported Appstore']['version']
     except: version = 'unknown'
     Logger('UnSupported Appstore version: %s' % version, force=True) 
     
