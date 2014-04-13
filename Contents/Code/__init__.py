@@ -12,7 +12,7 @@ PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
 
-DEV_MODE    = False
+DEV_MODE    = True
 
 ####################################################################################################
 
@@ -245,7 +245,7 @@ def Install(plugin, version=None, initial_download=False):
     # or, if just applying an update, restart the updated plugin
     else:
         try:
-            HTTP.Request('http://127.0.0.1:32400/:/plugins/%s/reloadServices' % plugin['identifier'], cacheTime=0, immediate=True)
+            HTTP.Request('http://127.0.0.1:32400/:/plugins/%s/restart' % plugin['identifier'], cacheTime=0, immediate=True)
         except:
             HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
     return
