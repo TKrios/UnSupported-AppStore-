@@ -12,7 +12,7 @@ PREFS_ICON  = 'icon-prefs.png'
 
 PLUGINS     = 'plugin_details.json'
 
-DEV_MODE    = True
+DEV_MODE    = False
 
 ####################################################################################################
 
