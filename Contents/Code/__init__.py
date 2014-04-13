@@ -215,6 +215,8 @@ def Install(plugin, version=None, initial_download=False):
     bundle_path = GetBundlePath(plugin)
     Logger('Extracting to ' + bundle_path)
     
+    errors = 0
+    
     for filename in zipfile:
         data = zipfile[filename]
 
@@ -223,7 +225,12 @@ def Install(plugin, version=None, initial_download=False):
                 path = JoinBundlePath(plugin, filename)
 
                 Logger('Extracting file' + path)
-                Core.storage.save(path, data)
+                try:
+                    Core.storage.save(path, data)
+                except Exception, e:
+                    Logger("Unexpected Error", True)
+                    Logger(e, True)
+                    errors += 1
             else:
                 Logger('Skipping "hidden" file: ' + filename)
         else:
@@ -235,9 +242,16 @@ def Install(plugin, version=None, initial_download=False):
                 Logger('Extracting folder ' + path)
                 Core.storage.ensure_dirs(path)
     
-    MarkUpdated(plugin['title'], version=version)
-    # "touch" the bundle to update the timestamp
-    os.utime(bundle_path, None)
+    if errors == 0:
+        # mark the plugin as updated
+        MarkUpdated(plugin['title'], version=version)
+        # "touch" the bundle to update the timestamp
+        os.utime(bundle_path, None)
+    else:
+        if initial_install:
+            Logger("Install of %s failed with %d errors." % (plugin['title'], errors), force=True)
+        else:
+            Logger("Update of %s failed with %d errors." % (plugin['title'], errors), force=True)
     # To help installs/updates register without rebooting PMS...
     # reload the system service if installing a new plugin
     if initial_download:
