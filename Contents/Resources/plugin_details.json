@@ -1,5 +1,18 @@
 [
     {
+        "title"           :     "4oD",
+        "bundle"          :     "4oD.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "4oD allows you to watch a wide range of content recently shown on Channel 4, E4 and More4. Programmes are available for 30 days after their original broadcast date, although some remain available for longer so you can catch up on the whole series. A large variety of shows can be viewed, including original dramas, soaps, documentaries, comedies and shows imported from the US. Some of the most popular content includes Shameless, Grand Designs, Skins, Smallville and Hollyoaks. 4oD is only available to UK residents.",
+        "repo"            :     "git@github.com:meriko/4oD.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.4oDmobile",
+        "icon"            :     "4oD-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "April 17, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "4tube",
         "bundle"          :     "4tube.bundle",
         "type"            :     ["Video", "Adult"],
