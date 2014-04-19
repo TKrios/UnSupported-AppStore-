@@ -874,6 +874,19 @@
         "tracking url"    :     ""
     },
     {
+        "title"           :     "Spotify2",
+        "bundle"          :     "Spotify2.bundle",
+        "type"            :     ["Music"],
+        "description"     :     "Stream music from Spotify (node.js + premium account required)",
+        "repo"            :     "git@github.com:fuzeman/Spotify2.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.spotify2",
+        "icon"            :     "spotify2-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "April 19, 2014",
+        "tracking url"    :     "http://bit.ly/1i3A6kd"
+    },
+    {
         "title"           :     "Srt2Utf-8",
         "bundle"          :     "SRT2UTF-8.bundle",
         "type"            :     ["Agent"],
