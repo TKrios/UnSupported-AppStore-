@@ -359,7 +359,7 @@ def genCode(length=20):
 def CheckForUpdates(install=False, return_message=False, plugin=None):
     #use the github commit feed for each installed plugin to check for available updates
     if plugin:
-        if plugin['hidden']:
+        if plugin['hidden'] == "true":
             return ObjectContainer(header="Unsupported Appstore", message="%s : No longer supported. No updates." % plugin['title'])
         GetRSSFeed(plugin=plugin, install=install)
         if return_message:
