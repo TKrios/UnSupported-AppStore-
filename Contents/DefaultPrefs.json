@@ -24,6 +24,12 @@
         "default": "True"
     },
     {
+        "id": "beta",
+        "type": "bool",
+        "label": "Install beta versions for testing.",
+        "default": "False"
+    },
+    {
         "id": "clear_dict",
         "type": "bool",
         "label": "Reset UnSupportedAppStore data. All plugins will need to be reinstalled for updates to work.",
