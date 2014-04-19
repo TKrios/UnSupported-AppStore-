@@ -201,13 +201,22 @@ def JoinBundlePath(plugin, path):
 @route(PREFIX + '/install', plugin=dict, initial_download=bool)
 def Install(plugin, version=None, initial_download=False):
     repo = GetRepo(plugin)
+    branch = GetBranch(plugin)
     if initial_download:
-        zipPath = plugin['tracking url']
-        rssURL = '%s/commits/%s.atom' % (repo, plugin['branch'])
+        if Prefs['beta'] and plugin['beta_branch'] != "":
+            Logger("Requesting beta build of %s" % plugin['title'], force=True)
+            # hit the tracking url to increment the counter
+            tracking_request = HTTP.Request(plugin['tracking url'], immediate=True)
+            # then set the zipPath using the beta branch
+            zipPath = '%s/archive/%s.zip' % (repo, branch)
+        else:
+            # use the basic install/tracking url
+            zipPath = plugin['tracking url']
+        rssURL = '%s/commits/%s.atom' % (repo, branch)
         commits = HTML.ElementFromURL(rssURL)
         version = commits.xpath('//entry')[0].xpath('./id')[0].text.split('/')[-1][:10]
     else:
-        zipPath = '%s/archive/%s.zip' % (repo, plugin['branch'])
+        zipPath = '%s/archive/%s.zip' % (repo, branch)
     Logger('zipPath = ' + zipPath)
     Logger('Downloading from ' + zipPath)
     zipfile = Archive.ZipFromURL(zipPath)
@@ -381,7 +390,8 @@ def CheckForUpdates(install=False, return_message=False, plugin=None):
 @route(PREFIX + '/GetFeed', plugin=dict)
 def GetRSSFeed(plugin, install=False):
     repo = GetRepo(plugin)
-    rssURL = '%s/commits/%s.atom' % (repo, plugin['branch'])
+    branch = GetBranch(plugin)
+    rssURL = '%s/commits/%s.atom' % (repo, branch)
     commits = HTML.ElementFromURL(rssURL)
     mostRecent = Datetime.ParseDate(commits.xpath('//entry')[0].xpath('./updated')[0].text[:-6])
     commitHash = commits.xpath('//entry')[0].xpath('./id')[0].text.split('/')[-1][:10]
@@ -430,6 +440,12 @@ def GetRepo(plugin):
         
     return repo
 
+@route(PREFIX + '/branch', plugin=dict)
+def GetBranch(plugin):
+    if Prefs['beta'] and plugin['beta_branch'] != "":
+        return plugin['beta_branch']
+    else:
+        return plugin['branch']
 
 @route(PREFIX + '/updater')
 def BackgroundUpdater():
