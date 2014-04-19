@@ -248,7 +248,7 @@ def Install(plugin, version=None, initial_download=False):
         # "touch" the bundle to update the timestamp
         os.utime(bundle_path, None)
     else:
-        if initial_install:
+        if initial_download:
             Logger("Install of %s failed with %d errors." % (plugin['title'], errors), force=True)
         else:
             Logger("Update of %s failed with %d errors." % (plugin['title'], errors), force=True)
