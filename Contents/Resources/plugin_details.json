@@ -939,6 +939,19 @@
         "tracking url"    :     "http://bit.ly/18vC90y"
     },
     {
+        "title"           :     "TV-Headend NG",
+        "bundle"          :     "tvheadend-ng.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch TV on your plex devices. Provided by a TV-Headend server.",
+        "repo"            :     "git@github.com:realriot/tvheadend-ng.bundle",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.tvheadend-ng",
+        "icon"            :     "tvheadend-ng-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "April 29, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Unofficial IMDb API",
         "bundle"          :     "Unofficial-IMDb-API.bundle",
         "type"            :     ["Metadata Agent"],
