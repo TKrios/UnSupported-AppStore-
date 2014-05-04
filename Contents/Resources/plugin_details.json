@@ -1145,7 +1145,7 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.yify",
         "icon"            :     "yify-icon.jpg",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
         "date added"      :     "February 2, 2014",
         "tracking url"    :     "http://bit.ly/LsQOR8"
     },
