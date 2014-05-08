@@ -607,7 +607,7 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.navix",
         "icon"            :     "navix-icon.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
         "date added"      :     "March 08, 2013",
         "tracking url"    :     "http://bit.ly/12ZBKm3"
     },
