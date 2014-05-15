@@ -391,6 +391,19 @@
         "tracking url"    :     "http://bit.ly/Ihs2T5"
     },
     {
+        "title"           :     "Grooveshark",
+        "bundle"          :     "Grooveshark.bundle",
+        "type"            :     ["Music"],
+        "description"     :     "Stream music from Grooveshark.com",
+        "repo"            :     "git@github.com:jwdempsey/Grooveshark.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.grooveshark",
+        "icon"            :     "grooveshark-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "May 15, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "HDBits Subtitles",
         "bundle"          :     "HdbitsSubtitles.bundle",
         "type"            :     ["Metadata Agent", "Subtitles"],
