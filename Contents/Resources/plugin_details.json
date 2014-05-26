@@ -234,6 +234,19 @@
         "tracking url"    :     "http://bit.ly/14UJOAj"
     },
     {
+        "title"           :     "Dabdate",
+        "bundle"          :     "Dabdate.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch Korean TV shows from dabdate.com",
+        "repo"            :     "git@github.com:hojel/Dabdate.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.dabdate",
+        "icon"            :     "dabdate-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "May 23, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Data18 Metadata Agent",
         "bundle"          :     "Data18.bundle",
         "type"            :     ["Metadata Agent", "Adult"],
@@ -571,6 +584,19 @@
         "hidden"          :     "False",
         "date added"      :     "November 04, 2013",
         "tracking url"    :     "http://bit.ly/19tdh5o"
+    },
+    {
+        "title"           :     "Mangafox",
+        "bundle"          :     "Mangafox.bundle",
+        "type"            :     ["Pictures"],
+        "description"     :     "Comics from Mangafox",
+        "repo"            :     "git@github.com:hojel/Mangafox.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.mangafox",
+        "icon"            :     "mangafox-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "May 23, 2014",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "MediaPortal",
@@ -1109,6 +1135,19 @@
         "hidden"          :     "False",
         "date added"      :     "February 07, 2014",
         "tracking url"    :     "http://bit.ly/1lQR11v"
+    },
+    {
+        "title"           :     "xiami",
+        "bundle"          :     "xiami.bundle",
+        "type"            :     ["Music"],
+        "description"     :     "Stream music from xiami.com",
+        "repo"            :     "git@github.com:hojel/xiami.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.xiami",
+        "icon"            :     "xiami-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "May 23, 2014",
+        "tracking url"    :     ""
     },
     {
         "title"           :     "xHamster",
