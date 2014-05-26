@@ -899,6 +899,19 @@
         "tracking url"    :     "http://bit.ly/UsZJzI"
     },
     {
+        "title"           :     "SMI Convert",
+        "bundle"          :     "SmiConvert.bundle",
+        "type"            :     ["Agent"],
+        "description"     :     "A agent to convert subtitles in SMI format to SRT format",
+        "repo"            :     "git@github.com:hojel/SmiConvert.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.agents.smiconvert",
+        "icon"            :     "smiconvert-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "May 24, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "SmugMug",
         "bundle"          :     "SmugMug.bundle",
         "type"            :     ["Pictures"],
