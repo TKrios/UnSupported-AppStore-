@@ -8,7 +8,7 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.4oDmobile",
         "icon"            :     "4oD-icon.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
         "date added"      :     "April 17, 2014",
         "tracking url"    :     "http://bit.ly/1nhVNVt"
     },
