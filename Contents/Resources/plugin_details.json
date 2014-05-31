@@ -404,6 +404,19 @@
         "tracking url"    :     "http://bit.ly/Ihs2T5"
     },
     {
+        "title"           :     "Google Music",
+        "bundle"          :     "GoogleMusic.bundle",
+        "type"            :     ["Music"],
+        "description"     :     "Stream music from Google Music",
+        "repo"            :     "git@github.com:jwdempsey/GoogleMusic.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.googlemusic",
+        "icon"            :     "googlemusic-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "May 31, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Grooveshark",
         "bundle"          :     "Grooveshark.bundle",
         "type"            :     ["Music"],
