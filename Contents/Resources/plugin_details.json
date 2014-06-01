@@ -742,6 +742,19 @@
         "tracking url"    :     "http://bit.ly/Tx1Ntt"
     },
     {
+        "title"           :     "ORF TVThek(AT)",
+        "bundle"          :     "ORFTVThek.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Sämtliche ORF-Nachrichtensendungen (ZIB bzw. Zeit im Bild), die „Bundesland heute“-Sendungen, und Sendungen aus den Bereichen wie z.B Comedy, Religion, Sport oder Kultur sind über die TVthek abrufbar. Auch Livestreams von vielen Eigenproduktionen und Sport-Events sind verfügbar. Generell sind die Sendungen sieben Tage im Internet abzurufen.",
+        "repo"            :     "git@github.com:meriko/ORFTVThek.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.orftvthek",
+        "icon"            :     "orftvthek-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "June 1, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Plex2CSV",
         "bundle"          :     "Plex2csv.bundle",
         "type"            :     ["Application"],
