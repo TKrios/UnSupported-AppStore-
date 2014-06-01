@@ -965,6 +965,19 @@
         "tracking url"    :     ""
     },
     {
+        "title"           :     "Soma FM",
+        "bundle"          :     "SomaFM.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Over 20 unique channels of listener-supported, commercial-free, underground/alternative radio broadcasting from San Francisco. All music hand-picked by SomaFM's award-winning DJs and music directors.",
+        "repo"            :     "git@github.com:meriko/SomaFM.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.somafm",
+        "icon"            :     "somafm-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "June 1, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Spotify2",
         "bundle"          :     "Spotify2.bundle",
         "type"            :     ["Music"],
