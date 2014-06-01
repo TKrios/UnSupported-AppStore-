@@ -1071,6 +1071,19 @@
         "tracking url"    :     ""
     },
     {
+        "title"           :     "UR Play",
+        "bundle"          :     "URPlay.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "UR Play är Sveriges mest kunskapsspäckade Playtjänst med mer än 2500 program om allt från historia till matematik och språk.",
+        "repo"            :     "git@github.com:meriko/URPlay.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.urplay",
+        "icon"            :     "urplay-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "June 1, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "USTVnow",
         "bundle"          :     "USTVnow.bundle",
         "type"            :     ["Video"],
