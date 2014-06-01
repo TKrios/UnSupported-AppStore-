@@ -65,6 +65,19 @@
         "tracking url"    :     "http://bit.ly/1cKA0lz"
     },
     {
+        "title"           :     "ATV MediaThek(AT)",
+        "bundle"          :     "ATVMediaThek.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "ATV.at - Alle Sendungen online ansehen. Jederzeit und kostenlos! Aktuelle News, Reportagen, Bauer sucht Frau, Saturday Night Fever, Teenager werden Mütter und vieles mehr.",
+        "repo"            :     "git@github.com:meriko/ATVMediaThek.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.atv",
+        "icon"            :     "atvmediathek-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "June 1, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Bay FM 99.9FM",
         "bundle"          :     "BayFM999.bundle",
         "type"            :     ["Music"],
