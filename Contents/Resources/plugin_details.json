@@ -303,7 +303,7 @@
         "title"           :     "Discovery Networks",
         "bundle"          :     "Discovery.bundle",
         "type"            :     ["Video"],
-        "description"     :     "Watch full episodes and clips from various Discovery Channels",
+        "description"     :     "Watch clips from various Discovery Channels",
         "repo"            :     "git@github.com:meriko/Discovery.bundle.git",
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.discovery",
