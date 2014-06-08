@@ -417,6 +417,8 @@ def GetRSSFeed(plugin, install=False):
             if plugin['title'] == 'UnSupported Appstore' and DEV_MODE:
                 pass
             else:
+                # Attempt to stop the plugin's running processes (if supported) before overwriting files
+                StopPlugin(plugin)
                 Install(plugin, version=commitHash)
     else:
         Logger(plugin['title'] + ': Up-to-date; Version %s' % commitHash, force=True)
@@ -493,6 +495,29 @@ def Logger(message, force=False):
         Log.Debug(message)
     else:
         pass
+
+'''ensure that plugins running processes that lock files, shutdown prior to updating'''    
+@route(PREFIX + '/stopplugin', plugin=dict)
+def StopPlugin(plugin):
+    if plugin['prefix'] == "":
+        return True
+    else:
+        stopURL = "http://127.0.0.1:32400%s/safestop" % plugin['prefix']
+        stopped = False
+        while not stopped:
+            try:
+                stop_request = HTTP.request(stopURL, cacheTime=0, timeout=30, immediate=True).content
+                if stop_request == "True":
+                    stopped = True
+                    break
+                elif stop_request == "False":
+                    pass
+            except:
+                # assume a failed request means that the plugin does not support stop requests as they are unnecessary
+                stopped = True
+                break
+            time.sleep(30)
+        return True
 
 '''allow plugins to mark themselves updated externally'''
 @route('%s/mark-updated/{title}' % PREFIX)
