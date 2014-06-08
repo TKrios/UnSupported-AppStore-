@@ -17,7 +17,12 @@ If you have authored a plugin and would like for it to appear in the UnSupported
 #Commit your changes with an appropriate descrition.
 #Send a Pull Request for your changes to be merged into the master-branch.
 
-Once the changes have been reviewed, they will be merged and your plugin will appear in the UnSupported AppStore. Please keep in mind for future development that, since the AppStore pulls updates directly from your plugins git repository that until any code changes are tested, it is best to work in a branch other than 'master'. As a general rule, I suggest that channels be designated to work on all Plex clients unless there are known issues with a particular client-type. This will decrease users' reliance on the "Disable Capability Checking" option which otherwise opens the door for them to have more troubles with other channels (both official and unofficial). To make sure all clients are supported, just set the string value for the "PlexClientPlatforms" key to "*" in your plugin's Info.plist.
+Once the changes have been reviewed, they will be merged and your plugin will appear in the UnSupported AppStore.
+Please keep in mind for future development that, since the AppStore pulls updates directly from your plugins git repository that until any code changes are tested, it is best to work in a branch other than 'master'.
+
+As a general rule, I suggest that channels be designated to work on all Plex clients unless there are known issues with a particular client-type.
+This will decrease users' reliance on the "Disable Capability Checking" option which otherwise opens the door for them to have more troubles with other channels (both official and unofficial).
+To make sure all clients are supported, just set the string value for the "PlexClientPlatforms" key to "*" in your plugin's Info.plist.
 
 ==== Plugin Details ====
 The plugin_details.json file located in the Resources directory is the key file for maintaining the list of channels available via the UnSupported Appstore. The required fields are:
@@ -51,5 +56,6 @@ The plugin_details.json file located in the Resources directory is the key file 
 === Tracking ===
 
 The UnSupported Appstore uses bit.ly links to track installs of individual channels. Other data which is collected includes: Country of "clicks", and referrer.
+
 Developers, feel free to check the download stats for your plugin using the bit.ly link in the plugin_details.json. The stats page for each link can be accessed by appending '+' to the URL.
 
