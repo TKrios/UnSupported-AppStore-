@@ -135,7 +135,7 @@
     {
         "title"           :     "BitTorrent",
         "bundle"          :     "BitTorrent.bundle",
-        "prefix"          :     "",
+        "prefix"          :     "/video/bittorrent",
         "type"            :     ["Video"],
         "description"     :     "Watch videos directly from BitTorrent",
         "repo"            :     "git@github.com:sharkone/BitTorrent.bundle.git",
