@@ -499,7 +499,9 @@ def Logger(message, force=False):
 '''ensure that plugins running processes that lock files, shutdown prior to updating'''    
 @route(PREFIX + '/stopplugin', plugin=dict)
 def StopPlugin(plugin):
-    if plugin['prefix'] == "":
+    if not 'prefix' in plugin:
+        return True
+    elif plugin['prefix'] == "":
         return True
     else:
         stopURL = "http://127.0.0.1:32400%s/safestop" % plugin['prefix']
