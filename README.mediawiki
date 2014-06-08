@@ -1,11 +1,14 @@
-The UnSupported AppStore is a plugin for the Plex Media Server to ease the process of finding, downloading, installing, updating and (if need be) uninstalling unsupported Plex plugins.
+== Description ==
+The UnSupported Appstore is a plugin for the Plex Media Server to ease the process of finding, downloading, installing, updating and (if need be) uninstalling unsupported Plex plugins.
 Please note that the plugins available here are not supported by the Plex Media Server 'Plex Online' store for a reason (possibly more than one reason).
 They may be unstable, unfinished, or provide access to content which may be offensive.
 If you are having trouble with any of the plugins available through this app, please make your best efforts to contact the plugin's author for support.
 The author of the UnSupported AppStore takes no responsibility for the content/stability/suitability of the contained plugins and any complaints or requests for support in relation to specific plugins will be ignored.
 
+== Developers ==
+If you have authored a plugin and would like for it to appear in the UnSupported Appstore, follow these instructions:
 
-If you have authored a plugin and would like for it to appear in the UnSupported AppStore, follow these instructions:
+=== Plugin Submission ===
 #Setup a git repository (github.com) for your plugin.
 #Fork the repository for the UnSupported AppStore (https://github.com/mikedm139/UnSupportedAppstore.bundle).
 #Edit the plugin_details.json file in /Contents/Resources/ to add the necessary info about your plugin. All fields except the "tracking url" should be filled in.
@@ -14,8 +17,39 @@ If you have authored a plugin and would like for it to appear in the UnSupported
 #Commit your changes with an appropriate descrition.
 #Send a Pull Request for your changes to be merged into the master-branch.
 
-Once the changes have been reviewed, they will be merged and your plugin will appear in the UnSupported AppStore. Please keep in mind for future development that, since the AppStore pulls updates directly from your plugins git repository that until any code changes are tested, it is best to work in a branch other than 'master'.
+Once the changes have been reviewed, they will be merged and your plugin will appear in the UnSupported AppStore. Please keep in mind for future development that, since the AppStore pulls updates directly from your plugins git repository that until any code changes are tested, it is best to work in a branch other than 'master'. As a general rule, I suggest that channels be designated to work on all Plex clients unless there are known issues with a particular client-type. This will decrease users' reliance on the "Disable Capability Checking" option which otherwise opens the door for them to have more troubles with other channels (both official and unofficial). To make sure all clients are supported, just set the string value for the "PlexClientPlatforms" key to "*" in your plugin's Info.plist.
 
-As a general rule, I suggest that channels be designated to work on all Plex clients unless there are known issues with a particular client-type. This will decrease users' reliance on the "Disable Capability Checking" option which otherwise opens the door for them to have more troubles with other channels (both official and unofficial). To make sure all clients are supported, just set the string value for the "PlexClientPlatforms" key to "*" in your plugin's Info.plist.
+==== Plugin Details ====
+The plugin_details.json file located in the Resources directory is the key file for maintaining the list of channels available via the UnSupported Appstore. The required fields are:
+;title
+: The title of your channel which will be displayed in the UnSupported Appstore, eg. "UnSupported Appstore".
+;bundle
+: The filename of the plugin bundle. Used by the UAS when installing/updating/removing channels. eg. "UnSupportedAppstore.bundle".
+;prefix
+: The plugin prefix registered in your channel's __init__.py. Particularly necessary if your plugin stays running in the background with active threads which may lock file access. eg. "/video/unsupportedappstore". Default is "".
+;type
+: The class of channel your plugin matches, eg. ["Video"]. This value takes a list of one or more applicable strings. Acceptable values are: "Adult", "Application", "Metadata Agent", "Music", "Pictures", "Video". Other values are not forbidden but will likely be ignored.
+;description
+: A summary of your channel which will be displayed to users in the UAS. eg. "This is the most awesome channel ever with over a billion videos of cats!"
+;repo
+: The GitHub repository address of your plugin. Takes the form of either "git@github.com:{github_username}/{plugin_name.bundle}.git" or "https://github.com/{github_username}/{plugin_name.bundle}.git". eg. "https://github.com/mikedm139/UnSupportedAppstore.bundle.git"
+;branch
+: The branch name of the public release branch of your plugin. Default is "master".
+;beta_branch
+: If you want to allow users to install a beta version of your plugin for testing, include the beta branch name here. eg. "develop". Default is "".
+;identifier
+: The plugin identifier defined in your plugin's Info.plist file. eg. "com.plexapp.plugins.unsupportedappstore".
+;icon
+: The filename of the icon that you include in the Resources directory of the UAS. "icon-default.png" is reserved for the UnSupportedAppstore. Using that name will cause your plugin to show up with the UAS icon in the UAS listings. Recommended format is "{pluginname}-icon.png".
+;hidden
+: This value indicates if a plugin should be removed from view of users. Default is "False". If your plugin is badly broken and/or no longer going to be maintained, please submit a Pull Request to set this value to "True".
+;date added
+: The date your plugin is added to the UnSupported Appstore. Format is "{month (english)} {day}, {year}". Recommended to either use the date of your Pull Request, or I will add the date when I merge the Pull Request.
+;tracking url
+: The UnSupported Appstore uses bit.ly links to track installs of individual channels. Please leave this blank. I will add a tracking link when I merge the Pull Request. Once the changes are pushed to the official repo, you can make note of the tracking link for your plugin(s).
 
+=== Tracking ===
+
+The UnSupported Appstore uses bit.ly links to track installs of individual channels. Other data which is collected includes: Country of "clicks", and referrer.
 Developers, feel free to check the download stats for your plugin using the bit.ly link in the plugin_details.json. The stats page for each link can be accessed by appending '+' to the URL.
+
