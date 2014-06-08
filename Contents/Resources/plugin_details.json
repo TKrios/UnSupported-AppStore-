@@ -2,6 +2,7 @@
     {
         "title"           :     "4oD (UK)",
         "bundle"          :     "4oD.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "4oD allows you to watch a wide range of content recently shown on Channel 4, E4 and More4. Programmes are available for 30 days after their original broadcast date, although some remain available for longer so you can catch up on the whole series. A large variety of shows can be viewed, including original dramas, soaps, documentaries, comedies and shows imported from the US. Some of the most popular content includes Shameless, Grand Designs, Skins, Smallville and Hollyoaks. 4oD is only available to UK residents.",
         "repo"            :     "git@github.com:meriko/4oD.bundle.git",
@@ -15,6 +16,7 @@
     {
         "title"           :     "4tube",
         "bundle"          :     "4tube.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch xxx videos from 4tube.com",
         "repo"            :     "git@github.com:piplongrun/4tube.bundle.git",
@@ -29,6 +31,7 @@
     {
         "title"           :     "AniDB.net Metadata Agent",
         "bundle"          :     "AniDB.bundle",
+        "prefix"          :     "",
         "type"            :     ["Metadata Agent"],
         "description"     :     "Metadata agent for anime movies and tv-shows",
         "repo"            :     "git@github.com:bstard/AniDB.bundle.git",
@@ -43,6 +46,7 @@
     {
         "title"           :     "AnimePlus.tv",
         "bundle"          :     "AnimePlus.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch anime shows and movies from AnimePlus.tv",
         "repo"            :     "git@github.com:TehCrucible/AnimePlus.bundle.git",
@@ -57,6 +61,7 @@
     {
         "title"           :     "AnimeToon.tv",
         "bundle"          :     "AnimeToon.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch cartoons and English dubbed anime from AnimeToon.tv",
         "repo"            :     "git@github.com:TehCrucible/AnimeToon.bundle.git",
@@ -71,6 +76,7 @@
     {
         "title"           :     "ATV MediaThek(AT)",
         "bundle"          :     "ATVMediaThek.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "ATV.at - Alle Sendungen online ansehen. Jederzeit und kostenlos! Aktuelle News, Reportagen, Bauer sucht Frau, Saturday Night Fever, Teenager werden Mütter und vieles mehr.",
         "repo"            :     "git@github.com:meriko/ATVMediaThek.bundle.git",
@@ -84,6 +90,7 @@
     {
         "title"           :     "Bay FM 99.9FM",
         "bundle"          :     "BayFM999.bundle",
+        "prefix"          :     "",
         "type"            :     ["Music"],
         "description"     :     "Plex plugin for Bay FM 99.9 Byron Bay, Australia",
         "repo"            :     "git@github.com:jab-au/BayFM999.bundle.git",
@@ -98,6 +105,7 @@
     {
         "title"           :     "beeg.com",
         "bundle"          :     "beeg.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch xxx videos from beeg.com",
         "repo"            :     "git@github.com:piplongrun/beeg.bundle.git",
@@ -112,6 +120,7 @@
     {
         "title"           :     "Big 12 Sports",
         "bundle"          :     "Big12Sports.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Highlights and Replays from big12sports.com",
         "repo"            :     "git@github.com:datvance/Big12Sports.bundle.git",
@@ -126,6 +135,7 @@
     {
         "title"           :     "BitTorrent",
         "bundle"          :     "BitTorrent.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch videos directly from BitTorrent",
         "repo"            :     "git@github.com:sharkone/BitTorrent.bundle.git",
@@ -140,6 +150,7 @@
     {
         "title"           :     "BringThePopcorn",
         "bundle"          :     "BringThePopcorn.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch Movies from www.bringthepopcorn.net",
         "repo"            :     "git@github.com:MaZZly/BringThePopcorn.bundle.git",
@@ -154,6 +165,7 @@
     {
         "title"           :     "Channel7 (AU)",
         "bundle"          :     "Channel7.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "View Australian TV Prime 7 on demand ",
         "repo"            :     "https://github.com:adamrumbold/Channel7.bundle.git",
@@ -168,6 +180,7 @@
     {
         "title"           :     "Channel9 (AU)",
         "bundle"          :     "Channel9.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "View Australian TV Channel 9 on demand ",
         "repo"            :     "https://github.com:adamrumbold/Channel9.bundle.git",
@@ -182,6 +195,7 @@
     {
         "title"           :     "Channel10 (AU)",
         "bundle"          :     "Channel10.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "View Australian TV Channel 10 on demand ",
         "repo"            :     "https://github.com:adamrumbold/Channel10.bundle.git",
@@ -196,6 +210,7 @@
     {
         "title"           :     "Christian Science",
         "bundle"          :     "ChristianScience.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Lectures, church services and other media about Christian Science",
         "repo"            :     "git@github.com:datvance/ChristianScience.bundle.git",
@@ -210,6 +225,7 @@
     {
         "title"           :     "ClickPlay",
         "bundle"          :     "ClickPlay.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch TV series from clickplay.to",
         "repo"            :     "git@github.com:piplongrun/ClickPlay.bundle.git",
@@ -224,6 +240,7 @@
     {
         "title"           :     "CMT Shows",
         "bundle"          :     "CMT.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch shows from www.cmt.com",
         "repo"            :     "git@github.com:shopgirl284/CMT.bundle.git",
@@ -238,6 +255,7 @@
     {
         "title"           :     "CouchPotato",
         "bundle"          :     "CouchPotato.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application", "Video"],
         "description"     :     "View, edit and add to your CouchPotato wanted list.",
         "repo"            :     "git@github.com:mikedm139/CouchPotato.bundle.git",
@@ -252,6 +270,7 @@
     {
         "title"           :     "Crunchyroll",
         "bundle"          :     "Crunchyroll.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch over 20,000 episodes of popular Anime & Drama 1-Hour after TV broadcast from the website Crunchyroll.com.",
         "repo"            :     "git@github.com:MattRK/Crunchyroll.bundle.git",
@@ -266,6 +285,7 @@
     {
         "title"           :     "Dabdate",
         "bundle"          :     "Dabdate.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch Korean TV shows from dabdate.com",
         "repo"            :     "git@github.com:hojel/Dabdate.bundle.git",
@@ -279,6 +299,7 @@
     {
         "title"           :     "Data18 Metadata Agent",
         "bundle"          :     "Data18.bundle",
+        "prefix"          :     "",
         "type"            :     ["Metadata Agent", "Adult"],
         "description"     :     "Metadata agent for adult films from Data18.com",
         "repo"            :     "git@github.com:chidychi/Data18.bundle.git",
@@ -293,6 +314,7 @@
     {
         "title"           :     "Data18-Content Metadata Agent",
         "bundle"          :     "Data18-Content.bundle",
+        "prefix"          :     "",
         "type"            :     ["Metadata Agent", "Adult"],
         "description"     :     "Metadata agent for adult Content from Data18.com",
         "repo"            :     "git@github.com:chidychi/Data18-Content.bundle.git",
@@ -307,6 +329,7 @@
     {
         "title"           :     "Devour",
         "bundle"          :     "Devour.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Videos worth watching from Devour.com",
         "repo"            :     "git@github.com:mmccurdy07/Devour.bundle.git",
@@ -322,6 +345,7 @@
     {
         "title"           :     "Discovery Networks",
         "bundle"          :     "Discovery.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch clips from various Discovery Channels",
         "repo"            :     "git@github.com:meriko/Discovery.bundle.git",
@@ -336,6 +360,7 @@
     {
         "title"           :     "Dropbox",
         "bundle"          :     "Dropbox.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Browse your Dropbox content direclty from any Plex device.",
         "repo"            :     "git@github.com:realriot/Dropbox.bundle.git",
@@ -350,6 +375,7 @@
     {
         "title"           :     "eporner",
         "bundle"          :     "eporner.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch XXX-Videos from EPORNER.COM",
         "repo"            :     "git@github.com:flownex/eporner.bundle.git",
@@ -364,6 +390,7 @@
     {
         "title"           :     "ExcaliburFilms Metadata Agent",
         "bundle"          :     "ExcaliburFilms.bundle",
+        "prefix"          :     "",
         "type"            :     ["Metadata Agent", "Adult"],
         "description"     :     "Metadata agent for adult films from ExcaliburFilms.com",
         "repo"            :     "git@github.com:vofik/ExcaliburFilms.bundle.git",
@@ -378,6 +405,7 @@
     {
         "title"           :     "Facebook",
         "bundle"          :     "Facebook.bundle",
+        "prefix"          :     "",
         "type"            :     ["Pictures", "Social"],
         "description"     :     "View newsfeed and photos from Facebook",
         "repo"            :     "git@github.com:DCstewieG/Facebook.bundle.git",
@@ -392,6 +420,7 @@
     {
         "title"           :     "FilmOn",
         "bundle"          :     "FilmOn.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch over 600 Free Live TV Channels",
         "repo"            :     "git@github.com:meriko/FilmOn.bundle.git",
@@ -406,6 +435,7 @@
     {
         "title"           :     "FindUnmatched",
         "bundle"          :     "Plex-FindUnmatched.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "Scan your medias, and report medias missing from the database.",
         "repo"            :     "git@github.com:ukdtom/Plex-FindUnmatched.bundle.git",
@@ -420,6 +450,7 @@
     {
         "title"           :     "FindMissing",
         "bundle"          :     "FindMissing.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "List any files that are missing.",
         "repo"            :     "git@github.com:srazer/FindMissing.bundle.git",
@@ -434,6 +465,7 @@
     {
         "title"           :     "Full Movies on Reddit",
         "bundle"          :     "FullMoviesOnReddit.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch full movies found on /r/fullmoviesonyoutube",
         "repo"            :     "git@github.com:jwdempsey/FullMoviesOnReddit.bundle.git",
@@ -448,6 +480,7 @@
     {
         "title"           :     "Google Music",
         "bundle"          :     "GoogleMusic.bundle",
+        "prefix"          :     "",
         "type"            :     ["Music"],
         "description"     :     "Stream music from Google Music",
         "repo"            :     "git@github.com:jwdempsey/GoogleMusic.bundle.git",
@@ -461,6 +494,7 @@
     {
         "title"           :     "Grooveshark",
         "bundle"          :     "Grooveshark.bundle",
+        "prefix"          :     "",
         "type"            :     ["Music"],
         "description"     :     "Stream music from Grooveshark.com",
         "repo"            :     "git@github.com:jwdempsey/Grooveshark.bundle.git",
@@ -474,6 +508,7 @@
     {
         "title"           :     "HDBits Subtitles",
         "bundle"          :     "HdbitsSubtitles.bundle",
+        "prefix"          :     "",
         "type"            :     ["Metadata Agent", "Subtitles"],
         "description"     :     "Downloads subtitles automatically from HDBits.org (Private torrent tracker)",
         "repo"            :     "git@github.com:Coi-l/HdbitsSubtitles.bundle.git",
@@ -488,6 +523,7 @@
     {
         "title"           :     "IceFilms",
         "bundle"          :     "IceFilms.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch Movies and TV Shows from IceFilms.info",
         "repo"            :     "git@github.com:ReallyFuzzy/IceFilms.bundle.git",
@@ -502,6 +538,7 @@
     {
         "title"           :     "IMDb HD Trailers",
         "bundle"          :     "IMDb-Trailers.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch movie trailers from IMDb in HD",
         "repo"            :     "git@github.com:mikedm139/IMDb-Trailers.bundle.git",
@@ -516,6 +553,7 @@
     {
         "title"           :     "Internet Archive",
         "bundle"          :     "InternetArchive.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch and listen to free videos and music from the non-profit digital online library: Internet Archive",
         "repo"            :     "git@github.com:meriko/InternetArchive.bundle.git",
@@ -530,6 +568,7 @@
     {
         "title"           :     "IPTV",
         "bundle"          :     "IPTV.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Plugin to play network streams (a.k.a. IPTV) from a M3U playlist",
         "repo"            :     "git@github.com:Cigaras/IPTV.bundle.git",
@@ -544,6 +583,7 @@
     {
         "title"           :     "iSho.ws",
         "bundle"          :     "iSho-ws.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch TV series from iSho.ws",
         "repo"            :     "git@github.com:piplongrun/iSho-ws.bundle.git",
@@ -558,6 +598,7 @@
     {
         "title"           :     "ITV Player (UK)",
         "bundle"          :     "ITV-Player.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "ITV Player has your favourite shows ready to watch whenever you want them. Browse and search for shows from all ITV channels from the last 31 days.",
         "repo"            :     "git@github.com:ReallyFuzzy/ITV-Player.bundle.git",
@@ -572,6 +613,7 @@
     {
         "title"           :     "Kink.com Metadata Agent",
         "bundle"          :     "Kink.bundle",
+        "prefix"          :     "",
         "type"            :     ["Metadata Agent", "Adult"],
         "description"     :     "Metadata agent for adult shoots from any Kink.com site",
         "repo"            :     "git@github.com:vofik/Kink.bundle.git",
@@ -586,6 +628,7 @@
     {
         "title"           :     "Let Me Watch This",
         "bundle"          :     "LetMeWatchThis.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch Movies and TV Shows from 1Channel.ch (Let Me Watch This)",
         "repo"            :     "git@github.com:ReallyFuzzy/LetMeWatchThis.bundle.git",
@@ -600,6 +643,7 @@
     {
         "title"           :     "Library Updater",
         "bundle"          :     "LibraryUpdater.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "Update Plex library sections or entire library without leaving Plex interface",
         "repo"            :     "git@github.com:mikedm139/LibraryUpdater.bundle.git",
@@ -614,6 +658,7 @@
     {
         "title"           :     "Link TV",
         "bundle"          :     "LinkTV.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Link TV broadcasts programs that engage, educate and activate viewers to become involved in the world. These programs provide a unique perspective on international news, current events, and diverse cultures, presenting issues not often covered in the US media.",
         "repo"            :     "git@github.com:meriko/LinkTV.bundle.git",
@@ -628,6 +673,7 @@
     {
         "title"           :     "LiveLeak",
         "bundle"          :     "LiveLeak.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Redefining the Media",
         "repo"            :     "git@github.com:meriko/LiveLeak.bundle.git",
@@ -642,6 +688,7 @@
     {
         "title"           :     "Logo TV",
         "bundle"          :     "LogoTV.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch shows from www.logotv.com",
         "repo"            :     "git@github.com:shopgirl284/LogoTV.bundle.git",
@@ -656,6 +703,7 @@
     {
         "title"           :     "Mangafox",
         "bundle"          :     "Mangafox.bundle",
+        "prefix"          :     "",
         "type"            :     ["Pictures"],
         "description"     :     "Comics from Mangafox",
         "repo"            :     "git@github.com:hojel/Mangafox.bundle.git",
@@ -669,6 +717,7 @@
     {
         "title"           :     "MediaPortal",
         "bundle"          :     "MediaPortal.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch Live TV from a MediaPortal server",
         "repo"            :     "git@github.com:jwdempsey/MediaPortal.bundle.git",
@@ -683,6 +732,7 @@
     {
         "title"           :     "Movie2k",
         "bundle"          :     "MOVIE2K.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch Movies and TV Show Series from Movie4k.to.",
         "repo"            :     "git@github.com:Joecowboy/MOVIE2K.bundle.git",
@@ -697,6 +747,7 @@
     {
         "title"           :     "MTV Shows",
         "bundle"          :     "MTVShows.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch shows from www.mtv.com",
         "repo"            :     "git@github.com:shopgirl284/MTVShows.bundle.git",
@@ -711,6 +762,7 @@
     {
         "title"           :     "Navi-X",
         "bundle"          :     "navix.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch user verified media from Navi-Xtreme",
         "repo"            :     "git@github.com:kriska/navix.bundle.git",
@@ -725,6 +777,7 @@
     {
         "title"           :     "NBCSports",
         "bundle"          :     "NBCSports.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Video highlights from NBCSports.com",
         "repo"            :     "git@github.com:datvance/NBCSports.bundle.git",
@@ -739,6 +792,7 @@
     {
         "title"           :     "NewsLook",
         "bundle"          :     "NewsLook.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Breaking Video News Online",
         "repo"            :     "git@github.com:meriko/NewsLook.bundle.git",
@@ -753,6 +807,7 @@
     {
         "title"           :     "Newzworthy",
         "bundle"          :     "Newzworthy.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application", "Video"],
         "description"     :     "A Usenet-Plex integration plugin. Currently only supported on OSX.",
         "repo"            :     "git@github.com:plexinc-plugins/Newsworthy.bundle.git",
@@ -767,6 +822,7 @@
     {
         "title"           :     "NHL",
         "bundle"          :     "NHL.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Requires a subscription to NHL GameCenter\nWatch live out-of-market, regular season games in HD-quality and choose between the home or away team's broadcast.\nWatch on-demand full-length and condensed replays\nWatch classic games from the NHL Vault.",
         "repo"            :     "git@github.com:mikedm139/NHL.bundle.git",
@@ -781,6 +837,7 @@
     {
         "title"           :     "Old Movie Time",
         "bundle"          :     "OldMovieTime.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch classic movies for free online!\nThe best of the thirties, forties, fifties, and sixties.",
         "repo"            :     "git@github.com:meriko/OldMovieTime.bundle.git",
@@ -795,6 +852,7 @@
     {
         "title"           :     "Open Movie Database",
         "bundle"          :     "OpenMovieDatabase.bundle",
+        "prefix"          :     "",
         "type"            :     ["Metadata Agent"],
         "description"     :     "Metadata agent to retrieve film info from the Open Movie Database (English only!)",
         "repo"            :     "git@github.com:haeY/OpenMovieDatabase.bundle.git",
@@ -809,6 +867,7 @@
     {
         "title"           :     "ORF TVThek(AT)",
         "bundle"          :     "ORFTVThek.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Sämtliche ORF-Nachrichtensendungen (ZIB bzw. Zeit im Bild), die „Bundesland heute“-Sendungen, und Sendungen aus den Bereichen wie z.B Comedy, Religion, Sport oder Kultur sind über die TVthek abrufbar. Auch Livestreams von vielen Eigenproduktionen und Sport-Events sind verfügbar. Generell sind die Sendungen sieben Tage im Internet abzurufen.",
         "repo"            :     "git@github.com:meriko/ORFTVThek.bundle.git",
@@ -822,6 +881,7 @@
     {
         "title"           :     "Plex2CSV",
         "bundle"          :     "Plex2csv.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "Will export selected sections into a CSV file",
         "repo"            :     "git@github.com:ukdtom/plex2csv.bundle.git",
@@ -836,6 +896,7 @@
     {
         "title"           :     "Plex Tools",
         "bundle"          :     "PlexTools.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Download subtitles and convert videos to MP4",
         "repo"            :     "git@github.com:jwdempsey/PlexTools.bundle.git",
@@ -850,6 +911,7 @@
     {
         "title"           :     "PLinkTV - Plex Link TV",
         "bundle"          :     "PLinkTV.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Build your own VOD service by hosting the media at any cloud service.",
         "repo"            :     "git@github.com:realriot/PLinkTV.bundle.git",
@@ -864,6 +926,7 @@
     {
         "title"           :     "Podnapisi Subtitles",
         "bundle"          :     "PodnapisiSubtitles.bundle",
+        "prefix"          :     "",
         "type"            :     ["Metadata Agent", "Subtitles"],
         "description"     :     "Downloads subtitles automatically from Podnapisi.net",
         "repo"            :     "git@github.com:Coi-l/PodnapisiSubtitles.bundle.git",
@@ -878,6 +941,7 @@
     {
         "title"           :     "PornHub",
         "bundle"          :     "PornHub.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch XXX-Videos from PornHub.com",
         "repo"            :     "git@github.com:piplongrun/PornHub.bundle.git",
@@ -892,6 +956,7 @@
 	{
         "title"           :     "rawrANIME.tv",
         "bundle"          :     "rawrANIME.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch HD subbed and dubbed anime from rawrANIME.tv",
         "repo"            :     "git@github.com:TehCrucible/rawrANIME.bundle.git",
@@ -906,6 +971,7 @@
     {
         "title"           :     "Rdio",
         "bundle"          :     "Rdio.bundle",
+        "prefix"          :     "",
         "type"            :     ["Music"],
         "description"     :     "Stream music from Rdio.com",
         "repo"            :     "git@github.com:mikedecaro/Rdio.bundle.git",
@@ -921,6 +987,7 @@
     {
         "title"           :     "RedTube",
         "bundle"          :     "RedTube.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch XXX-Videos from RedTube.com",
         "repo"            :     "git@github.com:flownex/RedTube.bundle.git",
@@ -935,6 +1002,7 @@
     {
         "title"           :     "Rooster Teeth",
         "bundle"          :     "RoosterTeeth.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch videos from Red vs. Blue, Achievement Hunter, RT Shorts, RWBY, and lots more",
         "repo"            :     "git@github.com:meriko/RoosterTeeth.bundle.git",
@@ -949,6 +1017,7 @@
     {
         "title"           :     "RSS Feeds",
         "bundle"          :     "RSSFeed.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch your favorite RSS Feeds",
         "repo"            :     "git@github.com:shopgirl284/RSSFeed.bundle.git",
@@ -963,6 +1032,7 @@
     {
         "title"           :     "SABnzbd+",
         "bundle"          :     "SABnzbd.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "Manage your SABnzbd+ queue and history from within Plex.",
         "repo"            :     "git@github.com:mikedm139/SABnzbd.bundle.git",
@@ -977,6 +1047,7 @@
     {
         "title"           :     "SBS (AU)",
         "bundle"          :     "SBS.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "View Australian TV SBS on demand ",
         "repo"            :     "https://github.com:adamrumbold/SBS.bundle.git",
@@ -991,6 +1062,7 @@
     {
         "title"           :     "SickBeard",
         "bundle"          :     "SickBeard.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "A plugin for Plex media center to view and control basic functions of SickBeard",
         "repo"            :     "git@github.com:mikedm139/SickBeard.bundle.git",
@@ -1005,6 +1077,7 @@
     {
         "title"           :     "SMI Convert",
         "bundle"          :     "SmiConvert.bundle",
+        "prefix"          :     "",
         "type"            :     ["Agent"],
         "description"     :     "A agent to convert subtitles in SMI format to SRT format",
         "repo"            :     "git@github.com:hojel/SmiConvert.bundle.git",
@@ -1018,6 +1091,7 @@
     {
         "title"           :     "SmugMug",
         "bundle"          :     "SmugMug.bundle",
+        "prefix"          :     "",
         "type"            :     ["Pictures"],
         "description"     :     "Photo Galleries from SmugMug",
         "repo"            :     "git@github.com:datvance/SmugMug.bundle.git",
@@ -1033,6 +1107,7 @@
     {
         "title"           :     "Soma FM",
         "bundle"          :     "SomaFM.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Over 20 unique channels of listener-supported, commercial-free, underground/alternative radio broadcasting from San Francisco. All music hand-picked by SomaFM's award-winning DJs and music directors.",
         "repo"            :     "git@github.com:meriko/SomaFM.bundle.git",
@@ -1046,6 +1121,7 @@
     {
         "title"           :     "Spotify2",
         "bundle"          :     "Spotify2.bundle",
+        "prefix"          :     "",
         "type"            :     ["Music"],
         "description"     :     "Stream music from Spotify (node.js + premium account required)",
         "repo"            :     "git@github.com:fuzeman/Spotify2.bundle.git",
@@ -1059,6 +1135,7 @@
     {
         "title"           :     "Srt2Utf-8",
         "bundle"          :     "SRT2UTF-8.bundle",
+        "prefix"          :     "",
         "type"            :     ["Agent"],
         "description"     :     "Plex Media Agent, that'll convert sidecar subtitle files into UTF-8, if not",
         "repo"            :     "git@github.com:ukdtom/SRT2UTF-8.bundle.git",
@@ -1073,6 +1150,7 @@
     {
         "title"           :     "SS Plex",
         "bundle"          :     "ss-plex.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch Movies and TV Shows from Icefilms, Watch Series, 1channel and more.",
         "repo"            :     "git@github.com:mikew/ss-plex.bundle.git",
@@ -1087,6 +1165,7 @@
     {
         "title"           :     "Sweflix",
         "bundle"          :     "Sweflix.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch movies from Sweflix.com",
         "repo"            :     "git@github.com:piplongrun/Sweflix.bundle.git",
@@ -1101,6 +1180,7 @@
     {
         "title"           :     "Trakt.tv plugin",
         "bundle"          :     "trakttv.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "Automatically scrobble all TV episodes and movies you are watching to trakt.tv!",
         "repo"            :     "git@github.com:trakt/Plex-Trakt-Scrobbler.git",
@@ -1115,6 +1195,7 @@
     {
         "title"           :     "TV-Headend NG",
         "bundle"          :     "tvheadend-ng.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch TV on your plex devices. Provided by a TV-Headend server.",
         "repo"            :     "git@github.com:realriot/tvheadend-ng.bundle",
@@ -1128,6 +1209,7 @@
     {
         "title"           :     "Unofficial IMDb API",
         "bundle"          :     "Unofficial-IMDb-API.bundle",
+        "prefix"          :     "",
         "type"            :     ["Metadata Agent"],
         "description"     :     "Has Been replaced by the Open Movie Database agent, please install that to receive future updates.",
         "repo"            :     "git@github.com:haeY/Unofficial-IMDb-API.bundle.git",
@@ -1143,6 +1225,7 @@
     {
         "title"           :     "unRAID",
         "bundle"          :     "unRAID.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "Plex Media Server plugin to control basic functions of an unRAID server. ",
         "repo"            :     "git@github.com:mikedm139/unRAID.bundle.git",
@@ -1158,6 +1241,7 @@
     {
         "title"           :     "UnSupported Appstore",
         "bundle"          :     "UnSupportedAppstore.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "Download, install, and update unsupported plugins for PMS",
         "repo"            :     "git@github.com:mikedm139/UnSupportedAppstore.bundle.git",
@@ -1172,6 +1256,7 @@
     {
         "title"           :     "UR Play(SE)",
         "bundle"          :     "URPlay.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "UR Play är Sveriges mest kunskapsspäckade Playtjänst med mer än 2500 program om allt från historia till matematik och språk.",
         "repo"            :     "git@github.com:meriko/URPlay.bundle.git",
@@ -1185,6 +1270,7 @@
     {
         "title"           :     "USTVnow",
         "bundle"          :     "USTVnow.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch Live TV from ustvnow.com",
         "repo"            :     "git@github.com:jwdempsey/USTVnow.bundle.git",
@@ -1199,6 +1285,7 @@
     {
         "title"           :     "Viaplay",
         "bundle"          :     "Viaplay.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch TV, Movies and Sports from Viaplay",
         "repo"            :     "git@github.com:JeppeTh/Viaplay.bundle.git",
@@ -1213,6 +1300,7 @@
     {
         "title"           :     "Vice",
         "bundle"          :     "Vice.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Online den of nefarious activities, investigative journalism, and enlightening documentaries. (US version)",
         "repo"            :     "git@github.com:meriko/Vice.bundle.git",
@@ -1227,6 +1315,7 @@
     {
         "title"           :     "VH1",
         "bundle"          :     "VH1.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch shows from www.vh1.com",
         "repo"            :     "git@github.com:shopgirl284/VH1.bundle.git",
@@ -1241,6 +1330,7 @@
     {
         "title"           :     "Webisodes",
         "bundle"          :     "Webisodes.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch your favorite web series from Yahoo Screens, BlipTV, Vimeo, YouTube, as well as RSS Feeds",
         "repo"            :     "git@github.com:shopgirl284/Webisodes.bundle.git",
@@ -1255,6 +1345,7 @@
     {
         "title"           :     "WorldTV",
         "bundle"          :     "WorldTV.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch live network streams from all over the world provided by WorldTVsite.net",
         "repo"            :     "git@github.com:mikedm139/WorldTV.bundle.git",
@@ -1270,6 +1361,7 @@
     {
         "title"           :     "XBMCnfoMoviesImporter",
         "bundle"          :     "XBMCnfoMoviesImporter.bundle",
+        "prefix"          :     "",
         "type"            :     ["Agent"],
         "description"     :     "Import Movies information from locally exported XBMC database.",
         "repo"            :     "git@github.com:gboudreau/XBMCnfoMoviesImporter.bundle.git",
@@ -1284,6 +1376,7 @@
     {
         "title"           :     "XBMCnfoTVImporter",
         "bundle"          :     "XBMCnfoTVImporter.bundle",
+        "prefix"          :     "",
         "type"            :     ["Agent"],
         "description"     :     "Import TVShow information from locally exported XBMC database.",
         "repo"            :     "git@github.com:gboudreau/XBMCnfoTVImporter.bundle.git",
@@ -1298,6 +1391,7 @@
     {
         "title"           :     "xiami",
         "bundle"          :     "xiami.bundle",
+        "prefix"          :     "",
         "type"            :     ["Music"],
         "description"     :     "Stream music from xiami.com",
         "repo"            :     "git@github.com:hojel/xiami.bundle.git",
@@ -1311,6 +1405,7 @@
     {
         "title"           :     "xHamster",
         "bundle"          :     "xHamster.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch XXX-Videos from xHamster.com",
         "repo"            :     "git@github.com:flownex/xHamster.bundle.git",
@@ -1325,6 +1420,7 @@
     {
         "title"           :     "xkcd",
         "bundle"          :     "xkcd.bundle",
+        "prefix"          :     "",
         "type"            :     ["Pictures"],
         "description"     :     "Strips from xkcd website",
         "repo"            :     "git@github.com:sengian/xkcd.bundle.git",
@@ -1339,6 +1435,7 @@
     {
         "title"           :     "XNXX",
         "bundle"          :     "XNXX.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch XXX-Videos from XNXX.COM",
         "repo"            :     "git@github.com:flownex/XNXX.bundle.git",
@@ -1353,6 +1450,7 @@
     {
         "title"           :     "Yify",
         "bundle"          :     "Yify.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video"],
         "description"     :     "Watch full movies from Yify TV",
         "repo"            :     "git@github.com:piplongrun/Yify.bundle.git",
@@ -1367,6 +1465,7 @@
     {
         "title"           :     "YouJizz",
         "bundle"          :     "YouJizz.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch XXX-Videos from YouJizz.com",
         "repo"            :     "git@github.com:flownex/YouJizz.bundle.git",
@@ -1381,6 +1480,7 @@
     {
         "title"           :     "YouPorn",
         "bundle"          :     "YouPorn.bundle",
+        "prefix"          :     "",
         "type"            :     ["Video", "Adult"],
         "description"     :     "Watch XXX-Videos from YouPorn.com",
         "repo"            :     "git@github.com:Gerk/YouPorn.bundle.git",
@@ -1395,6 +1495,7 @@
     {
         "title"           :     "FindUnmatched - Duplicate Entry",
         "bundle"          :     "Plex-FindUnmatched.bundle",
+        "prefix"          :     "",
         "type"            :     ["Application"],
         "description"     :     "Scan your medias, and report medias missing from the database.",
         "repo"            :     "git@github.com:ukdtom/Plex-FindUnmatched.bundle.git",
