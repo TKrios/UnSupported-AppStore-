@@ -417,6 +417,19 @@
         "tracking url"    :     "http://bit.ly/Ihs2T5"
     },
     {
+        "title"           :     "G2G.fm",
+        "bundle"          :     "G2Gfm.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch latest release movies and tv series in HD!",
+        "repo"            :     "git@github.com:TehCrucible/G2Gfm.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.g2gfm",
+        "icon"            :     "g2gfm-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "June 12, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Google Music",
         "bundle"          :     "GoogleMusic.bundle",
         "type"            :     ["Music"],
