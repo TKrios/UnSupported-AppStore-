@@ -1038,7 +1038,7 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.sweflix",
         "icon"            :     "sweflix-icon.jpg",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
         "date added"      :     "February 20, 2014",
         "tracking url"    :     "http://bit.ly/1dgzyX3"
     },
