@@ -1024,7 +1024,7 @@
         "repo"            :     "git@github.com:mikew/ss-plex.bundle.git",
         "branch"          :     "stable",
         "identifier"      :     "com.plexapp.plugins.wso",
-        "icon"            :     "icon-default.png",
+        "icon"            :     "ss-plex.png",
         "hidden"          :     "False",
         "date added"      :     "October 11, 2012",
         "tracking url"    :     "http://bit.ly/UksVwo"
