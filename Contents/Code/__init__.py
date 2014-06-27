@@ -182,11 +182,17 @@ def Installed(plugin):
 @route(PREFIX + '/installplugin', plugin=dict)
 def InstallPlugin(plugin):
     if Installed(plugin):
-        Install(plugin)
+        errors = Install(plugin)
     else:
-        Install(plugin, initial_download=True)
-    return ObjectContainer(header=NAME, message='%s installed.' % plugin['title'])
-
+        errors = Install(plugin, initial_download=True)
+    if errors == 0:
+        return ObjectContainer(header=NAME, message='%s installed.' % plugin['title'])
+    else:
+        if Installed(plugin):
+            return ObjectContainer(header=NAME, message="Install of %s failed with %d errors." % (plugin['title'], errors))
+        else:
+            return ObjectContainer(header=NAME, message="Update of %s failed with %d errors." % (plugin['title'], errors))
+    
 @route(PREFIX + '/joinpath', plugin=dict)
 def JoinBundlePath(plugin, path):
     bundle_path = GetBundlePath(plugin)
@@ -250,8 +256,11 @@ def Install(plugin, version=None, initial_download=False):
     else:
         if initial_download:
             Logger("Install of %s failed with %d errors." % (plugin['title'], errors), force=True)
+            # avoid a nasty updater loop and don't restart the 
+            return errors
         else:
             Logger("Update of %s failed with %d errors." % (plugin['title'], errors), force=True)
+            return errors
     # To help installs/updates register without rebooting PMS...
     # reload the system service if installing a new plugin
     if initial_download:
@@ -262,23 +271,31 @@ def Install(plugin, version=None, initial_download=False):
             HTTP.Request('http://127.0.0.1:32400/:/plugins/%s/restart' % plugin['identifier'], cacheTime=0, immediate=True)
         except:
             HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
-    return
+    return errors
 
 @route(PREFIX + '/updateall')
 def UpdateAll():
+    errors_total = 0
     for plugin in Dict['plugins']:
         if Dict['Installed'][plugin['title']]['installed'] == "True":
             if Dict['Installed'][plugin['title']]['updateAvailable'] == "False":
                 Logger('%s is already up to date.' % plugin['title'])
             else:
                 Logger('%s is installed. Downloading updates:' % (plugin['title']))
-                update = Install(plugin)
-                Logger(update)
+                errors = Install(plugin)
+                if errors == 0:
+                    Logger("%s updated." % plugin['title'])
+                else:
+                    Logger("Update of %s failed with %d errors." % (plugin['title'], errors), force=True)
+                    errors_total += errors
         else:
             Logger('%s is not installed.' % plugin['title'])
             pass
 
-    return ObjectContainer(header=NAME, message='Updates have been applied.')
+    if errors_total == 0:
+        return ObjectContainer(header=NAME, message='Updates have been applied.')
+    else:
+        return ObjectContainer(header=NAME, message='Updates have been applied but there were errors. Check logs for details.')
 
 @route(PREFIX + '/uninstall', plugin=dict)
 def UnInstallPlugin(plugin):
