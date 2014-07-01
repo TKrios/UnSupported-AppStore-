@@ -1175,6 +1175,19 @@
         "tracking url"    :     "http://bit.ly/18DJcRj"
     },
     {
+        "title"           :     "Wareztuga",
+        "bundle"          :     "Wareztuga.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch movies hosted on Wareztuga.tv",
+        "repo"            :     "git@github.com:galrito/Wareztuga.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.wareztuga",
+        "icon"            :     "wareztuga-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "July 01, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Webisodes",
         "bundle"          :     "Webisodes.bundle",
         "type"            :     ["Video"],
