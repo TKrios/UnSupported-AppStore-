@@ -711,7 +711,7 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.newslook",
         "icon"            :     "newslook-icon.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
         "date added"      :     "March 08, 2014",
         "tracking url"    :     "http://bit.ly/1fbDEo8"
     },
