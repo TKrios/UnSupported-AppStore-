@@ -47,7 +47,7 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.animeplus",
         "icon"            :     "animeplus-icon.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
         "date added"      :     "January 10, 2014",
         "tracking url"    :     "http://bit.ly/1iZEGWr"
     },
@@ -60,7 +60,7 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.animetoon",
         "icon"            :     "animetoon-icon.png",
-        "hidden"          :     "False",
+        "hidden"          :     "True",
         "date added"      :     "March 11, 2014",
         "tracking url"    :     "http://bit.ly/1cKA0lz"
     },
