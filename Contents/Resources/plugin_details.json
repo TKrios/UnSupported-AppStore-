@@ -943,7 +943,7 @@
         "type"            :     ["Application"],
         "description"     :     "A plugin for Plex media center to view and control basic functions of SickBeard",
         "repo"            :     "git@github.com:mikedm139/SickBeard.bundle.git",
-        "branch"          :     "videos",
+        "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.sickbeard",
         "icon"            :     "sickbeard-icon.png",
         "hidden"          :     "False",
