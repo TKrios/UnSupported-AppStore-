@@ -39,6 +39,19 @@
         "tracking url"    :     "http://bit.ly/Ua3xLR"
     },
     {
+        "title"           :     "AnimeHD",
+        "bundle"          :     "AnimeHD.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Watch subbed anime in HD and SD (provided by www.masterani.me)",
+        "repo"            :     "git@github.com:NexPB/AnimeHD.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.animehd",
+        "icon"            :     "animehd-icon.png",
+        "hidden"          :     "True",
+        "date added"      :     "July 20, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "AnimePlus.tv",
         "bundle"          :     "AnimePlus.bundle",
         "type"            :     ["Video"],
