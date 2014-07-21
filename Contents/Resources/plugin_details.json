@@ -47,7 +47,7 @@
         "branch"          :     "master",
         "identifier"      :     "com.plexapp.plugins.animehd",
         "icon"            :     "animehd-icon.png",
-        "hidden"          :     "True",
+        "hidden"          :     "False",
         "date added"      :     "July 20, 2014",
         "tracking url"    :     ""
     },
