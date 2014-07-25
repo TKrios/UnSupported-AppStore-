@@ -482,6 +482,20 @@
         "tracking url"    :     "http://bit.ly/R5pW8F"
     },
     {
+        "title"           :     "Hitbox.tv",
+        "bundle"          :     "Hitbox.tv.bundle",
+        "prefix"          :     "",
+        "type"            :     ["Video"],
+        "description"     :     "Allows streaming of Hitbox.tv live streams",
+        "repo"            :     "git@github.com:r15ch13/Hitbox.tv.bundle.git",
+        "identifier"      :     "com.plexapp.plugins.hitboxtv",
+        "branch"          :     "master",
+        "icon"            :     "hitboxtv-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "July 25, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "IceFilms",
         "bundle"          :     "IceFilms.bundle",
         "type"            :     ["Video"],
