@@ -1057,6 +1057,19 @@
         "tracking url"    :     "http://bit.ly/UksVwo"
     },
     {
+        "title"           :     "Sveriges Radio Play (SE)",
+        "bundle"          :     "SRPlay.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Listen to all of Swedish Radio's content. All channels are available live and all shows on demand. You can also download podcasts and listen offline.",
+        "repo"            :     "git@github.com:meriko/SRPlay.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.sverigesradioplay",
+        "icon"            :     "sverigesradioplay-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "August 10, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Sweflix",
         "bundle"          :     "Sweflix.bundle",
         "type"            :     ["Video"],
