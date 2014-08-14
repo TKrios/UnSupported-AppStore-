@@ -443,6 +443,19 @@
         "tracking url"    :     "http://bit.ly/UBPP6T"
     },
     {
+        "title"           :     "Game One",
+        "bundle"          :     "GameOne.bundle",
+        "type"            :     ["Video"],
+        "description"     :     "Stream Videos, Podcasts and TV Episodes from gameone.de",
+        "repo"            :     "git@github.com:derrod/GameOne.bundle.git",
+        "branch"          :     "master",
+        "identifier"      :     "com.plexapp.plugins.gameone",
+        "icon"            :     "gameone-icon.png",
+        "hidden"          :     "False",
+        "date added"      :     "August 14, 2014",
+        "tracking url"    :     ""
+    },
+    {
         "title"           :     "Google Music",
         "bundle"          :     "GoogleMusic.bundle",
         "type"            :     ["Music"],
