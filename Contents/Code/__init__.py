@@ -228,15 +228,34 @@ def Install(plugin, version=None, initial_download=False):
 
         if not str(filename).endswith('/'):
             if not str(filename.split('/')[-1]).startswith('.'):
-                path = JoinBundlePath(plugin, filename)
+                
+                Log(plugin['title'])
+                Log(filename)
+                Log(Platform.OS)
+                if plugin['title'] == 'UnSupported Appstore' and filename == '__init__.py' and Platform.OS == "Linux":
+                    # extract the file under a different name then replace the existing file to avoid wiping the file and breaking the UAS on linux systems
+                    temp_filename = filename + '.tmp'
+                    path = JoinBundlePath(plugin, filename)
+                    temp_path = JoinBundlePath(plugin, temp_filename)
 
-                Logger('Extracting file' + path)
-                try:
-                    Core.storage.save(path, data)
-                except Exception, e:
-                    Logger("Unexpected Error", True)
-                    Logger(e, True)
-                    errors += 1
+                    Logger('Extracting file %s as %s' % (filename, temp_path))
+                    try:
+                        Core.storage.save(temp_path, data)
+                        Core.storage.rename(temp_path, path)
+                    except Exception, e:
+                        Logger("Unexpected Error", True)
+                        Logger(e, True)
+                        errors += 1
+                else:
+                    path = JoinBundlePath(plugin, filename)
+
+                    Logger('Extracting file' + path)
+                    try:
+                        Core.storage.save(path, data)
+                    except Exception, e:
+                        Logger("Unexpected Error", True)
+                        Logger(e, True)
+                        errors += 1
             else:
                 Logger('Skipping "hidden" file: ' + filename)
         else:
@@ -264,7 +283,10 @@ def Install(plugin, version=None, initial_download=False):
     # To help installs/updates register without rebooting PMS...
     # reload the system service if installing a new plugin
     if initial_download:
-        HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
+        try:
+            HTTP.Request('http://127.0.0.1:32400/:/plugins/com.plexapp.system/restart', immediate=True)
+        except:
+            Log("Unable to restart System.bundle. Channel may not show up without PMS restart.")
     # or, if just applying an update, restart the updated plugin
     else:
         try:
@@ -426,7 +448,7 @@ def GetRSSFeed(plugin, install=False):
             else:
                 Install(plugin, version=commitHash)
     else:
-        Logger(plugin['title'] + ': Up-to-date; Version %s' % commitHash, force=True)
+        Logger(plugin['title'] + ': Up-to-date :: Version %s' % commitHash, force=True)
     
     Dict.Save()
     
